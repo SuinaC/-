@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <!-- START: Head-->
+    <head>
+        <meta charset="UTF-8">
+        <title>医生信息</title>
+        <link rel="shortcut icon" href="dist/images/favicon.ico" th:href="@{/information/}"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"> 
+
+        <!-- START: Template CSS-->
+        <link rel="stylesheet" href="dist/vendors/bootstrap/css/bootstrap.min.css" th:href="@{/information/vendors/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" href="dist/vendors/jquery-ui/jquery-ui.min.css" th:href="@{/information/vendors/jquery-ui/jquery-ui.min.css}">
+        <link rel="stylesheet" href="dist/vendors/jquery-ui/jquery-ui.theme.min.css" th:href="@{/information/vendors/jquery-ui/jquery-ui.theme.min.css}">
+        <link rel="stylesheet" href="dist/vendors/simple-line-icons/css/simple-line-icons.css" th:href="@{/information/vendors/simple-line-icons/css/simple-line-icons.css}">
+        <link rel="stylesheet" href="dist/vendors/flags-icon/css/flag-icon.min.css" th:href="@{/information/vendors/flags-icon/css/flag-icon.min.css}">
+        <link rel="stylesheet" href="dist/vendors/flag-select/css/flags.css" th:href="@{/information/vendors/flag-select/css/flags.css}">
+        <link rel="stylesheet" href="dist/vendors/sweetalert/sweetalert.css"
+              th:href="@{/information/vendors/sweetalert/sweetalert.css}">
+        <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css"
+        th:href="@{/information/css/style.css}">
+        <link rel="stylesheet" href="assets/css/style.css" th:href="@{/information/css/all.min.css}">
+        <link rel="stylesheet" href="assets/css/style.css" th:href="@{/information/css/fontawesome.min.css}">
+        <!-- END Template CSS-->
+
+        <!-- START: Custom CSS-->
+        <link rel="stylesheet" href="dist/css/main.css" th:href="@{/information/css/main.css}">
+        <link rel="stylesheet" href="dist/vendors/icofont/icofont.min.css" th:href="@{/information/vendors/icofont/icofont.min.css}">
+        <!-- END: Custom CSS-->
+    </head>
+    <!-- END Head-->
+
+    <!-- START: Body-->    
+    <body id="main-container" class="default">
+        <!-- START: Pre Loader-->
+        <div class="se-pre-con">
+            <img src="dist/images/logo.png" th:src="@{/information/images/logo.png}" alt="logo" width="23" class="img-fluid"/>
+        </div>
+        <!-- END: Pre Loader-->
+
+        <!-- START: Header-->
+        <div id="header-fix" class="header fixed-top">
+            <nav class="navbar navbar-expand-lg  p-0">
+                <div class="navbar-header h4 mb-0 align-self-center logo-bar text-center">
+                    <a href="index.html" class="horizontal-logo text-center">
+                        <span class="h3 align-self-center mb-0 ">用户主页</span>
+                    </a>
+                </div>
+                <div class="navbar-header h4 mb-0 text-center h-100 collapse-menu-bar">
+                    <a href="#" class="sidebarCollapse" id="collapse"><i class="icon-menu body-color"></i></a>
+                </div>
+
+                <form class="float-left d-none d-lg-block search-form">
+                    <div class="form-group mb-0 position-relative">
+                        <input type="text" class="form-control border-0 rounded bg-search pl-5" id="searchDisease" th:onblur="'javascript:searchDisease('+${tConsumer.id}+')'" placeholder="请输入病症">
+                        <div class="btn-search position-absolute top-0">
+                            <a th:onclick="'javascript:searchDisease('+${tConsumer.id}+')'" ><i class="h5 icon-magnifier body-color"></i></a>
+                        </div>
+                        <a href="#" class="position-absolute close-button mobilesearch d-lg-none" data-toggle="dropdown" aria-expanded="false"><i class="icon-close h5"></i>
+                        </a>
+
+                    </div>
+                </form>
+                <div class="navbar-right ml-auto h-100">
+                    <ul class="ml-auto p-0 m-0 list-unstyled d-flex top-icon h-100">
+                        <li class="d-inline-block align-self-center  d-block d-lg-none">
+                            <a href="#" class="nav-link mobilesearch" data-toggle="dropdown" aria-expanded="false"><i class="icon-magnifier h4"></i>
+                            </a>
+                        </li>
+                        <li class="dropdown user-profile align-self-center d-inline-block">
+                            <a href="#" class="nav-link py-0" data-toggle="dropdown" aria-expanded="false">
+                                <div class="media">
+                                    <img src="dist/images/author.jpg" th:src="@{${tConsumer.img}}" alt="" class="d-flex img-fluid rounded-circle" width="29">
+                                </div>
+                            </a>
+
+                            <div class="dropdown-menu  dropdown-menu-right p-0">
+                                <a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}" class="dropdown-item px-2 align-self-center d-flex">
+                                    <span class="icon-pencil mr-2 h6 mb-0"></span> 编辑个人资料</a>
+                                <a th:href="@{/consumerInformation/information(id=${tConsumer.id})}" class="dropdown-item px-2 align-self-center d-flex">
+                                    <span class="icon-user mr-2 h6 mb-0"></span> 查看资料</a>
+                                <div class="dropdown-divider"></div>
+
+                                <div class="dropdown-divider"></div>
+                                <a href="/consumer/login" class="dropdown-item px-2 text-danger align-self-center d-flex">
+                                    <span class="icon-logout mr-2 h6  mb-0"></span>登出</a>
+                            </div>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- END: Header-->
+
+        <!-- START: Main Menu-->
+        <div class="sidebar">
+            <div class="media d-block text-center user-profile">
+                <img class="img-fluid" src="dist/images/author1.jpg" style="width: 100px; hight:100px" th:src="@{${tConsumer.img}}" alt="">
+                <div class="media-body text-center mt-0 color-primary mt-2">
+                    <a href="#" class="nav-link py-0" data-toggle="dropdown" aria-expanded="false">
+                        <h6 class="mb-0 font-weight-bold" th:text="${tConsumer.name}">姓名</h6>
+                        <p th:text="${tConsumer.nativePlace}"></p>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right p-0" style="">
+                        <a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}" class="dropdown-item px-2 align-self-center d-flex">
+                            <span class="icon-pencil mr-2 h6 mb-0"></span> 编辑个人资料</a>
+                        <a th:href="@{/consumerInformation/information(id=${tConsumer.id})}" class="dropdown-item px-2 align-self-center d-flex">
+                            <span class="icon-user mr-2 h6 mb-0"></span> 查看资料</a>
+                        <div class="dropdown-divider"></div>
+
+                        <div class="dropdown-divider"></div>
+                        <a href="/consumer/login" class="dropdown-item px-2 text-danger align-self-center d-flex">
+                            <span class="icon-logout mr-2 h6  mb-0"></span> 登出</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- START: Menu-->
+            <ul id="side-menu" class="sidebar-menu">
+                <li class="dropdown active"><a href="#">首页</a>
+                    <ul>
+                        <li class="active"><a href="index.html" th:href="@{/consumerInformation/index(id=${tConsumer.id})}"><i class="icon-rocket"></i> 首页</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">应用</a>
+                    <ul>
+                        <li><a th:href="@{/consumerInformation/calendar(id=${tConsumer.id})}"><i class="icon-calendar"></i> 日历备忘录</a></li>
+
+                        <li class="dropdown"><a href="#"><i class="icon-envelope"></i>邮箱</a>
+                            <ul class="sub-menu">
+                                <li><a th:href="@{/mailInbox/mail(id=${tConsumer.id})}"><i class="icon-envelope"></i> 收件箱</a></li>
+                            </ul>
+                        </li>
+                        <li><a th:href="@{/consumerOrder/consumerOrder(id=${tConsumer.id})}"><i class="icon icofont-ui-copy"></i> 预约</a></li>
+                        <li><a th:href="@{/consumerOrder/medicalOrder(id=${tConsumer.id})}"><i class="icon icofont-first-aid"></i> 体检预约</a></li>
+                        <li><a th:href="@{/consumerInformation/prescriptionList(id=${tConsumer.id})}"><i class="icon icofont-ui-clip-board"></i> 查看处方</a></li>
+                        <li><a th:href="@{/consumerInformation/searchDoctor(id=${tConsumer.id})}"><i class="icon icofont-doctor"></i> 查找医生</a></li>
+                       <li><a th:href="@{/consumerInformation/doctorCollection(id=${tConsumer.id})}"><i class="icon icofont-heart"></i> 医生收藏</a></li>
+                        <li><a th:href="@{/drug/drugOrderList(id=${tConsumer.id})}"><i class="icon icofont-ticket"></i> 查看药品订单列表</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">信息</a>
+                    <ul>
+                        <li class="dropdown"><a href="#"><i class="icon-user"></i>个人信息</a>
+                            <ul class="sub-menu">
+                                <li><a th:href="@{/consumerInformation/information(id=${tConsumer.id})}"><i class="icon-disc"></i> 查看个人信息</a></li>
+                                <li><a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}"><i class="icon-disc"></i> 修改个人信息</a></li>
+                                <li><a th:href="@{/consumerInformation/updatePassword(id=${tConsumer.id})}"><i class="icon-disc"></i> 修改密码</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><i class="icon-paper-clip"></i>病历</a>
+                            <ul class="sub-menu">
+                                <li><a th:href="@{/consumerInformation/medical(id=${tConsumer.id})}"><i class="icon-disc"></i>历史病历</a></li>
+                                <li><a th:href="@{/consumerInformation/existingMedical(id=${tConsumer.id})}"><i class="icon-cursor-move"></i>现有病历</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><i class="icon icofont-restaurant-menu"></i>预约信息</a>
+                            <ul class="sub-menu">
+                               <li><a th:href="@{/consumerOrder/appointmentProgress(id=${tConsumer.id})}"><i class="icon-disc"></i> 预约进度</a></li>
+                                <li><a th:href="@{/consumerInformation/consumerOrderList(id=${tConsumer.id})}"><i class="icon-disc"></i> 预约列表</a></li>
+                        <li><a th:href="@{/consumerOrder/medicalAppointmentList(id=${tConsumer.id})}"><i class="icon-disc"></i> 体检预约列表</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- END: Menu-->
+        </div>
+        <!-- END: Main Menu-->
+
+        <!-- START: Main Content-->
+        <main>
+            <div class="container-fluid">
+                <!-- START: Breadcrumbs-->
+                <div class="row ">
+                    <input hidden="hidden" id="id" name="id" th:value="${tConsumer.id}">
+                    <div class="col-12  align-self-center">
+                        <div class="sub-header mt-3 py-3 px-3 align-self-center d-sm-flex w-100 rounded">
+                            <div class="w-sm-100 mr-auto"><h4 class="mb-0">医生信息</h4></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Breadcrumbs-->
+
+                <!-- START: Card Data-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Doctor Widget -->
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="doctor-widget">
+                                    <div class="doc-info-left">
+                                        <div class="doctor-img">
+                                            <img th:src="${tDoctor.img}" class="img-fluid" alt="User Image">
+                                        </div>
+                                        <div class="doc-info-cont">
+                                            <h4 class="doc-name" th:text="${tDoctor.name}">姓名</h4>
+                                            <p class="doc-speciality" th:text="${tDoctor.title}">职称</p>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '12'"><img th:src="@{/information/images/internal medicine.png}" class="img-fluid" alt="Speciality">内科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '13'"><img th:src="@{/information/images/Surgery.png}" class="img-fluid" alt="Speciality">外科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '14'"><img th:src="@{/information/images/pediatrics.png}" class="img-fluid" alt="Speciality">儿科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '15'"><img th:src="@{/information/images/gynaecology.png}" class="img-fluid" alt="Speciality">妇科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '16'"><img th:src="@{/information/images/Ophthalmology Department.png}" class="img-fluid" alt="Speciality">眼科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '17'"><img th:src="@{/information/images/Neurology.png}" class="img-fluid" alt="Speciality">神经科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '18'"><img th:src="@{/information/images/Otorhinolaryngology.png}" class="img-fluid" alt="Speciality">耳鼻喉科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '19'"><img th:src="@{/information/images/Dental Department.png}" class="img-fluid" alt="Speciality">口腔科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '20'"><img th:src="@{/information/images/Urology Department.png}" class="img-fluid" alt="Speciality">泌尿科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '21'"><img th:src="@{/information/images/orthopaedics.png}" class="img-fluid" alt="Speciality">骨科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '22'"><img th:src="@{/information/images/Trauma department.png}" class="img-fluid" alt="Speciality">创伤科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '23'"><img th:src="@{/information/images/Endocrine Department.png}" class="img-fluid" alt="Speciality">内分泌科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '24'"><img th:src="@{/information/images/Department of Anesthesiology.png}" class="img-fluid" alt="Speciality">麻醉科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '25'"><img th:src="@{/information/images/the skin department.png}" class="img-fluid" alt="Speciality">皮肤科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '26'"><img th:src="@{/information/images/Department of infectious diseases.png}" class="img-fluid" alt="Speciality">传染病科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '27'"><img th:src="@{/information/images/Department of Pathology.png}" class="img-fluid" alt="Speciality">病理科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '28'"><img th:src="@{/information/images/Psychiatry Department.png}" class="img-fluid" alt="Speciality">精神科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '29'"><img th:src="@{/information/images/orthopedic surgery.png}" class="img-fluid" alt="Speciality">矫形外科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '30'"><img th:src="@{/information/images/Cardiac surgery.png}" class="img-fluid" alt="Speciality">心脏外科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '31'"><img th:src="@{/information/images/Brain surgery.png}" class="img-fluid" alt="Speciality">脑外科</h5>
+                                            <h5 class="doc-department" th:if="${tDoctor.department} eq '32'"><img th:src="@{/information/images/Thoracic Surgery.png}" class="img-fluid" alt="Speciality">胸外科</h5>
+                                            <div class="rating">
+                                                <!--                                                <i class="fas fa-star filled"></i>-->
+                                                <!--                                                <i class="fas fa-star filled"></i>-->
+                                                <!--                                                <i class="fas fa-star filled"></i>-->
+                                                <!--                                                <i class="fas fa-star filled"></i>-->
+                                                <!--                                                <i class="fas fa-star"></i> 评价-->
+                                                <i class="fas fa-star filled" th:text="${tDoctor.evaluate}"></i>
+                                                <span class="d-inline-block average-rating" th:text="'('+ ${tDoctor.evaluateSum} + ')'"></span>
+                                            </div>
+                                            <div class="clinic-details">
+                                                <p class="doc-location" ><i class="icon icofont-location-pin"></i> [[${tDoctor.address}]]</p>
+                                            </div>
+                                            <div class="clinic-services">
+                                                <div th:each="label : ${tDoctor.labelList}">
+                                                    <span th:text="${label}">标签</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="doc-info-right">
+                                        <div class="clini-infos">
+                                            <ul>
+                                                <li ><i class="icon icofont-like"></i>  [[${tDoctor.praise}]]</li>
+                                                <li ><i class="far fa-comment"></i> [[${commentSum}]]</li>
+                                                <li ><i class="icon icofont-location-pin" ></i> [[${tDoctor.address}]]</li>
+                                            </ul>
+                                        </div>
+                                        <div class="doctor-action" th:fragment="collection_refresh" th:id="id_collection_refresh">
+                                            <a class="btn btn-white fav-btn" onclick="addCollection()" style="background: deeppink;color: white" th:if="${tDoctorCollection} != null">
+                                                <i class="far fa-bookmark"></i>
+                                            </a>
+                                            <a class="btn btn-white fav-btn" onclick="addCollection()"  th:if="${tDoctorCollection} == null">
+                                                <i class="far fa-bookmark"></i>
+                                            </a>
+                                            <a  th:href="@{/doctorChat/doctorChat(id=${tConsumer.id},doctorId=${tDoctor.id})}"  class="btn btn-white msg-btn">
+                                                <i class="far fa-comment-alt"></i>
+                                            </a>
+                                            <a th:href="@{/TRTC/video}"  target="_blank"  class="btn btn-white call-btn" >
+                                                <i class="fas fa-phone"></i>
+                                            </a>
+                                            <a th:href="@{/TRTC/video}"  target="_blank"  class="btn btn-white call-btn" >
+                                                <i class="fas fa-video"></i>
+                                            </a>
+                                        </div>
+                                        <div class="clinic-booking">
+                                            <a class="apt-btn" th:href="@{/doctorInformation/doctorOrder(id=${tConsumer.id},doctorId=${tDoctor.id})}">预约</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Doctor Widget -->
+                        <!-- Doctor Details Tab -->
+                        <div class="card">
+                            <div class="card-body pt-0">
+
+                                <!-- Tab Menu -->
+                                <nav class="user-tabs mb-4">
+                                    <ul class="nav nav-tabs nav-tabs-bottom nav-justified">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" href="#doc_overview" data-toggle="tab">简介</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#doc_locations" data-toggle="tab">地址</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#doc_reviews" data-toggle="tab">评论</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#doc_business_hours" data-toggle="tab">预约时间</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <!-- /Tab Menu -->
+
+                                <!-- Tab Content -->
+                                <div class="tab-content pt-0">
+
+                                    <!-- Overview Content -->
+                                    <div role="tabpanel" id="doc_overview" class="tab-pane fade show active">
+                                        <div class="row">
+                                            <div class="col-md-12 col-lg-9">
+
+                                                <!-- About Details -->
+                                                <div class="widget about-widget">
+                                                    <h4 class="widget-title">简介</h4>
+                                                    <p th:text="${tDoctor.introduction}"></p>
+                                                </div>
+                                                <!-- /About Details -->
+
+                                                <!-- Education Details -->
+                                                <div class="widget education-widget">
+                                                    <h4 class="widget-title">教育经历</h4>
+                                                    <div class="experience-box" >
+                                                        <ul class="experience-list" th:each="p:${tDoctorResumes}">
+                                                            <li>
+                                                                <div class="experience-user">
+                                                                    <div class="before-circle"></div>
+                                                                </div>
+                                                                <div class="experience-content">
+                                                                    <div class="timeline-content">
+                                                                        <a  class="name" th:text="${p.education}">American Dental Medical University</a>
+                                                                        <span class="time" th:text="${p.educationTime}">1998 - 2003</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <!-- /Education Details -->
+
+                                                <!-- Experience Details -->
+                                                <div class="widget experience-widget">
+                                                    <h4 class="widget-title">工作经历</h4>
+                                                    <div class="experience-box">
+                                                        <ul class="experience-list" th:each="p:${tDoctorResumes}">
+                                                            <li>
+                                                                <div class="experience-user">
+                                                                    <div class="before-circle"></div>
+                                                                </div>
+                                                                <div class="experience-content">
+                                                                    <div class="timeline-content">
+                                                                        <a  class="name" th:text="${p.workExperience}">Glowing Smiles Family Dental Clinic</a>
+                                                                        <span class="time" th:text="${p.workExperienceTime}">2010 - Present (5 years)</span>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <!-- /Experience Details -->
+
+                                                <!-- Awards Details -->
+                                                <div class="widget awards-widget">
+                                                    <h4 class="widget-title">获奖</h4>
+                                                    <div class="experience-box">
+                                                        <ul class="experience-list" th:each="p:${tDoctorResumes}">
+                                                            <li>
+                                                                <div class="experience-user">
+                                                                    <div class="before-circle"></div>
+                                                                </div>
+                                                                <div class="experience-content">
+                                                                    <div class="timeline-content">
+                                                                        <p class="exp-year" th:text="${p.awardsTime}">July 2019</p>
+                                                                        <h4 class="exp-title" th:text="${p.awards}">Humanitarian Award</h4>
+<!--                                                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin a ipsum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>-->
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <!-- /Awards Details -->
+
+                                                <!-- Services List -->
+                                                <div class="service-list">
+                                                    <h4>服务</h4>
+                                                    <ul class="clearfix" th:each="p:${tDoctorResumes}">
+                                                        <li th:text="${p.service}"> Surgical Extractions</li>
+                                                    </ul>
+                                                </div>
+                                                <!-- /Services List -->
+
+                                                <!-- Specializations List -->
+                                                <div class="service-list">
+                                                    <h4>专业性</h4>
+                                                    <ul class="clearfix" th:each="p:${tDoctorResumes}">
+                                                        <li th:text="${p.specializations}">Prosthodontics</li>
+                                                    </ul>
+                                                </div>
+                                                <!-- /Specializations List -->
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /Overview Content -->
+
+                                    <!-- Locations Content -->
+                                    <div role="tabpanel" id="doc_locations" class="tab-pane fade">
+
+                                        <!-- Location List -->
+                                        <div class="location-list">
+                                            <div class="row">
+
+                                                <!-- Clinic Content -->
+                                                <div class="col-md-6">
+                                                    <div class="clinic-content">
+                                                        <h4 class="clinic-name"><a th:text="${tDoctor.address}">Smile Cute Dental Care Center</a></h4>
+                                                        <p class="doc-speciality"></p>
+                                                        <div class="clinic-details mb-0">
+<!--                                                            <h5 class="clinic-direction"> <i class="fas fa-map-marker-alt"></i> 2286  Sundown Lane, Austin, Texas 78749, USA <br><a href="javascript:void(0);">Get Directions</a></h5>-->
+                                                            <ul>
+                                                                <li>
+                                                                    <a href="/information/hospitalImg/1.jpg" data-fancybox="gallery2">
+                                                                        <img th:src="@{/information/hospitalImg/1.jpg}" alt="Feature Image">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="/information/hospitalImg/2.jpg" data-fancybox="gallery2">
+                                                                        <img th:src="@{/information/hospitalImg/2.jpg}">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="/information/hospitalImg/3.jpg" data-fancybox="gallery2">
+                                                                        <img th:src="@{/information/hospitalImg/3.jpg}">
+                                                                    </a>
+                                                                </li>
+                                                                <li>
+                                                                    <a href="/information/hospitalImg/4.jpg" data-fancybox="gallery2">
+                                                                        <img th:src="@{/information/hospitalImg/4.jpg}">
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- /Clinic Content -->
+
+                                                <!-- Clinic Timing -->
+                                                <div class="col-md-4">
+                                                    <div class="clinic-timing">
+                                                        <div>
+                                                            <p class="timings-days">
+                                                                <span>预约</span>
+                                                                <span> 周一——周日 </span>
+                                                            </p>
+                                                            <p class="timings-times">
+                                                                <span>08:00-18:00</span>
+                                                                <span>13:30-17:00</span>
+                                                            </p>
+                                                        </div>
+                                                        <div>
+                                                            <p class="timings-days">
+                                                                <span>急诊</span>
+                                                            </p>
+                                                            <p class="timings-times">
+                                                                <span>全天24小时</span>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- /Clinic Timing -->
+
+
+                                            </div>
+                                        </div>
+                                        <!-- /Location List -->
+
+                                    </div>
+                                    <!-- /Locations Content -->
+
+                                    <!-- Reviews Content -->
+                                    <div role="tabpanel" id="doc_reviews" class="tab-pane fade" >
+                                    <div th:fragment="comment_refresh" th:id="id_comment_refresh">
+
+
+                                        <!-- Review Listing -->
+                                        <div class="widget review-listing" >
+                                            <ul class="comments-list" th:each="p:${tDoctorComments}">
+
+                                                <!-- Comment List -->
+                                                <li>
+                                                    <div class="comment">
+                                                        <img class="avatar avatar-sm rounded-circle" alt="User Image" th:src="${p.tConsumer.img}">
+                                                        <div class="comment-body">
+                                                            <div class="meta-data">
+                                                                <span class="comment-author" th:text="${p.tConsumer.name}">姓名</span>
+                                                                <span class="comment-date" th:text="${#dates.format(p.gmtCreate,'yyyy年MM月dd日 HH:mm:ss')}">回复时间</span>
+                                                            </div>
+                                                            <p class="comment-content" th:text="${p.commentContent}">
+                                                                内容
+                                                            </p>
+                                                            <div class="comment-reply">
+                                                                <p class="recommend-btn" th:if="${p.tCommentGreat} != null">
+                                                                    <input hidden="hidden"  class="greatId" th:value="${p.tCommentGreat.id}">
+                                                                    <input hidden="hidden"  class="commentId" th:value="${p.tCommentGreat.id}">
+                                                                    <input hidden="hidden"  class="tDoctorCommentId" th:value="${p.id}">
+                                                                    <a style="cursor:pointer;" class="like-btn" th:onclick="giveNotTheThumbsUp([[${pStat.index}]])" th:if="${p.tCommentGreat.isFabulous} == false">
+                                                                        <i  class="far fa-thumbs-up"></i> 赞
+                                                                    </a>
+                                                                    <a class="like-btn" style="cursor:pointer;background: deeppink;color:white" th:onclick="giveNoTheThumbsUp([[${pStat.index}]])"  th:if="${p.tCommentGreat.isFabulous} == true">
+                                                                        <i   class="far fa-thumbs-up"></i> [[${p.fabulous}]]
+                                                                    </a>
+                                                                    <a style="cursor:pointer;" class="dislike-btn" th:onclick="stepNotOn( [[${pStat.index}]] )" th:if="${p.tCommentGreat.isStep} == false">
+                                                                        <i  class="far fa-thumbs-down"></i> 反对
+                                                                    </a>
+                                                                    <a  class="dislike-btn" style="cursor:pointer;background: red;color:white" th:onclick="stepNoOn([[${pStat.index}]])" th:if="${p.tCommentGreat.isStep} == true">
+                                                                        <i  class="far fa-thumbs-down"></i> [[${p.stepOn}]]
+                                                                    </a>
+                                                                    <a style="cursor:pointer;" class="like-btn" th:onclick="commentReply([[${pStat.index}]])">
+                                                                        <i  class="far fa-comment"></i> 回复
+                                                                    </a>
+
+                                                                </p>
+                                                                <p class="recommend-btn" th:if="${p.tCommentGreat} == null">
+                                                                    <input hidden="hidden"  class="tDoctorCommentId" th:value="${p.id}">
+                                                                    <a style="cursor:pointer;" class="like-btn" th:onclick="giveTheThumbsUp([[${pStat.index}]])">
+                                                                        <i  class="far fa-thumbs-up"></i> 赞
+                                                                    </a>
+                                                                    <a style="cursor:pointer;" class="dislike-btn" th:onclick="stepOn([[${pStat.index}]])">
+                                                                        <i  class="far fa-thumbs-down"></i> 反对
+                                                                    </a>
+                                                                    <a style="cursor:pointer;" class="like-btn" th:onclick="commentReply([[${pStat.index}]])">
+                                                                        <i  class="far fa-comment"></i> 回复
+                                                                    </a>
+
+                                                                </p>
+                                                                <div id="replyDiv" class="replyDiv" name="replyDiv" style="width:550px" hidden="hidden">
+                                                                    <input hidden="hidden" class="replyCommentId" id="commentId" name="commentId" th:value="${p.id}">
+                                                                    <textarea class="form-control replay" id="replay" name="replay">回复 [[${p.tConsumer.name}]] :</textarea>
+                                                                    <button class="btn btn-success btn-sm" style="float: right;margin-top: 10px" th:onclick="replyText([[${pStat.index}]])"> 回复 </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Comment Reply -->
+                                                    <ul class="comments-reply" th:if="${p.tCommentReplies} != null">
+                                                        <li th:each="tCommentReply : ${p.tCommentReplies}" >
+                                                            <div class="comment">
+                                                                <img class="avatar avatar-sm rounded-circle" alt="User Image" th:src="${tCommentReply.tConsumer.img}">
+                                                                <div class="comment-body">
+                                                                    <div class="meta-data">
+                                                                        <span class="comment-author" th:text="${tCommentReply.tConsumer.name}"></span>
+                                                                        <span class="comment-date" th:text="${#dates.format(tCommentReply.gmtCreate,'yyyy年MM月dd日 HH:mm:ss')}"></span>
+                                                                    </div>
+                                                                    <p class="comment-content" th:text="${tCommentReply.replyContent}">
+
+                                                                    </p>
+<!--                                                                    <div class="comment-reply">-->
+<!--                                                                        <input hidden="hidden" th:if="${tCommentReplyStat.index} eq 0" th:with="i=${#lists.size(p.tCommentReplies)}">-->
+<!--                                                                        <p class="recommend-btn" th:if="${tCommentReply.tCommentGreat} != null">-->
+<!--                                                                            <input hidden="hidden" class="greatsId" id="greatsId" name="greatsId" th:value="${tCommentReply.tCommentGreat.id}">-->
+<!--                                                                            <input hidden="hidden" class="tCommentReplyId"  name="tCommentReplyId" th:value="${tCommentReply.id}">-->
+<!--                                                                            <a style="cursor:pointer;" class="like-btn" th:onclick="giveReplyNotTheThumbsUp([[${tCommentReplyStat.index}]])" th:if="${tCommentReply.tCommentGreat.isFabulous} == false">-->
+<!--                                                                                <i  class="far fa-thumbs-up"></i> 赞-->
+<!--                                                                            </a>-->
+<!--                                                                            <a class="like-btn" style="cursor:pointer;background: deeppink;color:white" th:onclick="giveReplyNoTheThumbsUp([[${tCommentReplyStat.index}]])"  th:if="${tCommentReply.tCommentGreat.isFabulous} == true">-->
+<!--                                                                                <i   class="far fa-thumbs-up"></i> [[${tCommentReply.fabulous}]]-->
+<!--                                                                            </a>-->
+<!--                                                                            <a style="cursor:pointer;" class="dislike-btn" th:onclick="stepReplyNotOn([[${tCommentReplyStat.index}]])" th:if="${tCommentReply.tCommentGreat.isStep} == false">-->
+<!--                                                                                <i  class="far fa-thumbs-down"></i> 反对-->
+<!--                                                                            </a>-->
+<!--                                                                            <a  class="dislike-btn" style="cursor:pointer;background: red;color:white" th:onclick="stepReplyNoOn([[${tCommentReplyStat.index}]])" th:if="${tCommentReply.tCommentGreat.isStep} == true">-->
+<!--                                                                                <i  class="far fa-thumbs-down"></i> [[${tCommentReply.stepOn}]]-->
+<!--                                                                            </a>-->
+<!--                                                                            <a style="cursor:pointer;" class="like-btn" th:onclick="commentsReply([[${tCommentReplyStat.index}]])">-->
+<!--                                                                                <i  class="far fa-comment"></i> 回复-->
+<!--                                                                            </a>-->
+
+<!--                                                                        </p>-->
+<!--                                                                        <p class="recommend-btn" th:if="${tCommentReply.tCommentGreat} == null">-->
+<!--                                                                            <input hidden="hidden" class="tCommentReplyId" id="tCommentReplyId" name="tCommentReplyId" th:value="${tCommentReply.id}">-->
+<!--                                                                            <a style="cursor:pointer;" class="like-btn" th:onclick="giveReplyTheThumbsUp([[${tCommentReplyStat.index}]])">-->
+<!--                                                                                <i  class="far fa-thumbs-up"></i> 赞-->
+<!--                                                                            </a>-->
+<!--                                                                            <a style="cursor:pointer;" class="dislike-btn" th:onclick="stepReplyOn([[${tCommentReplyStat.index}]])">-->
+<!--                                                                                <i  class="far fa-thumbs-down"></i> 反对-->
+<!--                                                                            </a>-->
+<!--                                                                            <a style="cursor:pointer;" class="like-btn" th:onclick="commentsReply([[${tCommentReplyStat.index}]])">-->
+<!--                                                                                <i  class="far fa-comment"></i> 回复-->
+<!--                                                                            </a>-->
+
+<!--                                                                        </p>-->
+<!--                                                                        <div id="replysDiv" class="replysDiv" name="replyDiv" style="width:550px" hidden="hidden">-->
+<!--                                                                            <input hidden="hidden" class="replyCommentsId" id="commentsId" name="commentsId" th:value="${tCommentReply.id}">-->
+<!--                                                                            <textarea class="form-control replays" id="replays" name="replays">回复 [[${p.tConsumer.name}]] :</textarea>-->
+<!--                                                                            <button class="btn btn-success btn-sm" style="float: right;margin-top: 10px" th:onclick="replysText([[${tCommentReplyStat.index}]])"> 回复 </button>-->
+<!--                                                                        </div>-->
+<!--                                                                    </div>-->
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                    <!-- /Comment Reply -->
+
+                                                </li>
+                                                <!-- /Comment List -->
+                                            </ul>
+
+                                            <!-- Show All -->
+<!--                                            <div class="all-feedback text-center" th:if="${commentSum} ge 3">-->
+<!--                                                <a  class="btn btn-success btn-sm">-->
+<!--                                                    显示所有的评论 <strong>([[${commentSum}]])</strong>-->
+<!--                                                </a>-->
+<!--                                            </div>-->
+                                            <!-- /Show All -->
+
+                                        </div>
+                                        <!-- /Review Listing -->
+                                    </div>
+
+                                        <!-- Write Review -->
+                                        <div class="write-review">
+                                            <h4>给<strong>[[${tDoctor.name}]]</strong>医生评论</h4>
+
+                                            <!-- Write Review Form -->
+                                            <form onsubmit="return false;">
+                                                <input id="doctorId" name="doctorId" hidden="hidden" th:value="${tDoctor.id}">
+                                                <input id="consumerId" name="consumerId" hidden="hidden" th:value="${tConsumer.id}">
+                                                <div class="form-group">
+                                                    <label>评论</label>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>你的评论</label>
+                                                    <textarea id="commentContent" maxlength="100" name="commentContent" class="form-control"></textarea>
+
+                                                    <div class="d-flex justify-content-between mt-3"><small class="text-muted"><span id="chars">100</span> 字以内</small></div>
+                                                </div>
+                                                <hr>
+                                                <div class="submit-section">
+                                                    <button type="submit" class="btn btn-success submit-btn" onclick="addComment()">评论</button>
+                                                </div>
+                                            </form>
+                                            <!-- /Write Review Form -->
+
+                                        </div>
+                                        <!-- /Write Review -->
+
+                                    </div>
+                                    <!-- /Reviews Content -->
+
+                                    <!-- Business Hours Content -->
+                                    <div role="tabpanel" id="doc_business_hours" class="tab-pane fade">
+                                        <div class="row">
+                                            <div class="col-md-6 offset-md-3">
+
+                                                <!-- Business Hours Widget -->
+                                                <div class="widget business-widget">
+                                                    <div class="widget-content">
+                                                        <div class="listing-hours">
+                                                            <div class="listing-day current">
+                                                                <div class="day">今天 <span th:text="${todayTime}">5 Nov 2019</span></div>
+                                                                <div class="time-items">
+                                                                    <span class="open-status"><span th:if="${today} != null" th:text="可预约" class="badge bg-success-light">可预约
+                                                                    <span class="time" th:text="${today}">上午08:00 - 下午06:00 </span></span>
+                                                                    <span th:if="${today} == null" th:text="不可预约" class="badge bg-danger-light">可预约</span></span>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="listing-day">
+                                                                <div class="day">星期一</div>
+                                                                <div class="time-items" th:if="${time1} != null">
+                                                                    <span class="time" th:text="${time1}"></span>
+                                                                </div>
+                                                                <div class="time-items" th:if="${time1} == null">
+                                                                    <span class="time"><span class="badge bg-danger-light">不可预约</span></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="listing-day">
+                                                                <div class="day">星期二</div>
+                                                                <div class="time-items" th:if="${time2} != null">
+                                                                    <span class="time" th:text="${time2}"></span>
+                                                                </div>
+                                                                <div class="time-items" th:if="${time2} == null">
+                                                                    <span class="time"><span class="badge bg-danger-light">不可预约</span></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="listing-day">
+                                                                <div class="day">星期三</div>
+                                                                <div class="time-items" th:if="${time3} != null">
+                                                                    <span class="time" th:text="${time3}"></span>
+                                                                </div>
+                                                                <div class="time-items" th:if="${time3} == null">
+                                                                    <span class="time"><span class="badge bg-danger-light">不可预约</span></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="listing-day">
+                                                                <div class="day">星期四</div>
+                                                                <div class="time-items" th:if="${time4} != null">
+                                                                    <span class="time" th:text="${time4}"></span>
+                                                                </div>
+                                                                <div class="time-items" th:if="${time4} == null">
+                                                                    <span class="time"><span class="badge bg-danger-light">不可预约</span></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="listing-day">
+                                                                <div class="day">星期五</div>
+                                                                <div class="time-items" th:if="${time5} != null">
+                                                                    <span class="time" th:text="${time5}"></span>
+                                                                </div>
+                                                                <div class="time-items" th:if="${time5} == null">
+                                                                    <span class="time"><span class="badge bg-danger-light">不可预约</span></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="listing-day">
+                                                                <div class="day">星期六</div>
+                                                                <div class="time-items" th:if="${time6} != null">
+                                                                    <span class="time" th:text="${time6}"></span>
+                                                                </div>
+                                                                <div class="time-items" th:if="${time6} == null">
+                                                                    <span class="time"><span class="badge bg-danger-light">不可预约</span></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="listing-day closed">
+                                                                <div class="day">星期日</div>
+                                                                <div class="time-items" th:if="${time} != null">
+                                                                    <span class="time" th:text="${time}"></span>
+                                                                </div>
+                                                                <div class="time-items" th:if="${time} == null">
+                                                                    <span class="time"><span class="badge bg-danger-light">不可预约</span></span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- /Business Hours Widget -->
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /Business Hours Content -->
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Doctor Details Tab -->
+
+                    </div>
+
+                    </div>
+                <!-- END: Card DATA-->
+            </div>
+        </main>
+        <!-- END: Content-->
+
+        
+
+        <!-- START: Back to top-->
+        <a href="#" class="scrollup text-center"> 
+            <i class="icon-arrow-up"></i>
+        </a>
+        <!-- END: Back to top-->
+
+        <!-- START: Template JS-->
+        <script src="dist/vendors/jquery/jquery-3.3.1.min.js" th:src="@{/information/vendors/jquery/jquery-3.3.1.min.js}"></script>
+        <script src="dist/vendors/jquery-ui/jquery-ui.min.js" th:src="@{/information/vendors/jquery-ui/jquery-ui.min.js}"></script>
+        <script src="dist/vendors/moment/moment.js" th:src="@{/information/vendors/moment/moment.js}"></script>
+        <script src="dist/vendors/bootstrap/js/bootstrap.bundle.min.js" th:src="@{/information/vendors/bootstrap/js/bootstrap.bundle.min.js}"></script>
+        <script src="dist/vendors/slimscroll/jquery.slimscroll.min.js" th:src="@{/information/vendors/slimscroll/jquery.slimscroll.min.js}"></script>
+        <script src="dist/vendors/flag-select/js/jquery.flagstrap.min.js" th:src="@{/information/vendors/flag-select/js/jquery.flagstrap.min.js}"></script>
+        <script src="dist/vendors/sweetalert/sweetalert.min.js" th:src="@{/information/vendors/sweetalert/sweetalert.min.js}"></script>
+        <!-- END: Template JS-->
+        <!-- END: Template JS-->
+
+        <!-- START: APP JS-->
+        <script src="dist/js/app.js" th:src="@{/information/js/app.js}"></script>
+        <script src="dist/js/app.js" th:src="@{/information/js/script.js}"></script>
+        <!-- END: APP JS-->
+        <script type="text/javascript">
+            function addComment(){
+                var doctorId = $("#doctorId").val();
+                var consumerId = $("#consumerId").val();
+                var commentContent = $("#commentContent").val();
+                if(commentContent.length > 100){
+                    swal({
+                        title: "提示",
+                        text: "评论不超过100字",
+                        type: "error",
+                        confirmButtonText: '重试'
+                    });
+                }else {
+                    console.log({
+                        doctorId,consumerId,commentContent
+                    });
+                    $.post(
+                        "/doctorInformation/addComment",
+                        {
+                            doctorId,consumerId,commentContent
+                        },
+                        function (data){
+                            if(data == "error"){
+                                swal({
+                                    title: "提示",
+                                    text: "评论失败",
+                                    type: "error",
+                                    confirmButtonText: '重试'
+                                });
+                            }else {
+                                swal({
+                                    title: "提示",
+                                    text: "评论成功",
+                                    type: "success",
+                                    showLoaderOnConfirm: '确定'
+                                },function (){
+                                    $("#commentContent").val("");
+                                    $("#id_comment_refresh").html(data);
+                                });
+                            }
+                        }
+                    )
+                }
+            }
+
+        </script>
+        <script type="text/javascript">
+            function addCollection(){
+                var consumerId = $("#consumerId").val();
+                var doctorId = $("#doctorId").val();
+                $.post(
+                    "/doctorInformation/addCollection",
+                    "consumerId=" + consumerId + "&doctorId=" + doctorId,
+                    function (data){
+                        if(data == "error"){
+                            swal({
+                                title: "提示",
+                                text: "收藏失败",
+                                type: "error",
+                                confirmButtonText: '重试'
+                            });
+                        }else {
+                            $("#id_collection_refresh").html(data);
+                        }
+                    }
+                )
+            }
+        </script>
+        <script type="text/javascript">
+            function giveTheThumbsUp(pid){
+                var consumerId = $("#consumerId").val();
+                var doctorId = $("#doctorId").val();
+                var id = $(".tDoctorCommentId").eq(pid).val()
+                $.post(
+                    "/doctorInformation/giveTheThumbsUp",
+                    "id=" + id  + "&consumerId=" + consumerId + "&doctorId=" + doctorId,
+                    function (data){
+                        if(data == "error"){
+                            swal({
+                                title: "提示",
+                                text: "点赞失败",
+                                type: "error",
+                                confirmButtonText: '重试'
+                            });
+                        }else {
+                            swal({
+                                title: "提示",
+                                text: "点赞成功",
+                                type: "success",
+                                showLoaderOnConfirm: '确定'
+                            },function (){
+                                $("#id_comment_refresh").html(data);
+                            });
+                        }
+                    }
+                )
+            }
+
+            function giveNoTheThumbsUp(pid){
+                var consumerId = $("#consumerId").val();
+                var doctorId = $("#doctorId").val();
+                var greatId = $(".greatId").eq(pid).val();
+                var id = $(".tDoctorCommentId").eq(pid).val();
+                $.post(
+                    "/doctorInformation/giveNoTheThumbsUp",
+                    "id=" + id  + "&consumerId=" + consumerId + "&doctorId=" + doctorId + "&greatId=" + greatId,
+                    function (data){
+                        if(data == "error"){
+                            swal({
+                                title: "提示",
+                                text: "取消点赞失败",
+                                type: "error",
+                                confirmButtonText: '重试'
+                            });
+                        }else {
+                            swal({
+                                title: "提示",
+                                text: "取消点赞成功",
+                                type: "success",
+                                showLoaderOnConfirm: '确定'
+                            },function (){
+                                $("#id_comment_refresh").html(data);
+                            });
+                        }
+                    }
+                )
+            }
+            function giveNotTheThumbsUp(pid){
+                var consumerId = $("#consumerId").val();
+                var doctorId = $("#doctorId").val();
+                var greatId = $(".greatId").eq(pid).val();
+                var id = $(".tDoctorCommentId").eq(pid).val();
+                $.post(
+                    "/doctorInformation/giveNotTheThumbsUp",
+                    "id=" + id  + "&consumerId=" + consumerId + "&doctorId=" + doctorId + "&greatId=" + greatId,
+                    function (data){
+                        if(data == "error"){
+                            swal({
+                                title: "提示",
+                                text: "点赞失败",
+                                type: "error",
+                                confirmButtonText: '重试'
+                            });
+                        }else {
+                            swal({
+                                title: "提示",
+                                text: "点赞成功",
+                                type: "success",
+                                showLoaderOnConfirm: '确定'
+                            },function (){
+                                $("#id_comment_refresh").html(data);
+                            });
+                        }
+                    }
+                )
+            }
+
+            function stepOn(pid){
+                var consumerId = $("#consumerId").val();
+                var doctorId = $("#doctorId").val();
+                var id = $(".tDoctorCommentId").eq(pid).val();
+                $.post(
+                    "/doctorInformation/stepOn",
+                    "id=" + id  + "&consumerId=" + consumerId + "&doctorId=" + doctorId,
+                    function (data){
+                        if(data == "error"){
+                            swal({
+                                title: "提示",
+                                text: "反对失败",
+                                type: "error",
+                                confirmButtonText: '重试'
+                            });
+                        }else {
+                            swal({
+                                title: "提示",
+                                text: "反对成功",
+                                type: "success",
+                                showLoaderOnConfirm: '确定'
+                            },function (){
+                                $("#id_comment_refresh").html(data);
+                            });
+                        }
+                    }
+                )
+            }
+            function stepNoOn(pid){
+                var consumerId = $("#consumerId").val();
+                var doctorId = $("#doctorId").val();
+                var greatId = $(".greatId").eq(pid).val();
+                var id = $(".tDoctorCommentId").eq(pid).val();
+                $.post(
+                    "/doctorInformation/stepNoOn",
+                    "id=" + id  + "&consumerId=" + consumerId + "&doctorId=" + doctorId + "&greatId=" + greatId,
+                    function (data){
+                        if(data == "error"){
+                            swal({
+                                title: "提示",
+                                text: "取消反对失败",
+                                type: "error",
+                                confirmButtonText: '重试'
+                            });
+                        }else {
+                            swal({
+                                title: "提示",
+                                text: "取消反对成功",
+                                type: "success",
+                                showLoaderOnConfirm: '确定'
+                            },function (){
+                                $("#id_comment_refresh").html(data);
+                            });
+                        }
+                    }
+                )
+            }
+            function stepNotOn(pid){
+                var consumerId = $("#consumerId").val();
+                var doctorId = $("#doctorId").val();
+                var greatId = $(".greatId").eq(pid).val();
+                var id = $(".tDoctorCommentId").eq(pid).val();
+                $.post(
+                    "/doctorInformation/stepNotOn",
+                    "id=" + id  + "&consumerId=" + consumerId + "&doctorId=" + doctorId + "&greatId=" + greatId,
+                    function (data){
+                        if(data == "error"){
+                            swal({
+                                title: "提示",
+                                text: "反对失败",
+                                type: "error",
+                                confirmButtonText: '重试'
+                            });
+                        }else {
+                            swal({
+                                title: "提示",
+                                text: "反对成功",
+                                type: "success",
+                                showLoaderOnConfirm: '确定'
+                            },function (){
+                                $("#id_comment_refresh").html(data);
+                            });
+                        }
+                    }
+                )
+            }
+
+
+        </script>
+    <script type="text/javascript">
+        function giveReplyTheThumbsUp(pid){
+            var consumerId = $("#consumerId").val();
+            var doctorId = $("#doctorId").val();
+            var id = $(".tCommentReplyId").eq(pid).val();
+            $.post(
+                "/doctorInformation/giveReplyTheThumbsUp",
+                "id=" + id  + "&consumerId=" + consumerId + "&doctorId=" + doctorId,
+                function (data){
+                    if(data == "error"){
+                        swal({
+                            title: "提示",
+                            text: "点赞失败",
+                            type: "error",
+                            confirmButtonText: '重试'
+                        });
+                    }else {
+                        swal({
+                            title: "提示",
+                            text: "点赞成功",
+                            type: "success",
+                            showLoaderOnConfirm: '确定'
+                        },function (){
+                            $("#id_comment_refresh").html(data);
+                        });
+                    }
+                }
+            )
+        }
+
+        function giveReplyNoTheThumbsUp(pid){
+            var consumerId = $("#consumerId").val();
+            var doctorId = $("#doctorId").val();
+            var greatId = $(".greatsId").eq(pid).val();
+            var id = $(".tCommentReplyId").eq(pid).val();
+            $.post(
+                "/doctorInformation/giveReplyNoTheThumbsUp",
+                "id=" + id  + "&consumerId=" + consumerId + "&doctorId=" + doctorId + "&greatId=" + greatId,
+                function (data){
+                    if(data == "error"){
+                        swal({
+                            title: "提示",
+                            text: "取消点赞失败",
+                            type: "error",
+                            confirmButtonText: '重试'
+                        });
+                    }else {
+                        swal({
+                            title: "提示",
+                            text: "取消点赞成功",
+                            type: "success",
+                            showLoaderOnConfirm: '确定'
+                        },function (){
+                            $("#id_comment_refresh").html(data);
+                        });
+                    }
+                }
+            )
+        }
+        function giveReplyNotTheThumbsUp(pid){
+            var consumerId = $("#consumerId").val();
+            var doctorId = $("#doctorId").val();
+            var greatId = $(".greatsId").eq(pid).val();
+            var id = $(".tCommentReplyId").eq(pid).val();
+            $.post(
+                "/doctorInformation/giveReplyNotTheThumbsUp",
+                "id=" + id  + "&consumerId=" + consumerId + "&doctorId=" + doctorId + "&greatId=" + greatId,
+                function (data){
+                    if(data == "error"){
+                        swal({
+                            title: "提示",
+                            text: "点赞失败",
+                            type: "error",
+                            confirmButtonText: '重试'
+                        });
+                    }else {
+                        swal({
+                            title: "提示",
+                            text: "点赞成功",
+                            type: "success",
+                            showLoaderOnConfirm: '确定'
+                        },function (){
+                            $("#id_comment_refresh").html(data);
+                        });
+                    }
+                }
+            )
+        }
+
+        function stepReplyOn(pid){
+            var consumerId = $("#consumerId").val();
+            var doctorId = $("#doctorId").val();
+            var id = $(".tCommentReplyId").eq(pid).val();
+            $.post(
+                "/doctorInformation/stepReplyOn",
+                "id=" + id  + "&consumerId=" + consumerId + "&doctorId=" + doctorId,
+                function (data){
+                    if(data == "error"){
+                        swal({
+                            title: "提示",
+                            text: "反对失败",
+                            type: "error",
+                            confirmButtonText: '重试'
+                        });
+                    }else {
+                        swal({
+                            title: "提示",
+                            text: "反对成功",
+                            type: "success",
+                            showLoaderOnConfirm: '确定'
+                        },function (){
+                            $("#id_comment_refresh").html(data);
+                        });
+                    }
+                }
+            )
+        }
+        function stepReplyNoOn(pid){
+            var consumerId = $("#consumerId").val();
+            var doctorId = $("#doctorId").val();
+            var greatId = $(".greatsId").eq(pid).val();
+            var id = $(".tDoctorCommentId").eq(pid).val();
+            $.post(
+                "/doctorInformation/stepReplyNoOn",
+                "id=" + id  + "&consumerId=" + consumerId + "&doctorId=" + doctorId + "&greatId=" + greatId,
+                function (data){
+                    if(data == "error"){
+                        swal({
+                            title: "提示",
+                            text: "取消反对失败",
+                            type: "error",
+                            confirmButtonText: '重试'
+                        });
+                    }else {
+                        swal({
+                            title: "提示",
+                            text: "取消反对成功",
+                            type: "success",
+                            showLoaderOnConfirm: '确定'
+                        },function (){
+                            $("#id_comment_refresh").html(data);
+                        });
+                    }
+                }
+            )
+        }
+        function stepReplyNotOn(pid){
+            var consumerId = $("#consumerId").val();
+            var doctorId = $("#doctorId").val();
+            var greatId = $(".greatsId").eq(pid).val();
+            var id = $(".tCommentReplyId").eq(pid).val();
+            $.post(
+                "/doctorInformation/stepReplyNotOn",
+                "id=" + id  + "&consumerId=" + consumerId + "&doctorId=" + doctorId + "&greatId=" + greatId,
+                function (data){
+                    if(data == "error"){
+                        swal({
+                            title: "提示",
+                            text: "反对失败",
+                            type: "error",
+                            confirmButtonText: '重试'
+                        });
+                    }else {
+                        swal({
+                            title: "提示",
+                            text: "反对成功",
+                            type: "success",
+                            showLoaderOnConfirm: '确定'
+                        },function (){
+                            $("#id_comment_refresh").html(data);
+                        });
+                    }
+                }
+            )
+        }
+
+
+    </script>
+    <script type="text/javascript">
+        function commentReply(pid){
+           var replyD =  $(".replyDiv").eq(pid).attr("hidden");
+            if( replyD == "hidden"){
+                $(".replyDiv").eq(pid).attr("hidden",false);
+            }else{
+                $(".replyDiv").eq(pid).attr("hidden",true);
+            }
+        }
+        function commentsReply(pid){
+            var replyD =  $(".replysDiv").eq(pid).attr("hidden");
+            if( replyD == "hidden"){
+                $(".replysDiv").eq(pid).attr("hidden",false);
+            }else{
+                $(".replysDiv").eq(pid).attr("hidden",true);
+            }
+        }
+
+        function replysText(pid){
+            var commentId = $(".replyCommentsId").eq(pid).val();
+            var consumerId = $("#consumerId").val();
+            var doctorId = $("#doctorId").val();
+            var reply = $(".replays").eq(pid).val();
+            $.post(
+                "/doctorInformation/reply",
+                "commentId="+commentId + "&doctorId=" + doctorId + "&consumerId=" + consumerId + "&reply=" + reply,
+                function (data){
+                    if(data == "error"){
+                        swal({
+                            title: "提示",
+                            text: "回复失败",
+                            type: "error",
+                            confirmButtonText: '重试'
+                        });
+                    }else {
+                        swal({
+                            title: "提示",
+                            text: "回复成功",
+                            type: "success",
+                            showLoaderOnConfirm: '确定'
+                        },function (){
+                            $("#id_comment_refresh").html(data);
+                        });
+                    }
+
+                }
+            )
+        }
+
+        function replyText(pid){
+            var commentId = $(".replyCommentId").eq(pid).val();
+            var consumerId = $("#consumerId").val();
+            var doctorId = $("#doctorId").val();
+            var reply = $(".replay").eq(pid).val();
+            $.post(
+                "/doctorInformation/reply",
+                "commentId="+commentId + "&doctorId=" + doctorId + "&consumerId=" + consumerId + "&reply=" + reply,
+                function (data){
+                    if(data == "error"){
+                        swal({
+                            title: "提示",
+                            text: "回复失败",
+                            type: "error",
+                            confirmButtonText: '重试'
+                        });
+                    }else {
+                        swal({
+                            title: "提示",
+                            text: "回复成功",
+                            type: "success",
+                            showLoaderOnConfirm: '确定'
+                        },function (){
+                            $("#id_comment_refresh").html(data);
+                        });
+                    }
+
+                }
+            )
+        }
+    </script>
+    </body>
+    <!-- END: Body-->
+</html>

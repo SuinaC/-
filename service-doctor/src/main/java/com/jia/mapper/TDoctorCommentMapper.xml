@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jia.mapper.TDoctorCommentMapper" >
+  <resultMap id="BaseResultMap" type="com.jia.entity.TDoctorComment" >
+    <result column="id" property="id" jdbcType="BIGINT" />
+    <result column="doctor_id" property="doctorId" jdbcType="BIGINT" />
+    <result column="consumer_id" property="consumerId" jdbcType="BIGINT" />
+    <result column="comment_id" property="commentId" jdbcType="BIGINT" />
+    <result column="comment_content" property="commentContent" jdbcType="VARCHAR" />
+    <result column="fabulous" property="fabulous" jdbcType="INTEGER" />
+    <result column="step_on" property="stepOn" jdbcType="INTEGER" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMap" type="com.jia.entity.TDoctorComment" >
+    <result column="id" property="id" jdbcType="BIGINT" />
+    <result column="doctor_id" property="doctorId" jdbcType="BIGINT" />
+    <result column="consumer_id" property="consumerId" jdbcType="BIGINT" />
+    <result column="comment_id" property="commentId" jdbcType="BIGINT" />
+    <result column="comment_content" property="commentContent" jdbcType="VARCHAR" />
+    <result column="fabulous" property="fabulous" jdbcType="INTEGER" />
+    <result column="step_on" property="stepOn" jdbcType="INTEGER" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+    <collection property="tConsumer" ofType="com.jia.entity.TConsumer" javaType="com.jia.entity.TConsumer">
+      <id column="c_id" property="id" jdbcType="BIGINT" />
+      <result column="c_name" property="name" jdbcType="VARCHAR" />
+      <result column="c_address" property="address" jdbcType="VARCHAR" />
+      <result column="c_img" property="img" jdbcType="VARCHAR" />
+      <result column="c_phone" property="phone" jdbcType="BIGINT" />
+      <result column="c_email" property="email" jdbcType="VARCHAR" />
+      <result column="c_id_card" property="idCard" jdbcType="VARCHAR" />
+      <result column="c_native_place" property="nativePlace" jdbcType="VARCHAR" />
+    </collection>
+    <collection property="tDoctor" ofType="com.jia.entity.TDoctor" javaType="com.jia.entity.TDoctor">
+      <id column="d_id" property="id" jdbcType="BIGINT"/>
+      <result column="d_name" property="name" jdbcType="VARCHAR"/>
+      <result column="d_department" property="department" jdbcType="VARCHAR"/>
+      <result column="d_title" property="title" jdbcType="VARCHAR"/>
+      <result column="d_address" property="address" jdbcType="VARCHAR"/>
+    </collection>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, doctor_id, consumer_id, comment_id, comment_content, fabulous, step_on, gmt_create, 
+    gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />
+    from t_doctor_comment
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectByDoctorId" resultMap="ResultMap" parameterType="java.lang.Long">
+    SELECT t_doctor_comment.id AS id,t_consumer.id AS c_id,t_doctor.id AS d_id,t_consumer.name AS c_name,
+           t_doctor.name AS d_name,t_doctor_comment.comment_content,t_doctor_comment.fabulous,t_doctor_comment.step_on,
+           t_consumer.img AS c_img,t_doctor_comment.gmt_create
+    FROM t_doctor_comment
+        LEFT JOIN t_doctor ON t_doctor_comment.doctor_id = t_doctor.id
+        LEFT JOIN t_consumer ON t_doctor_comment.consumer_id = t_consumer.id
+    WHERE  t_doctor_comment.comment_id is null AND t_doctor.id = #{doctorId,jdbcType=BIGINT}
+  </select>
+  <select id="selectAllByDoctorId" resultMap="ResultMap" parameterType="java.lang.Long">
+    SELECT t_doctor_comment.id AS id,t_consumer.id AS c_id,t_doctor.id AS d_id,t_consumer.name AS c_name,
+           t_doctor.name AS d_name,t_doctor_comment.comment_content,t_doctor_comment.fabulous,t_doctor_comment.step_on,
+           t_consumer.img AS c_img,t_doctor_comment.gmt_create
+    FROM t_doctor_comment
+           LEFT JOIN t_doctor ON t_doctor_comment.doctor_id = t_doctor.id
+           LEFT JOIN t_consumer ON t_doctor_comment.consumer_id = t_consumer.id
+    WHERE t_doctor_comment.comment_id is null AND t_doctor.id = #{doctorId,jdbcType=BIGINT}
+  </select>
+  <select id="selectCountByDoctorId" resultType="java.lang.Integer" parameterType="java.lang.Long">
+    SELECT count(*)
+    FROM t_doctor,t_consumer,t_doctor_comment
+    WHERE t_consumer.id = t_doctor_comment.consumer_id AND t_doctor.id = t_doctor_comment.doctor_id
+    AND t_doctor_comment.comment_id is null AND t_doctor.id = #{doctorId,jdbcType=BIGINT}
+  </select>
+
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.jia.entity.TDoctorCommentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_doctor_comment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <delete id="deleteByExample" parameterType="com.jia.entity.TDoctorCommentExample" >
+    delete from t_doctor_comment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.jia.entity.TDoctorComment" >
+    insert into t_doctor_comment (id, doctor_id, consumer_id, 
+      comment_id, comment_content, fabulous, 
+      step_on, gmt_create, gmt_modified
+      )
+    values (#{id,jdbcType=BIGINT}, #{doctorId,jdbcType=BIGINT}, #{consumerId,jdbcType=BIGINT}, 
+      #{commentId,jdbcType=BIGINT}, #{commentContent,jdbcType=VARCHAR}, #{fabulous,jdbcType=INTEGER}, 
+      #{stepOn,jdbcType=INTEGER}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.jia.entity.TDoctorComment" >
+    insert into t_doctor_comment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="doctorId != null" >
+        doctor_id,
+      </if>
+      <if test="consumerId != null" >
+        consumer_id,
+      </if>
+      <if test="commentId != null" >
+        comment_id,
+      </if>
+      <if test="commentContent != null" >
+        comment_content,
+      </if>
+      <if test="fabulous != null" >
+        fabulous,
+      </if>
+      <if test="stepOn != null" >
+        step_on,
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create,
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="doctorId != null" >
+        #{doctorId,jdbcType=BIGINT},
+      </if>
+      <if test="consumerId != null" >
+        #{consumerId,jdbcType=BIGINT},
+      </if>
+      <if test="commentId != null" >
+        #{commentId,jdbcType=BIGINT},
+      </if>
+      <if test="commentContent != null" >
+        #{commentContent,jdbcType=VARCHAR},
+      </if>
+      <if test="fabulous != null" >
+        #{fabulous,jdbcType=INTEGER},
+      </if>
+      <if test="stepOn != null" >
+        #{stepOn,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null" >
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.jia.entity.TDoctorCommentExample" resultType="java.lang.Integer" >
+    select count(*) from t_doctor_comment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update t_doctor_comment
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.doctorId != null" >
+        doctor_id = #{record.doctorId,jdbcType=BIGINT},
+      </if>
+      <if test="record.consumerId != null" >
+        consumer_id = #{record.consumerId,jdbcType=BIGINT},
+      </if>
+      <if test="record.commentId != null" >
+        comment_id = #{record.commentId,jdbcType=BIGINT},
+      </if>
+      <if test="record.commentContent != null" >
+        comment_content = #{record.commentContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.fabulous != null" >
+        fabulous = #{record.fabulous,jdbcType=INTEGER},
+      </if>
+      <if test="record.stepOn != null" >
+        step_on = #{record.stepOn,jdbcType=INTEGER},
+      </if>
+      <if test="record.gmtCreate != null" >
+        gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gmtModified != null" >
+        gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update t_doctor_comment
+    set id = #{record.id,jdbcType=BIGINT},
+      doctor_id = #{record.doctorId,jdbcType=BIGINT},
+      consumer_id = #{record.consumerId,jdbcType=BIGINT},
+      comment_id = #{record.commentId,jdbcType=BIGINT},
+      comment_content = #{record.commentContent,jdbcType=VARCHAR},
+      fabulous = #{record.fabulous,jdbcType=INTEGER},
+      step_on = #{record.stepOn,jdbcType=INTEGER},
+      gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jia.entity.TDoctorComment" >
+    update t_doctor_comment
+    set id = #{record.id,jdbcType=BIGINT},
+        doctor_id = #{record.doctorId,jdbcType=BIGINT},
+        consumer_id = #{record.consumerId,jdbcType=BIGINT},
+        comment_id = #{record.commentId,jdbcType=BIGINT},
+        comment_content = #{record.commentContent,jdbcType=VARCHAR},
+        fabulous = #{record.fabulous,jdbcType=INTEGER},
+        step_on = #{record.stepOn,jdbcType=INTEGER},
+        gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
+        gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP}
+    where id = #{record.id,jdbcType=BIGINT}
+  </update>
+</mapper>

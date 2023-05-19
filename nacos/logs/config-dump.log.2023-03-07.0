@@ -1,0 +1,40 @@
+2023-03-07 17:02:23,957 INFO [dump-task] add task. groupKey=user-service-dev.yml+DEFAULT_GROUP, taskKey=user-service-dev.yml+DEFAULT_GROUP++false+null
+
+2023-03-07 17:09:30,219 INFO [dump-all-ok] user-service-dev.yml+DEFAULT_GROUP, 1678179743876, length=227, md5=356a7c6ae8e6b488181799364ff7026a
+
+2023-03-07 17:11:37,818 INFO [dump-task] add task. groupKey=book-service-dev+DEFAULT_GROUP, taskKey=book-service-dev+DEFAULT_GROUP++false+null
+
+2023-03-07 17:13:22,388 INFO [dump-task] add task. groupKey=borrow-service-dev+DEFAULT_GROUP, taskKey=borrow-service-dev+DEFAULT_GROUP++false+null
+
+2023-03-07 17:18:24,234 INFO [dump-task] add task. groupKey=book-service-dev+DEFAULT_GROUP, taskKey=book-service-dev+DEFAULT_GROUP++false+null
+
+2023-03-07 17:18:27,354 INFO [dump-task] add task. groupKey=borrow-service-dev+DEFAULT_GROUP, taskKey=borrow-service-dev+DEFAULT_GROUP++false+null
+
+2023-03-07 17:18:53,560 INFO [dump-task] add task. groupKey=book-service-dev.yml+DEFAULT_GROUP, taskKey=book-service-dev.yml+DEFAULT_GROUP++false+null
+
+2023-03-07 17:19:16,647 INFO [dump-task] add task. groupKey=borrow-service-dev.yml+DEFAULT_GROUP, taskKey=borrow-service-dev.yml+DEFAULT_GROUP++false+null
+
+2023-03-07 17:26:25,998 INFO [dump-all-ok] user-service-dev.yml+DEFAULT_GROUP, 1678179743876, length=227, md5=356a7c6ae8e6b488181799364ff7026a
+
+2023-03-07 17:26:25,999 INFO [dump-all-ok] book-service-dev.yml+DEFAULT_GROUP, 1678180733548, length=227, md5=356a7c6ae8e6b488181799364ff7026a
+
+2023-03-07 17:26:25,999 INFO [dump-all-ok] borrow-service-dev.yml+DEFAULT_GROUP, 1678180756642, length=227, md5=356a7c6ae8e6b488181799364ff7026a
+
+2023-03-07 17:40:34,852 INFO [dump-all-ok] user-service-dev.yml+DEFAULT_GROUP, 1678179743876, length=227, md5=356a7c6ae8e6b488181799364ff7026a
+
+2023-03-07 17:40:34,852 INFO [dump-all-ok] book-service-dev.yml+DEFAULT_GROUP, 1678180733548, length=227, md5=356a7c6ae8e6b488181799364ff7026a
+
+2023-03-07 17:40:34,852 INFO [dump-all-ok] borrow-service-dev.yml+DEFAULT_GROUP, 1678180756642, length=227, md5=356a7c6ae8e6b488181799364ff7026a
+
+2023-03-07 17:53:01,761 INFO [dump-task] add task. groupKey=user-service-dev.yml+DEFAULT_GROUP, taskKey=user-service-dev.yml+DEFAULT_GROUP++false+null
+
+2023-03-07 17:53:07,283 INFO [dump-task] add task. groupKey=book-service-dev.yml+DEFAULT_GROUP, taskKey=book-service-dev.yml+DEFAULT_GROUP++false+null
+
+2023-03-07 17:53:10,516 INFO [dump-task] add task. groupKey=borrow-service-dev.yml+DEFAULT_GROUP, taskKey=borrow-service-dev.yml+DEFAULT_GROUP++false+null
+
+2023-03-07 17:53:27,109 INFO [dump-task] add task. groupKey=userservice-dev.yml+DEFAULT_GROUP, taskKey=userservice-dev.yml+DEFAULT_GROUP++false+null
+
+2023-03-07 17:53:48,195 INFO [dump-task] add task. groupKey=bookservice-dev.yml+DEFAULT_GROUP, taskKey=bookservice-dev.yml+DEFAULT_GROUP++false+null
+
+2023-03-07 17:54:10,116 INFO [dump-task] add task. groupKey=borrowservice-dev.yml+DEFAULT_GROUP, taskKey=borrowservice-dev.yml+DEFAULT_GROUP++false+null
+

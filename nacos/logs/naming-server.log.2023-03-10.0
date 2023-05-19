@@ -1,0 +1,391 @@
+2023-03-10 15:15:21,228 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 15:15:21,293 INFO [NACOS-RAFT] datum is changed, key: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@bookservice, value: {"instanceList":[{"instanceId":"172.20.10.4#8202#Changsha#DEFAULT_GROUP@@bookservice","ip":"172.20.10.4","port":8202,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":false,"clusterName":"Changsha","serviceName":"DEFAULT_GROUP@@bookservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"lastBeat":1678432521276,"marked":false,"app":"unknown","ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000},{"instanceId":"172.20.10.4#8201#Zhengzhou#DEFAULT_GROUP@@bookservice","ip":"172.20.10.4","port":8201,"weight":1.0,"healthy":false,"enabled":true,"ephemeral":false,"clusterName":"Zhengzhou","serviceName":"DEFAULT_GROUP@@bookservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"lastBeat":1678182919701,"marked":false,"app":"unknown","ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]}
+
+2023-03-10 15:15:21,851 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 15:15:21,874 INFO [NACOS-RAFT] datum is changed, key: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@bookservice, value: {"instanceList":[{"instanceId":"172.20.10.4#8202#Changsha#DEFAULT_GROUP@@bookservice","ip":"172.20.10.4","port":8202,"weight":1.0,"healthy":false,"enabled":true,"ephemeral":false,"clusterName":"Changsha","serviceName":"DEFAULT_GROUP@@bookservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"lastBeat":1678432521276,"marked":false,"app":"unknown","ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000},{"instanceId":"172.20.10.4#8201#Zhengzhou#DEFAULT_GROUP@@bookservice","ip":"172.20.10.4","port":8201,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":false,"clusterName":"Zhengzhou","serviceName":"DEFAULT_GROUP@@bookservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"lastBeat":1678432521873,"marked":false,"app":"unknown","ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]}
+
+2023-03-10 15:15:22,266 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 15:15:22,302 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 15:15:22,304 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 15:15:22,876 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 15:15:24,278 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 15:15:24,890 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 15:15:28,294 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 15:15:28,900 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 15:15:32,199 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 15:17:00,838 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 15:17:00,866 INFO [NACOS-RAFT] datum is changed, key: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@userservice, value: {"instanceList":[{"instanceId":"172.20.10.4#8102#Changsha#DEFAULT_GROUP@@userservice","ip":"172.20.10.4","port":8102,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":false,"clusterName":"Changsha","serviceName":"DEFAULT_GROUP@@userservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"lastBeat":1678432620863,"marked":false,"app":"unknown","ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000},{"instanceId":"172.20.10.4#8101#Zhengzhou#DEFAULT_GROUP@@userservice","ip":"172.20.10.4","port":8101,"weight":1.0,"healthy":false,"enabled":true,"ephemeral":false,"clusterName":"Zhengzhou","serviceName":"DEFAULT_GROUP@@userservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"lastBeat":1678182921427,"marked":false,"app":"unknown","ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]}
+
+2023-03-10 15:17:01,880 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 15:17:01,900 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 15:17:02,055 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 15:17:02,091 INFO [NACOS-RAFT] datum is changed, key: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@userservice, value: {"instanceList":[{"instanceId":"172.20.10.4#8102#Changsha#DEFAULT_GROUP@@userservice","ip":"172.20.10.4","port":8102,"weight":1.0,"healthy":false,"enabled":true,"ephemeral":false,"clusterName":"Changsha","serviceName":"DEFAULT_GROUP@@userservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"lastBeat":1678432620863,"marked":false,"app":"unknown","ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000},{"instanceId":"172.20.10.4#8101#Zhengzhou#DEFAULT_GROUP@@userservice","ip":"172.20.10.4","port":8101,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":false,"clusterName":"Zhengzhou","serviceName":"DEFAULT_GROUP@@userservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"lastBeat":1678432622087,"marked":false,"app":"unknown","ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]}
+
+2023-03-10 15:17:03,071 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 15:17:03,096 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 15:17:03,097 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 15:17:03,921 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 15:17:04,561 INFO creating empty service public:DEFAULT_GROUP@@borrowservice
+
+2023-03-10 15:17:04,565 INFO [NEW-SERVICE] {"name":"DEFAULT_GROUP@@borrowservice","protectThreshold":0.0,"groupName":"DEFAULT_GROUP","metadata":{},"finalizeCount":0,"owners":[],"resetWeight":false,"enabled":true,"selector":{"type":"none"},"namespaceId":"public","ipDeleteTimeout":30000,"lastModifiedMillis":1678432624561,"checksum":"8dedfd960ecf3cfa8d8c7753b76e9e54","clusterMap":{},"empty":true}
+
+2023-03-10 15:17:04,566 WARN cluster: DEFAULT not found, ip: {"instanceId":"172.20.10.4#8301#DEFAULT#DEFAULT_GROUP@@borrowservice","ip":"172.20.10.4","port":8301,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@borrowservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"lastBeat":1678432624560,"marked":false,"app":"unknown","ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}, will create new cluster with default configuration.
+
+2023-03-10 15:17:04,566 INFO [NACOS-RAFT] datum is changed, key: com.alibaba.nacos.naming.iplist.ephemeral.public##DEFAULT_GROUP@@borrowservice, value: {"instanceList":[{"instanceId":"172.20.10.4#8301#DEFAULT#DEFAULT_GROUP@@borrowservice","ip":"172.20.10.4","port":8301,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@borrowservice","metadata":{"preserved.register.source":"SPRING_CLOUD"},"lastBeat":1678432624560,"marked":false,"app":"unknown","ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]}
+
+2023-03-10 15:17:05,086 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 15:17:07,945 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 15:17:09,098 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 15:17:24,936 WARN tcp check started before last one finished, service: DEFAULT_GROUP@@borrow-service:Zhengzhou:172.20.10.4:8301
+
+2023-03-10 16:06:43,696 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:06:43,705 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:06:44,194 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:06:44,794 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:06:44,794 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:06:45,833 WARN tcp check started before last one finished, service: DEFAULT_GROUP@@borrow-service:Zhengzhou:172.20.10.4:8301
+
+2023-03-10 16:06:54,819 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:06:54,819 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:07:04,468 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:07:04,830 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:07:04,830 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:07:05,590 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:07:14,842 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:07:14,842 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:07:24,839 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:07:24,851 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:07:24,851 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:07:25,405 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:07:34,861 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:07:34,861 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:07:44,870 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:07:44,871 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:07:54,875 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:07:54,876 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:08:04,481 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:08:04,885 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:08:04,885 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:08:05,602 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:08:14,895 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:08:14,896 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:08:24,855 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:08:24,906 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:08:24,906 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:08:25,420 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:08:34,915 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:08:34,915 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:08:44,922 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:08:44,922 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:08:54,937 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:08:54,937 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:09:04,491 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:09:04,951 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:09:04,951 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:09:05,615 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:09:14,962 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:09:14,962 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:09:24,872 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:09:24,972 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:09:24,972 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:09:25,431 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:09:34,982 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:09:34,982 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:09:44,990 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:09:44,990 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:09:54,998 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:09:54,999 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:10:04,506 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:10:05,008 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:10:05,008 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:10:05,632 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:10:15,042 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:10:15,043 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:10:24,896 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:10:25,055 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:10:25,056 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:10:25,438 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:10:35,075 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:10:35,075 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:10:45,086 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:10:45,086 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:10:55,093 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:10:55,094 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:11:04,519 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:11:05,102 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:11:05,102 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:11:05,644 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:11:15,111 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:11:15,111 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:11:24,911 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:11:25,120 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:11:25,120 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:11:25,446 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:11:35,129 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:11:35,129 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:11:45,139 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:11:45,139 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:11:55,143 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:11:55,143 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:12:04,533 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:12:05,151 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:12:05,151 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:12:05,655 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:12:15,162 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:12:15,162 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:12:24,925 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:12:25,168 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:12:25,168 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:12:25,455 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:12:35,177 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:12:35,177 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:12:45,186 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:12:45,186 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:12:55,197 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:12:55,197 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:13:04,550 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:13:05,207 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:13:05,208 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:13:05,668 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:13:15,224 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:13:15,224 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:13:24,934 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:13:25,233 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:13:25,234 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:13:25,464 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:13:35,242 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:13:35,242 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:13:45,251 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:13:45,251 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:13:55,261 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:13:55,261 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:14:04,565 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:14:05,270 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:14:05,272 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:14:05,681 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:14:15,281 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:14:15,281 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:14:24,945 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:14:25,290 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:14:25,290 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:14:25,472 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:14:35,298 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:14:35,298 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:14:45,305 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:14:45,305 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:14:55,316 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:14:55,317 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:15:04,575 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:15:05,328 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:15:05,328 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:15:05,692 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:15:15,361 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:15:15,361 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:15:24,956 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:15:25,370 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:15:25,370 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:15:25,479 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:15:35,382 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:15:35,382 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:35:55,724 INFO [NACOS-RAFT] datum is changed, key: com.alibaba.nacos.naming.iplist.ephemeral.public##DEFAULT_GROUP@@bookservice, value: {"instanceList":[]}
+
+2023-03-10 16:35:55,725 INFO [NACOS-RAFT] datum is changed, key: com.alibaba.nacos.naming.iplist.ephemeral.public##DEFAULT_GROUP@@userservice, value: {"instanceList":[]}
+
+2023-03-10 16:35:55,725 INFO [NACOS-RAFT] datum is changed, key: com.alibaba.nacos.naming.iplist.ephemeral.public##DEFAULT_GROUP@@bookservice, value: {"instanceList":[]}
+
+2023-03-10 16:35:55,958 INFO [NACOS-RAFT] datum is changed, key: com.alibaba.nacos.naming.iplist.ephemeral.public##DEFAULT_GROUP@@userservice, value: {"instanceList":[]}
+
+2023-03-10 16:35:55,959 INFO [NACOS-RAFT] datum is changed, key: com.alibaba.nacos.naming.iplist.ephemeral.public##DEFAULT_GROUP@@borrowservice, value: {"instanceList":[]}
+
+2023-03-10 16:35:56,583 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:35:56,726 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@bookservice
+
+2023-03-10 16:35:56,728 WARN protect threshold reached, return all ips, service: DEFAULT_GROUP@@userservice
+
+2023-03-10 16:36:13,970 WARN [NamingServerHttpClientManager] Start destroying HTTP-Client
+
+2023-03-10 16:36:13,978 WARN [NamingServerHttpClientManager] Destruction of the end
+
+2023-03-10 16:36:26,267 ERROR [HEALTH-CHECK] error while processing NIO task
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1679)
+	at java.base/java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:460)
+	at com.alibaba.nacos.naming.healthcheck.TcpSuperSenseProcessor.processTask(TcpSuperSenseProcessor.java:137)
+	at com.alibaba.nacos.naming.healthcheck.TcpSuperSenseProcessor.run(TcpSuperSenseProcessor.java:154)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)

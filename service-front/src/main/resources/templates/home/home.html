@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="referrer" content="never">
+    <title>首页</title>
+    <link rel="stylesheet" href="/home/css/zz.css" th:href="@{/home/css/zz.css}"/>
+    <link rel="stylesheet" href="/home/css/reset.css" th:href="@{/home/css/reset.css}"/>
+    <link rel="stylesheet" href="/home/css/animation.css" th:href="@{/home/css/animation.css}"/>
+    <link rel="stylesheet" href="/home/css/time.css" th:href="@{/home/css/time.css}"/>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"  >-->
+    <link rel="stylesheet" href="/home/css/bootstrap.min.css"/>
+    <link href="/static/test/css/index.css" th:href="@{/test/css/index.css}" type="text/css" rel="stylesheet"/>
+
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <input id="search" type="text" placeholder="请输入要搜索的内容." x-webkit-speech/>
+        <div class="search"></div>
+    </div>
+    <div class="head-top">
+        <div class="warp" style="text-align: right">
+
+            <ul>
+                <ul>
+                    <li id="address" th:text="${tConsumer.address}"></li>
+                    <li style="top: 3px"><img id="imgAddress" style="width: 20px;height: 20px"
+                                              th:src="@{/home/img/address.png}" onclick="changeAddress()"/></li>
+                    <li><span>|</span></li>
+                </ul>
+
+                <li><span>|</span></li>
+                <li>
+                    <a href="#"><span id="loginhide" name="loginhide" th:text="${tConsumer.name}"
+                                      th:value="${tConsumer.name}"></span>,欢迎你<i></i></a>
+                    <div class="downlist">
+                        <a id="information" href="/home/information" th:href="@{/consumerInformation/index(id=${tConsumer.id})}">用户主页</a>
+                        <a id="exit" href="/consumer/login">退出登录</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="head-content">
+        <div class="warp">
+            <div class="logo"></div>
+            <div class="nav">
+                <ul class="nav-main">
+                    <li><a th:href="${'/home/login?'+tConsumer.id != null?'':'id='+tConsumer.id}">首页</a></li>
+                    <li><a th:href="${tConsumer.id != null?'/consumerOrder/consumerOrder?id='+tConsumer.id:'/consumerOrder/touristOrder'}">预约</a></li>
+                    <li><a th:href="${tConsumer.id != null?'/consumerInformation/searchDoctor?id='+tConsumer.id:'/consumer/login'}">咨询</a></li>
+<!--                    <li><a href="/medicalShop/home">药品商城</a></li>-->
+                </ul>
+                <ul class="login">
+                    <li><a href="/consumer/login">登录</a></li>
+                    <li><a href="/consumer/login">注册</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<section class="body">
+
+    <section class="sec0 page count">
+        <div class="bg">
+            <div class="mask"></div>
+            <div class="post"></div>
+        </div>
+        <div class="warp view0">
+            <div>
+                <div class="gb"></div>
+                <div class="login1">
+                    <a href="/consumer/login">登录</a>
+                    <a href="/consumer/login">立即注册</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec1 page">
+        <div class="bg"></div>
+        <div class="warp view1">
+            <img class="words" src="/static/home/img/page1-1.jpg" th:src="@{/home/img/page1-1.jpg}" alt=""/>
+            <img class="php" src="/static/home/img/page1-4.jpg" th:src="@{/home/img/page1-4.jpg}" alt=""/>
+            <img class="yun" src="/static/home/img/page1-3.jpg" th:src="@{/home/img/page1-3.jpg}" alt=""/>
+            <img class="yun1" src="/static/home/img/page1-2.jpg" th:src="@{/home/img/page1-2.jpg}" alt=""/>
+            <img class="yun2" src="/static/home/img/page-1-5.jpg" th:src="@{/home/img/page-1-5.jpg}" alt=""/>
+        </div>
+        <div class="fix-bot">
+            <div class="warp">
+                <div class="fix-content">
+                    <i>&#xe60a;</i>
+                    <div class="tips">
+                        <p>合作医疗</p>
+                        <span>新的医疗联合体</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec2 page">
+        <div class="bg"></div>
+        <div class="warp view2">
+            <img src="/static/home/img/page2-1.jpg" th:src="@{/home/img/page2-1.jpg}" alt="" class="words"/>
+            <img src="/static/home/img/page2-2.jpg" th:src="@{/home/img/page2-2.jpg}" alt="" class="phone"/>
+            <img src="/static/home/img/page2-3.jpg" th:src="@{/home/img/page2-3.jpg}" alt="" class="leg"/>
+        </div>
+        <div class="fix-bot">
+            <div class="warp">
+                <div class="fix-content">
+                    <i>&#xe616;</i>
+                    <div class="tips">
+                        <p>预约</p>
+                        <span>即时预约，医院随心</span>
+                    </div>
+                </div>
+                <div class="fix-content">
+                    <i>&#xe60c;</i>
+                    <div class="tips">
+                        <p>咨询</p>
+                        <span>即时咨询，解决难题</span>
+                    </div>
+                </div>
+                <div class="fix-content">
+                    <i>&#xe604;</i>
+                    <div class="tips">
+                        <p>病历</p>
+                        <span>数据安全，保障你我</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec3 page">
+        <div class="bg"></div>
+        <div class="warp view3">
+            <img src="/static/home/img/page3-1.jpg" th:src="@{/home/img/page3-1.jpg}" alt="" class="words"/>
+        </div>
+        <div class="fix-bot">
+            <div class="warp">
+                <div class="fix-content">
+                    <i>&#xe601;</i>
+                    <div class="tips">
+                        <p>处方药品</p>
+                        <span>业界良心</span>
+                    </div>
+                </div>
+                <div class="fix-content">
+                    <i>&#xe60b;</i>
+                    <div class="tips">
+                        <p>海量资源</p>
+                        <span>三甲医院带头，医疗服务有保障</span>
+                    </div>
+                </div>
+                <div class="fix-content">
+                    <i>&#xe60e;</i>
+                    <div class="tips">
+                        <p>界面简约</p>
+                        <span>无需复杂操作</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec4 page">
+        <div class="bg">
+            <div class="mask"></div>
+        </div>
+        <div class="warp view4">
+            <img src="/static/home/img/page4-1.jpg" th:src="@{/home/img/page4-1.jpg}" class="words" alt=""/>
+        </div>
+        <div class="fix-bot">
+            <div class="warp">
+                <div class="fix-content">
+                    <i>&#xe61b;</i>
+                    <div class="tips">
+                        <p>预约提醒</p>
+                        <span>自动发送到您的邮箱</span>
+                    </div>
+                </div>
+                <div class="fix-content">
+                    <i>&#xe618;</i>
+                    <div class="tips">
+                        <p>医疗保障</p>
+                        <span>支持医保</span>
+                    </div>
+                </div>
+                <div class="fix-content">
+                    <i>&#xe61a;</i>
+                    <div class="tips">
+                        <p>就诊方便</p>
+                        <span>省去跑腿的麻烦</span>
+                    </div>
+                </div>
+                <div class="fix-content">
+                    <i>&#xe619;</i>
+                    <div class="tips">
+                        <p>沟通方便</p>
+                        <span>医生随时答疑回复</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sec5 page">
+        <div class="bg"></div>
+        <div class="words view5">
+            <img src="/static/home/img/page5-1.jpg" th:src="@{/home/img/page5-1.jpg}" class="words" alt=""/>
+        </div>
+        <div class="fix-bot">
+            <div class="warp">
+                <div class="fix-content">
+                    <i>&#xe613;</i>
+                    <div class="tips">
+                        <p>预约</p>
+                        <span>预约信息查询，足不出户</span>
+                    </div>
+                </div>
+                <div class="fix-content">
+                    <i>&#xe609;</i>
+                    <div class="tips">
+                        <p>医院检索</p>
+                        <span>涵盖海量医院</span>
+                    </div>
+                </div>
+                <div class="fix-content">
+                    <i>&#xe60d;</i>
+                    <div class="tips">
+                        <p>智慧医疗</p>
+                        <span>一端走天下</span>
+                    </div>
+                </div>
+                <div class="fix-content">
+                    <i>&#xe603;</i>
+                    <div class="tips">
+                        <p>就诊结果</p>
+                        <span>短信邮箱通知</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</section>
+
+<div class="ch-page">
+    <ul>
+        <li class="add"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+
+<!-- Modal -->
+<div class="modal fade bs-example-modal-lg" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" style="width: 100%" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">语音输入模拟</h4>
+            </div>
+            <div class="modal-body">
+                <div class="service-item service-item-taste">
+                    <div class="service-item-content service-item-taste-content">
+                        <div class="taste-content">
+                            <button class="taste-button ready-button" id="taste_button">语音录入</button>
+                        </div>
+                        <div class="start-taste">
+                            <div class="start-taste-left">
+                                <div class="time-box">
+                                            <span class="start-taste-line">
+                                              <hr class="hr hr1">
+                                              <hr class="hr hr2">
+                                              <hr class="hr hr3">
+                                              <hr class="hr hr4">
+                                              <hr class="hr hr5">
+                                              <hr class="hr hr6">
+                                              <hr class="hr hr7">
+                                              <hr class="hr hr8">
+                                              <hr class="hr hr9">
+                                              <hr class="hr hr10">
+                                            </span>
+                                    <span class="total-time"><span class="used-time">00: 00</span></span></span>
+                                </div>
+                                <div class="start-taste-button">
+                                    <button class="taste-button start-button">结束录入</button>
+                                </div>
+                            </div>
+                            <div class="output-box" id="result_output"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<a href="#" class="next">&#xe612;</a>
+
+<script src="/home/js/jquery-1.10.2.js" th:src="@{/home/js/jquery-1.10.2.js}"></script>
+<script src="/home/js/zz.js" th:src="@{/home/js/zz.js}"></script>
+<script src="/home/js/zz.js" th:src="@{/home/js/jquery.min.js}"></script>
+<script src="/home/js/zz.js" th:src="@{/signup/js/jquery.js}"></script>
+<script src="/home/js/zz.js" th:src="@{/home/js/moment.min.js}"></script>
+<script src="/home/js/zz.js" th:src="@{/home/js/time.js}"></script>
+<script src="/home/js/zz.js" th:src="@{/home/js/time.js}"></script>
+<script src="/static/test/js/hmac-sha256.js" th:src="@{/test/js/hmac-sha256.js}"></script>
+<script src="/static/test/js/HmacSHA1.js" th:src="@{/test/js/HmacSHA1.js}"></script>
+<script src="/static/test/js/md5.js" th:src="@{/test/js/md5.js}"></script>
+<script src="/static/test/js/enc-base64-min.js" th:src="@{/test/js/enc-base64-min.js}"></script>
+<script src="/static/test/js/jquery.js" th:src="@{/test/js/jquery.js}"></script>
+<script src="/static/test/js/jquery.js" th:src="@{/test/js/index.js}"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+<script type="text/javascript">
+    function changeAddress() {
+        $("#imgAddress").append("<img th:src='@{/home/img/loading.gif}' />")
+        $.post(
+            "/home/changeAddress",
+            function (data) {
+                if (data != "error") {
+                    $("#address").text(data)
+                    $("#imgAddress").append("<img th:src='@{/home/img/address.png}' />")
+                    alert("重新定位成功")
+                } else {
+                    $("#imgAddress").append("<img th:src='@{/home/img/address.png}' />")
+                    alert("服务器错误，请重新尝试")
+                }
+            }
+        )
+    }
+</script>
+<script type="text/javascript">
+    function speak() {
+        $("#apEidtModel").modal('show');
+    }
+</script>
+</body>
+</html>

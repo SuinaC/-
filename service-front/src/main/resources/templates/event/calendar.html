@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <!-- START: Head-->
+    <head>
+        <meta charset="UTF-8">
+        <title>备忘录</title>
+        <link rel="shortcut icon" href="dist/images/favicon.ico" th:href="@{/information/images/favicon.ico}"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"> 
+
+        <!-- START: Template CSS-->
+        <link rel="stylesheet" href="dist/vendors/bootstrap/css/bootstrap.min.css" th:href="@{/information/vendors/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" href="dist/vendors/jquery-ui/jquery-ui.min.css" th:href="@{/information/vendors/jquery-ui/jquery-ui.min.css}">
+        <link rel="stylesheet" href="dist/vendors/jquery-ui/jquery-ui.theme.min.css" th:href="@{/information/vendors/jquery-ui/jquery-ui.theme.min.css}">
+        <link rel="stylesheet" href="dist/vendors/simple-line-icons/css/simple-line-icons.css" th:href="@{/information/vendors/simple-line-icons/css/simple-line-icons.css}">
+        <link rel="stylesheet" href="dist/vendors/flags-icon/css/flag-icon.min.css" th:href="@{/information/vendors/flags-icon/css/flag-icon.min.css}">
+        <link rel="stylesheet" href="dist/vendors/flag-select/css/flags.css" th:href="@{/information/vendors/flag-select/css/flags.css}">
+        <link rel="stylesheet" href="dist/vendors/sweetalert/sweetalert.css"
+              th:href="@{/information/vendors/sweetalert/sweetalert.css}">
+        <link rel="stylesheet" href="dist/vendors/icofont/icofont.min.css"
+              th:href="@{/information/vendors/icofont/icofont.min.css}">
+        <!-- END Template CSS-->      
+
+        <!-- START: Custom CSS-->
+        <link rel="stylesheet" href="dist/css/main.css" th:href="@{/event/css/main.css}">
+        <link rel="stylesheet" href="style/jalendar.css" th:href="@{/event/css/fullcalendar.min.css}" type="text/css" />
+        <link rel="stylesheet" href="style/jalendar.css" th:href="@{/event/css/all.min.css}" type="text/css" />
+        <link rel="stylesheet" href="style/jalendar.css" th:href="@{/event/css/bootstrap-datetimepicker.min.css}" type="text/css" />
+        <link rel="stylesheet" href="style/jalendar.css" th:href="@{/event/css/fontawesome.min.css}" type="text/css" />
+        <link rel="stylesheet" href="style/jalendar.css" th:href="@{/event/css/style.css}" type="text/css" />
+        <!-- END: Custom CSS-->
+    </head>
+    <!-- END Head-->
+
+    <!-- START: Body-->    
+    <body id="main-container" class="default">
+        <!-- START: Pre Loader-->
+        <div class="se-pre-con">
+            <img src="dist/images/logo.png" th:src="@{/information/images/logo.png}" alt="logo" width="23" class="img-fluid"/>
+        </div>
+        <!-- END: Pre Loader-->
+
+        <div id="header-fix" class="header fixed-top">
+            <nav class="navbar navbar-expand-lg  p-0">
+                <div class="navbar-header h4 mb-0 align-self-center logo-bar text-center">
+                    <a href="index.html" class="horizontal-logo text-center">
+                        <span class="h3 align-self-center mb-0 ">备忘录</span>
+                    </a>
+                </div>
+                <div class="navbar-header h4 mb-0 text-center h-100 collapse-menu-bar">
+                    <a href="#" class="sidebarCollapse" id="collapse"><i class="icon-menu body-color"></i></a>
+                </div>
+
+                <form class="float-left d-none d-lg-block search-form">
+                    <div class="form-group mb-0 position-relative">
+                        <input type="text" class="form-control border-0 rounded bg-search pl-5"
+                               placeholder="Search anything...">
+                        <div class="btn-search position-absolute top-0">
+                            <a th:onclick="'javascript:searchDisease('+${tConsumer.id}+')'" ><i class="h5 icon-magnifier body-color"></i></a>
+                        </div>
+                        <a href="#" class="position-absolute close-button mobilesearch d-lg-none" data-toggle="dropdown"
+                           aria-expanded="false"><i class="icon-close h5"></i>
+                        </a>
+
+                    </div>
+                </form>
+                <div class="navbar-right ml-auto h-100">
+                    <ul class="ml-auto p-0 m-0 list-unstyled d-flex top-icon h-100">
+                        <li class="d-inline-block align-self-center  d-block d-lg-none">
+                            <a href="#" class="nav-link mobilesearch" data-toggle="dropdown" aria-expanded="false"><i
+                                    class="icon-magnifier h4"></i>
+                            </a>
+                        </li>
+                        <li class="dropdown user-profile align-self-center d-inline-block">
+                            <a href="#" class="nav-link py-0" data-toggle="dropdown" aria-expanded="false">
+                                <div class="media">
+                                    <img src="dist/images/author.jpg" th:src="@{${tConsumer.img}}" alt=""
+                                         class="d-flex img-fluid rounded-circle" width="29">
+                                </div>
+                            </a>
+
+                            <div class="dropdown-menu  dropdown-menu-right p-0">
+                                <a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}"
+                                   class="dropdown-item px-2 align-self-center d-flex">
+                                    <span class="icon-pencil mr-2 h6 mb-0"></span> 编辑个人资料</a>
+                                <a th:href="@{/consumerInformation/information(id=${tConsumer.id})}"
+                                   class="dropdown-item px-2 align-self-center d-flex">
+                                    <span class="icon-user mr-2 h6 mb-0"></span> 查看资料</a>
+                                <div class="dropdown-divider"></div>
+
+                                <div class="dropdown-divider"></div>
+                                <a href="/consumer/login" class="dropdown-item px-2 text-danger align-self-center d-flex">
+                                    <span class="icon-logout mr-2 h6  mb-0"></span>登出</a>
+                            </div>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- END: Header-->
+
+        <!-- START: Main Menu-->
+        <div class="sidebar">
+            <div class="media d-block text-center user-profile">
+                <img class="img-fluid" src="dist/images/author1.jpg" style="width: 100px;hight: 100px;" th:src="@{${tConsumer.img}}" alt="">
+                <div class="media-body text-center mt-0 color-primary mt-2">
+                    <a href="#" class="nav-link py-0" data-toggle="dropdown" aria-expanded="false">
+                        <input hidden="hidden" id="consumerId" name="consumerId" th:value="${tConsumer.id}" >
+                        <h6 class="mb-0 font-weight-bold" th:text="${tConsumer.name}">姓名</h6>
+                        <p th:text="${tConsumer.nativePlace}"></p>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right p-0" style="">
+                        <a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}"
+                           class="dropdown-item px-2 align-self-center d-flex">
+                            <span class="icon-pencil mr-2 h6 mb-0"></span> 编辑个人资料</a>
+                        <a th:href="@{/consumerInformation/information(id=${tConsumer.id})}"
+                           class="dropdown-item px-2 align-self-center d-flex">
+                            <span class="icon-user mr-2 h6 mb-0"></span> 查看资料</a>
+                        <div class="dropdown-divider"></div>
+
+                        <div class="dropdown-divider"></div>
+                        <a href="/consumer/login" class="dropdown-item px-2 text-danger align-self-center d-flex">
+                            <span class="icon-logout mr-2 h6  mb-0"></span> 登出</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- START: Menu-->
+            <ul id="side-menu" class="sidebar-menu">
+                <li class="dropdown active"><a href="#">首页</a>
+                    <ul>
+                        <li class="active"><a href="index.html" th:href="@{/consumerInformation/index(id=${tConsumer.id})}"><i class="icon-rocket"></i> 首页</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">应用</a>
+                    <ul>
+                        <li><a th:href="@{/consumerInformation/calendar(id=${tConsumer.id})}"><i class="icon-calendar"></i> 日历备忘录</a></li>
+                        <li class="dropdown"><a href="#"><i class="icon-envelope"></i>邮箱</a>
+                            <ul class="sub-menu">
+                                <li><a th:href="@{/mailInbox/mail(id=${tConsumer.id})}"><i class="icon-envelope"></i> 收件箱</a></li>
+                            </ul>
+                        </li>
+                        <li><a th:href="@{/consumerOrder/consumerOrder(id=${tConsumer.id})}"><i class="icon icofont-ui-copy"></i> 预约</a></li>
+                        <li><a th:href="@{/consumerOrder/medicalOrder(id=${tConsumer.id})}"><i class="icon icofont-first-aid"></i> 体检预约</a></li>
+                        <li><a th:href="@{/consumerInformation/prescriptionList(id=${tConsumer.id})}"><i class="icon icofont-ui-clip-board"></i> 查看处方</a></li>
+                        <li><a th:href="@{/consumerInformation/searchDoctor(id=${tConsumer.id})}"><i class="icon icofont-doctor"></i> 查找医生</a></li>
+                       <li><a th:href="@{/consumerInformation/doctorCollection(id=${tConsumer.id})}"><i class="icon icofont-heart"></i> 医生收藏</a></li>
+                        <li><a th:href="@{/drug/drugOrderList(id=${tConsumer.id})}"><i class="icon icofont-ticket"></i> 查看药品订单列表</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">信息</a>
+                    <ul>
+                        <li class="dropdown"><a href="#"><i class="icon-user"></i>个人信息</a>
+                            <ul class="sub-menu">
+                                <li><a th:href="@{/consumerInformation/information(id=${tConsumer.id})}"><i class="icon-disc"></i> 查看个人信息</a></li>
+                                <li><a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}"><i class="icon-disc"></i> 修改个人信息</a></li>
+                                <li><a th:href="@{/consumerInformation/updatePassword(id=${tConsumer.id})}"><i class="icon-disc"></i> 修改密码</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><i class="icon-paper-clip"></i>病历</a>
+                            <ul class="sub-menu">
+                                <li><a th:href="@{/consumerInformation/medical(id=${tConsumer.id})}"><i class="icon-disc"></i>历史病历</a></li>
+                                <li><a th:href="@{/consumerInformation/existingMedical(id=${tConsumer.id})}"><i class="icon-cursor-move"></i>现有病历</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><i class="icon icofont-restaurant-menu"></i>预约信息</a>
+                            <ul class="sub-menu">
+                               <li><a th:href="@{/consumerOrder/appointmentProgress(id=${tConsumer.id})}"><i class="icon-disc"></i> 预约进度</a></li>
+                                <li><a th:href="@{/consumerInformation/consumerOrderList(id=${tConsumer.id})}"><i class="icon-disc"></i> 预约列表</a></li>
+                        <li><a th:href="@{/consumerOrder/medicalAppointmentList(id=${tConsumer.id})}"><i class="icon-disc"></i> 体检预约列表</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- END: Menu-->
+        </div>
+        <!-- END: Main Menu-->
+
+        <!-- Main Wrapper -->
+        <main>
+        <div class="main-wrapper">
+
+            <div class="content">
+                <div class="container-fluid">
+
+                    <div class="row">
+
+                        <!-- Calendar Events -->
+                        <div class="col-md-3">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title mb-0">移动事件</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div id="calendar-events" class="mb-3">
+
+                                    </div>
+                                    <div class="checkbox mb-3">
+                                        <input id="drop-remove" type="checkbox">
+                                        <label for="drop-remove">
+                                            移动时间后删除
+                                        </label>
+                                    </div>
+                                    <a href="#" data-toggle="modal" data-target="#add_new_event" class="btn btn-primary btn-block">
+                                        <i class="fas fa-plus"></i>添加事件
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Calendar Events -->
+
+                        <!-- Calendar -->
+                        <div class="col-md-7 col-lg-8 col-xl-9">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div id="calendar"></div>
+                                    <input hidden="hidden" id="tCalendarNotebooks" name="tCalendarNotebooks" th:value="${tCalendarNotebooks}">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /Calendar -->
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- /Page Content -->
+
+
+            <!-- /Footer -->
+
+        </div>
+        <!-- /Main Wrapper -->
+
+        <!-- Add Event Modal -->
+        <div id="add_event" class="modal custom-modal fade" role="dialog">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">添加事件</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label>事件名称 <span class="text-danger">*</span></label>
+                                <input class="form-control" type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>事件日期 <span class="text-danger">*</span></label>
+                                <div class="cal-icon">
+                                    <input class="form-control datetimepicker" type="text">
+                                </div>
+                            </div>
+                            <div class="submit-section">
+                                <button class="btn btn-primary submit-btn">提交</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Add Event Modal -->
+
+        <!-- Add Event Modal -->
+        <div class="modal custom-modal fade none-border" id="my_event">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">添加事件</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body"></div>
+                    <div class="modal-footer justify-content-center">
+                        <button type="button" class="btn btn-success save-event submit-btn">创建事件</button>
+                        <button type="button" class="btn btn-danger delete-event submit-btn" data-dismiss="modal">删除</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Add Event Modal -->
+
+        <!-- Add Category Modal -->
+        <div class="modal custom-modal fade" id="add_new_event">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">添加事件</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label>事件名称</label>
+                                <input class="form-control form-white" placeholder="输入名称" type="text" name="category-name" />
+                            </div>
+                            <div class="form-group">
+                                <label>选择事件颜色</label>
+                                <select class="form-control form-white" data-placeholder="选择颜色" name="category-color">
+                                    <option value="success">绿色</option>
+                                    <option value="danger">红色</option>
+                                    <option value="info">蓝色</option>
+                                    <option value="primary">浅绿</option>
+                                    <option value="warning">橙色</option>
+                                    <option value="inverse">黑色</option>
+                                </select>
+                            </div>
+                            <div class="submit-section text-center">
+                                <button type="button" class="btn btn-primary save-category submit-btn" data-dismiss="modal">保存</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /Add Category Modal -->
+        </main>
+
+        <!-- START: Template JS-->
+        <script src="dist/vendors/jquery/jquery-3.3.1.min.js" th:src="@{/information/vendors/jquery/jquery-3.3.1.min.js}"></script>
+        <script src="dist/vendors/jquery-ui/jquery-ui.min.js" th:src="@{/information/vendors/jquery-ui/jquery-ui.min.js}"></script>
+        <script src="dist/vendors/moment/moment.js" th:src="@{/information/vendors/moment/moment.js}"></script>
+        <script src="dist/vendors/bootstrap/js/bootstrap.bundle.min.js" th:src="@{/information/vendors/bootstrap/js/bootstrap.bundle.min.js}"></script>
+        <script src="dist/vendors/slimscroll/jquery.slimscroll.min.js" th:src="@{/information/vendors/slimscroll/jquery.slimscroll.min.js}"></script>
+        <script src="dist/vendors/flag-select/js/jquery.flagstrap.min.js" th:src="@{/information/vendors/flag-select/js/jquery.flagstrap.min.js}"></script>
+        <!-- END: Template JS-->
+
+        <!-- START: APP JS-->
+        <script src="dist/vendors/sweetalert/sweetalert.min.js" th:src="@{/information/vendors/sweetalert/sweetalert.min.js}"></script>
+        <script src="dist/js/app.js" th:src="@{/information/js/app.js}"></script>
+        <!-- END: APP JS-->
+
+
+
+        <script type="text/javascript" src="js/jalendar.js" th:src="@{/event/js/fullcalendar.min.js}"></script>
+        <script type="text/javascript" src="js/jalendar.js" th:src="@{/event/js/jquery.fullcalendar.js}"></script>
+
+    </body>
+    <!-- END: Body-->
+</html>

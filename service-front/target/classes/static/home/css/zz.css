@@ -1,0 +1,874 @@
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100
+}
+
+.head-top, .head-top a, .head-top span {
+    color: #fff
+}
+
+.head-top {
+    background: #1e1b29;
+    height: 28px;
+    line-height: 28px
+}
+
+.head-top ul:nth-child(1) li:first-child a, .head-top a:hover {
+    color: cornflowerblue
+}
+
+.head-top ul:nth-child(1) li {
+    text-align: center;
+    margin: 0 10px
+}
+
+.head-top ul:nth-child(2) li {
+    position: relative;
+    text-align: center;
+    margin: 0 5px
+}
+
+.head-top ul:nth-child(2) li i {
+    margin-left: 3px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-width: 5px 5px 0;
+    border-color: #eee transparent transparent transparent;
+    border-style: solid dashed dashed dashed;
+    transition: all .5s ease
+}
+
+.head-top ul:nth-child(2) li:last-child:hover i {
+    transform: rotate(180deg)
+}
+
+.head-top ul:nth-child(2) li:last-child:hover .downlist {
+    display: block
+}
+
+.head-top ul {
+    float: left
+}
+
+.head-top ul:last-child {
+    float: right
+}
+
+.head-top .downlist {
+    display: none;
+    padding: 5px 0;
+    position: absolute;
+    top: 28px;
+    left: -10px;
+    width: 80px;
+    text-align: center;
+    border: 1px #f1f1f1 solid;
+    border-width: 0 1px 1px;
+    background: #fff
+}
+
+.head-top .downlist a {
+    display: block;
+    color: #333
+}
+
+.head-top .downlist a:hover {
+    color: #90a3ff
+}
+
+.head-content {
+    height: 80px;
+    border-bottom: 1px #eee solid;
+    background-color: rgba(255, 255, 255, .9)
+}
+
+.head-content .logo {
+    display: block;
+    margin-top: 15px;
+    float: left;
+    width: 100px;
+    height: 50px;
+    background: url(../img/logo.png) no-repeat
+}
+
+.head-content .nav {
+    margin-left: 0px;
+    height: 80px;
+    width: 100%
+}
+
+.nav a {
+    color: #333
+}
+
+.nav a:hover {
+    color: cornflowerblue
+}
+
+.head-content .nav-main {
+    float: left;
+    height: 100%
+}
+
+.nav-main li {
+    height: 100%;
+    line-height: 80px;
+    font-size: 16px;
+    padding: 0 30px
+}
+
+.nav-main li:first-child a {
+    color: cornflowerblue
+}
+
+.nav-main li:nth-child(4) {
+    position: relative;
+    margin-left: 30px
+}
+
+.nav-main li:nth-child(4):before {
+    content: "";
+    display: block;
+    margin-left: -16px;
+    position: absolute;
+    top: 32px;
+    left: 0;
+    width: 1px;
+    height: 16px;
+    background: #444
+}
+
+.head-content .login {
+    float: right;
+    margin-top: 20px;
+    display: none
+}
+
+.login li {
+    text-align: center
+}
+
+.login li:first-child a {
+    display: block;
+    height: 28px;
+    line-height: 28px;
+    font-size: 14px;
+    width: 84px;
+    border-radius: 2px;
+    background: cornflowerblue;
+    color: #fff
+}
+
+.login li:last-child a {
+    margin-left: 15px;
+    color: cornflowerblue
+}
+
+.body, .bg, .page {
+    width: 100%;
+    height: 100%
+}
+
+.page {
+    overflow: hidden
+}
+
+.body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 500ms ease
+}
+
+.sec0 video {
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    width: 1366px;
+    height: 768px;
+    top: -80px;
+    left: 0
+}
+
+.sec0 .mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #000;
+    opacity: .3;
+    z-index: 99
+}
+
+.sec0 .post {
+    background-image: url(../img/page0.jpg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover
+}
+
+.sec0 .view0 {
+    position: relative;
+    height: 100%;
+    z-index: 99
+}
+
+.sec0 .view0 > div {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 420px;
+    height: 200px;
+    margin-left: -195px;
+    margin-top: -40px
+}
+
+.sec0 video {
+    opacity: 0
+}
+
+.sec0 .view0 .gb {
+    background-image: url(../img/page0-1.jpg);
+    margin-bottom: 10px;
+    width: 420px;
+    height: 88px
+}
+
+.sec0 .login1 a {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: 0;
+    font-size: 14px;
+    line-height: 30px;
+    height: 30px;
+    width: 186px;
+    color: #fff;
+    border-width: 1px;
+    border-style: solid;
+    margin-right: 20px
+}
+
+.sec0 .login1 a:first-child {
+    background-color: #ff552e;
+    border: 0
+}
+
+.sec0 .login1 a:first-child:hover {
+    background-color: cornflowerblue
+}
+
+.sec0 .view0 > div > a {
+    display: block;
+    height: 36px;
+    width: 36px;
+    line-height: 36px;
+    font-size: 34px;
+    text-decoration: none;
+    color: #fff;
+    bottom: 130px;
+    right: -40px;
+    position: absolute;
+    z-index: 99;
+    font-family: fonts
+}
+
+.sec1 {
+    overflow: hidden;
+    position: relative;
+    z-index: 3
+}
+
+.sec1 .bg {
+    background-image: url(../img/page1.jpg);
+    background-position: center center;
+    background-size: cover
+}
+
+.view1 {
+    height: 100%;
+    position: relative
+}
+
+.view1 .words {
+    position: absolute;
+    top: 30%;
+    left: 25%;
+    width: 315px
+}
+
+.view1 .php {
+    position: absolute;
+    width: 800px;
+    bottom: -50px;
+    right: -15%;
+    z-index: 10
+}
+
+.view1 .yun {
+    position: absolute;
+    width: 600px;
+    right: 10%;
+    top: 10%
+}
+
+.view1 .yun1 {
+    position: absolute;
+    width: 400px;
+    right: -5%;
+    top: 5%
+}
+
+.view1 .yun2 {
+    position: absolute;
+    width: 224px;
+    left: 5%;
+    top: 150px;
+    z-index: 1
+}
+
+.fix-bot {
+    height: 60px;
+    overflow: hidden;
+    z-index: 101;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, .3)
+}
+
+.fix-content {
+    padding-top: 12px;
+    margin-left: 40px
+}
+
+.tips {
+    position: relative;
+    padding-left: 12px;
+    margin-left: 42px
+}
+
+.tips p {
+    font-size: 16px;
+    color: #fff
+}
+
+.tips span {
+    color: #fff;
+    margin-top: 5px
+}
+
+.fix-content .tips:before {
+    content: '';
+    display: block;
+    background-color: #b5b5b5;
+    position: absolute;
+    height: 90%;
+    width: 1px;
+    top: 1px;
+    left: -1px
+}
+
+.fix-bot .fix-content i {
+    font-family: fonts;
+    font-size: 32px;
+    color: #fff;
+    float: left;
+    display: block;
+    font-style: normal;
+    height: 32px;
+    width: 32px;
+    line-height: 32px;
+    text-align: center
+}
+
+.sec2 .bg {
+    background-image: url(../img/page2.jpg)
+}
+
+.view2 {
+    height: 100%
+}
+
+.sec2 .words {
+    position: absolute;
+    top: 29%;
+    left: 50%;
+    width: 345px
+}
+
+.sec2 .phone {
+    position: absolute;
+    top: -100px;
+    left: 2%;
+    z-index: 2;
+    width: 420px;
+    opacity: 0
+}
+
+.sec2 .leg {
+    position: absolute;
+    width: 1300px;
+    top: 300px;
+    left: 12%;
+    z-index: 1;
+    opacity: 0
+}
+
+.sec2 .fix-content {
+    display: inline-block
+}
+
+.sec2 .fix-content:nth-child(2) {
+    margin-left: 250px
+}
+
+.sec2 .fix-content:nth-child(3) {
+    margin-left: 250px
+}
+
+.sec3 .bg {
+    background-image: url(../img/page3.jpg)
+}
+
+.view3 {
+    height: 100%
+}
+
+.view3 .words {
+    position: absolute;
+    top: 30%;
+    left: 13%;
+    width: 355px
+}
+
+.sec3 .fix-content {
+    display: inline-block
+}
+
+.sec3 .fix-content:nth-child(2) {
+    margin-left: 240px
+}
+
+.sec3 .fix-content:nth-child(3) {
+    margin-left: 191px
+}
+
+.sec4 .bg {
+    background-image: url(../img/page4.jpg)
+}
+
+.view4 {
+    height: 100%
+}
+
+.view4 .words {
+    position: absolute;
+    top: 30%;
+    right: 18%;
+    width: 300px
+}
+
+.sec4 .fix-content {
+    display: inline-block;
+    width: 240px
+}
+
+.sec4 .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #2d0e0e;
+    opacity: 0
+}
+
+.sec5 .bg {
+    background-image: url(../img/page5.jpg)
+}
+
+.view5 {
+    height: 100%
+}
+
+.view5 .words {
+    position: absolute;
+    top: 30%;
+    left: 100px;
+    width: 300px
+}
+
+.sec5 .fix-content {
+    display: inline-block;
+    width: 240px
+}
+
+.sec6 .view6 {
+    height: 100%;
+    z-index: 99;
+    position: relative
+}
+
+.sec6 .wite {
+    height: 70%;
+    min-height: 430px;
+    background-color: #f5f5f5;
+    z-index: 2
+}
+
+.sec6 .black {
+    height: 30%;
+    background-color: #1e1b29
+}
+
+.sec6 .top-view {
+    height: 70%;
+    min-height: 430px
+}
+
+.sec6 .bot-view {
+    height: 30%
+}
+
+.sec6 .icon {
+    font-family: fonts;
+    text-align: center;
+    line-height: 36px;
+    font-size: 36px;
+    font-style: normal;
+    float: left;
+    display: block;
+    height: 36px;
+    width: 36px
+}
+
+.sec6 .top-view-t {
+    padding-top: 150px;
+    padding-bottom: 40px;
+    z-index: 4
+}
+
+.top-view-t .buy:first-child i {
+    color: #ffb400
+}
+
+.top-view-t .buy:nth-child(2) i {
+    color: #47a8ef
+}
+
+.top-view-t .buy:nth-child(3) i {
+    color: #f60
+}
+
+.top-view-t .buy:nth-child(4) i {
+    color: #47a8ef
+}
+
+.sec6 .buy {
+    float: left;
+    width: 25%
+}
+
+.buy span {
+    display: inline-block;
+    height: 36px;
+    line-height: 36px;
+    font-size: 14px;
+    margin-left: 15px
+}
+
+.buy p {
+    margin-top: 4px
+}
+
+.buy p a {
+    font-size: 14px;
+    color: #999
+}
+
+.top-view a:hover {
+    text-decoration: underline
+}
+
+.top-view-b {
+    padding-top: 40px;
+    border-top: 1px solid #eee
+}
+
+.top-view-b .about {
+    float: left;
+    width: 25%
+}
+
+.top-view-b a {
+    color: #999
+}
+
+.top-view-b p {
+    margin-bottom: 10px;
+    color: #999
+}
+
+.top-view-b span.xian {
+    background: #999;
+    display: inline-block;
+    width: 1px;
+    height: 12px
+}
+
+.top-view-b span.gg {
+    color: #666
+}
+
+.top-view-b .about:nth-child(4) {
+    position: relative
+}
+
+.top-view-b .about:nth-child(4) img {
+    position: absolute;
+    top: 0;
+    right: 0
+}
+
+.top-view-b .about:nth-child(4) a {
+    padding: 2px 15px;
+    background: #959595;
+    color: #fff
+}
+
+.top-view-b .about:nth-child(4) a:hover {
+    text-decoration: none
+}
+
+.bot-view {
+    padding-top: 30px
+}
+
+.bot-view p {
+    margin-top: 10px
+}
+
+.bot-view p a, .bot-view p span {
+    color: #959595
+}
+
+.ch-page {
+    position: absolute;
+    right: 4%;
+    top: 50%;
+    z-index: 99
+}
+
+.ch-page li {
+    display: block;
+    margin-top: 15px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #ccc
+}
+
+.ch-page .add {
+    background: #ED2553
+}
+
+.next {
+    position: absolute;
+    left: 50%;
+    bottom: 80px;
+    width: 40px;
+    height: 40px;
+    display: block;
+    text-align: center;
+    font-family: fonts;
+    font-size: 36px;
+    color: #fff;
+    z-index: 100
+}
+
+.count.sec1 .bg {
+    animation: bgChange 3s ease
+}
+
+.count .words {
+    animation: word 3s 1.5s ease both
+}
+
+.count .phone {
+    animation: phoChange .8s .5s ease both;
+    -webkit-animation: phoChange .8s .5s ease both
+}
+
+.count .leg {
+    -webkit-animation: legChange .5s ease both;
+    animation: legChange .5s ease both
+}
+
+.count.sec3 .bg {
+    -webkit-animation: bg3Change 10s ease both;
+    -o-animation: bg3Change 10s ease both;
+    animation: bg3Change 10s ease both
+}
+
+.count.sec4 .bg {
+    -webkit-animation: bg4Change 8s ease both;
+    -o-animation: bg4Change 8s ease both;
+    animation: bg4Change 8s ease both
+}
+
+.count.sec4 .mask {
+    -webkit-animation: maskChange 2s ease both;
+    -o-animation: maskChange 2s ease both;
+    animation: maskChange 2s ease both
+}
+
+.count.sec5 .bg {
+    -webkit-animation: bg5Change 15s ease both;
+    -o-animation: bg5Change 15s ease both;
+    animation: bg5Change 15s ease both
+}
+
+
+.container {
+    /*position: absolute;*/
+    /*margin: auto;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    bottom: 0;
+    width: 300px;
+    height: 100px;
+    overflow: hidden;
+    z-index: 9999;
+    position: fixed;
+    padding: 5px;
+    text-align: center;
+    right: 0;
+    top: 100px;
+}
+
+.container .search {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 80px;
+    background: cornflowerblue;
+    border-radius: 50%;
+    transition: all 1s;
+    z-index: 4;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+}
+
+.container .search:hover {
+    cursor: pointer;
+}
+
+.container .search::before {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: 22px;
+    right: 0;
+    bottom: 0;
+    left: 22px;
+    width: 12px;
+    height: 2px;
+    background: white;
+    transform: rotate(45deg);
+    transition: all .5s;
+}
+
+.container .search::after {
+    content: "";
+    position: absolute;
+    margin: auto;
+    top: -5px;
+    right: 0;
+    bottom: 0;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid white;
+    transition: all .5s;
+}
+
+.container input {
+    font-family: 'Inconsolata', monospace;
+    position: absolute;
+    margin: auto;
+    top: 10px;
+    right: 10px;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    outline: none;
+    border: none;
+    background: cornflowerblue;
+    color: white;
+    text-shadow: 0 0 10px cornflowerblue;
+    padding: 0 80px 0 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 25px 0 cornflowerblue, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+    transition: all 1s;
+    opacity: 0;
+    z-index: 5;
+    font-weight: bolder;
+    letter-spacing: 0.1em;
+}
+
+.container input:hover {
+    cursor: pointer;
+}
+
+.container input:focus {
+    width: 300px;
+    opacity: 1;
+    cursor: text;
+}
+
+.container input:focus ~ .search {
+    right: -250px;
+    background: #151515;
+    z-index: 6;
+}
+
+.container input:focus ~ .search::before {
+    top: 0;
+    left: 0;
+    width: 25px;
+}
+
+.container input:focus ~ .search::after {
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 2px;
+    border: none;
+    background: white;
+    border-radius: 0%;
+    transform: rotate(-45deg);
+}
+
+.container input::placeholder {
+    color: white;
+    opacity: 0.5;
+    font-weight: bolder;
+}

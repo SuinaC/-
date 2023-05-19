@@ -1,0 +1,64 @@
+server:
+  port: 8010
+
+mybatis:
+  mapperLocations: classpath:com/jia/mapper/*.xml
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+    scan-packages: com.jia.utils
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cmos
+    username: root
+    password: root
+  application:
+    name: front-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8858
+
+  redis:
+    database: 1
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    jedis:
+      pool:
+        max-active: 50
+        max-wait: 3000
+        max-idle: 20
+        min-idle: 2
+    timeout: 20000
+
+  multipart:
+    #上传文件总的最大值
+    max-request-size: 10MB
+    #上传文件的最大值
+    max-file-size: 10MB
+  mvc:
+    static-path-pattern=/static/**
+  thymeleaf:
+    cache: false
+    check-template: true
+    check-template-location: true
+    #开启MVC thymeleaf 视图解析
+    enabled: true
+    encoding: utf-8
+    mode: HTML5
+    prefix: classpath:/templates/
+    suffix: .html
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/
+      exclude: static
+
+file:
+  upload:
+    path: /Applications/work/bishe/CooperativeMedical/cmms/service-front/src/main/resources/static/images/
+    path.relative: /images/**
+

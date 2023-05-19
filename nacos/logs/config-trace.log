@@ -1,0 +1,15 @@
+2023-03-10 15:15:19,511|172.20.10.4|bookservice|DEFAULT_GROUP|null|unknown|-1|pull|not-found|-1|127.0.0.1
+2023-03-10 15:15:19,540|172.20.10.4|bookservice.yml|DEFAULT_GROUP|null|unknown|-1|pull|not-found|-1|127.0.0.1
+2023-03-10 15:15:19,557|172.20.10.4|bookservice-dev.yml|DEFAULT_GROUP|null|unknown|1678182828188|pull|ok|249691369|127.0.0.1
+2023-03-10 15:15:20,727|172.20.10.4|bookservice|DEFAULT_GROUP|null|unknown|-1|pull|not-found|-1|127.0.0.1
+2023-03-10 15:15:20,735|172.20.10.4|bookservice.yml|DEFAULT_GROUP|null|unknown|-1|pull|not-found|-1|127.0.0.1
+2023-03-10 15:15:20,740|172.20.10.4|bookservice-dev.yml|DEFAULT_GROUP|null|unknown|1678182828188|pull|ok|249692552|127.0.0.1
+2023-03-10 15:16:59,330|172.20.10.4|userservice|DEFAULT_GROUP|null|unknown|-1|pull|not-found|-1|127.0.0.1
+2023-03-10 15:16:59,349|172.20.10.4|userservice.yml|DEFAULT_GROUP|null|unknown|-1|pull|not-found|-1|127.0.0.1
+2023-03-10 15:16:59,357|172.20.10.4|userservice-dev.yml|DEFAULT_GROUP|null|unknown|1678182807084|pull|ok|249812273|127.0.0.1
+2023-03-10 15:17:00,411|172.20.10.4|userservice|DEFAULT_GROUP|null|unknown|-1|pull|not-found|-1|127.0.0.1
+2023-03-10 15:17:00,427|172.20.10.4|userservice.yml|DEFAULT_GROUP|null|unknown|-1|pull|not-found|-1|127.0.0.1
+2023-03-10 15:17:00,432|172.20.10.4|userservice-dev.yml|DEFAULT_GROUP|null|unknown|1678182807084|pull|ok|249813348|127.0.0.1
+2023-03-10 15:17:03,427|172.20.10.4|borrowservice|DEFAULT_GROUP|null|unknown|-1|pull|not-found|-1|127.0.0.1
+2023-03-10 15:17:03,433|172.20.10.4|borrowservice.yml|DEFAULT_GROUP|null|unknown|-1|pull|not-found|-1|127.0.0.1
+2023-03-10 15:17:03,437|172.20.10.4|borrowservice-dev.yml|DEFAULT_GROUP|null|unknown|1678182850105|pull|ok|249773332|127.0.0.1

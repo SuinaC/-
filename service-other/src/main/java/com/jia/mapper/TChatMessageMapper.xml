@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jia.mapper.TChatMessageMapper" >
+  <resultMap id="BaseResultMap" type="com.jia.entity.TChatMessage" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="consumer_id" property="consumerId" jdbcType="BIGINT" />
+    <result column="doctor_id" property="doctorId" jdbcType="BIGINT" />
+    <result column="from_id" property="fromId" jdbcType="BIGINT" />
+    <result column="to_id" property="toId" jdbcType="BIGINT" />
+    <result column="message" property="message" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMap" type="com.jia.entity.TChatMessage" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="consumer_id" property="consumerId" jdbcType="BIGINT" />
+    <result column="doctor_id" property="doctorId" jdbcType="BIGINT" />
+    <result column="from_id" property="fromId" jdbcType="BIGINT" />
+    <result column="to_id" property="toId" jdbcType="BIGINT" />
+    <result column="message" property="message" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+    <collection property="tConsumer" ofType="com.jia.entity.TConsumer" javaType="com.jia.entity.TConsumer">
+      <id column="c_id" property="id" jdbcType="BIGINT" />
+      <result column="c_name" property="name" jdbcType="VARCHAR" />
+      <result column="c_address" property="address" jdbcType="VARCHAR" />
+      <result column="c_img" property="img" jdbcType="VARCHAR" />
+      <result column="c_phone" property="phone" jdbcType="BIGINT" />
+      <result column="c_email" property="email" jdbcType="VARCHAR" />
+      <result column="c_id_card" property="idCard" jdbcType="VARCHAR" />
+      <result column="c_native_place" property="nativePlace" jdbcType="VARCHAR" />
+    </collection>
+    <collection property="tDoctor" ofType="com.jia.entity.TDoctor" javaType="com.jia.entity.TDoctor">
+      <id column="d_id" property="id" jdbcType="BIGINT"/>
+      <result column="d_name" property="name" jdbcType="VARCHAR"/>
+      <result column="d_department" property="department" jdbcType="VARCHAR"/>
+      <result column="d_title" property="title" jdbcType="VARCHAR"/>
+      <result column="d_address" property="address" jdbcType="VARCHAR"/>
+      <result column="d_img" property="img" jdbcType="VARCHAR"/>
+      <result column="d_email" property="email" jdbcType="VARCHAR"/>
+      <result column="d_evaluate" property="evaluate" jdbcType="VARCHAR"/>
+      <result column="d_evaluate_sum" property="evaluateSum" jdbcType="VARCHAR"/>
+    </collection>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, consumer_id, doctor_id, from_id, to_id, message,status, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.jia.entity.TChatMessageExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_chat_message
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByFromConsumerIdAndDoctorId" resultMap="ResultMap" >
+    SELECT t_chat_message.id,t_chat_message.consumer_id,t_chat_message.doctor_id,t_chat_message.from_id,
+           t_chat_message.to_id,t_chat_message.message,t_chat_message.gmt_create,t_chat_message.gmt_modified,
+           t_consumer.name AS c_name,t_consumer.address AS c_name,t_consumer.img AS c_img,t_doctor.address AS d_address,
+           t_doctor.img AS d_img,t_doctor.name AS d_name,t_chat_message.status
+    FROM t_chat_message
+           RIGHT JOIN t_doctor ON t_doctor.id = t_chat_message.doctor_id
+           LEFT JOIN t_consumer ON t_chat_message.consumer_id = t_consumer.id
+    WHERE  t_consumer.id = #{consumerId,jdbcType=BIGINT}
+    AND t_doctor.id = #{doctorId,jdbcType=BIGINT}
+  </select>
+  <select id="selectByConsumerIdAndDoctorId" resultMap="ResultMap" >
+    SELECT t_chat_message.id,t_chat_message.consumer_id,t_chat_message.doctor_id,t_chat_message.from_id,
+           t_chat_message.to_id,t_chat_message.message,t_chat_message.gmt_create,t_chat_message.gmt_modified,
+           t_consumer.name AS c_name,t_consumer.address AS c_name,t_consumer.img AS c_img,t_doctor.address AS d_address,
+           t_doctor.img AS d_img,t_doctor.name AS d_name,t_chat_message.status
+    FROM t_chat_message
+           RIGHT JOIN t_doctor ON t_doctor.id = t_chat_message.doctor_id
+           LEFT JOIN t_consumer ON t_chat_message.consumer_id = t_consumer.id
+    WHERE  t_consumer.id = #{consumerId,jdbcType=BIGINT}
+      AND t_doctor.id = #{doctorId,jdbcType=BIGINT}
+  </select>
+  <select id="selectByFromDoctorIdAndConsumerId" resultMap="ResultMap" >
+    SELECT t_chat_message.id,t_chat_message.consumer_id,t_chat_message.doctor_id,t_chat_message.from_id,
+           t_chat_message.to_id,t_chat_message.message,t_chat_message.gmt_create,t_chat_message.gmt_modified,
+           t_consumer.name AS c_name,t_consumer.address AS c_name,t_consumer.img AS c_img,t_doctor.address AS d_address,
+           t_doctor.img AS d_img,t_doctor.name AS d_name,t_chat_message.status
+    FROM t_chat_message
+           RIGHT JOIN t_doctor ON t_doctor.id = t_chat_message.doctor_id
+           LEFT JOIN t_consumer ON t_chat_message.consumer_id = t_consumer.id
+    WHERE  t_consumer.id = #{consumerId,jdbcType=BIGINT}
+      AND t_doctor.id = #{doctorId,jdbcType=BIGINT}
+  </select>
+  <select id="selectByDoctorIdAndStatus" resultMap="ResultMap" >
+    SELECT t_chat_message.id,t_chat_message.consumer_id,t_chat_message.doctor_id,t_chat_message.from_id,
+           t_chat_message.to_id,t_chat_message.message,t_chat_message.gmt_create,t_chat_message.gmt_modified,
+           t_consumer.name AS c_name,t_consumer.address AS c_name,t_consumer.img AS c_img,t_doctor.address AS d_address,
+           t_doctor.img AS d_img,t_doctor.name AS d_name,t_chat_message.status
+    FROM t_chat_message
+           RIGHT JOIN t_doctor ON t_doctor.id = t_chat_message.doctor_id
+           LEFT JOIN t_consumer ON t_chat_message.consumer_id = t_consumer.id
+    WHERE t_chat_message.status = 0
+      AND t_doctor.id = #{doctorId,jdbcType=BIGINT}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_chat_message
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_chat_message
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.jia.entity.TChatMessageExample" >
+    delete from t_chat_message
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.jia.entity.TChatMessage" >
+    insert into t_chat_message (id, consumer_id, doctor_id, 
+      from_id, to_id, message, status,
+      gmt_create, gmt_modified)
+    values (#{id,jdbcType=BIGINT}, #{consumerId,jdbcType=BIGINT}, #{doctorId,jdbcType=BIGINT}, 
+      #{fromId,jdbcType=BIGINT}, #{toId,jdbcType=BIGINT}, #{message,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER},
+      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jia.entity.TChatMessage" >
+    insert into t_chat_message
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="consumerId != null" >
+        consumer_id,
+      </if>
+      <if test="doctorId != null" >
+        doctor_id,
+      </if>
+      <if test="fromId != null" >
+        from_id,
+      </if>
+      <if test="toId != null" >
+        to_id,
+      </if>
+      <if test="message != null" >
+        message,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create,
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="consumerId != null" >
+        #{consumerId,jdbcType=BIGINT},
+      </if>
+      <if test="doctorId != null" >
+        #{doctorId,jdbcType=BIGINT},
+      </if>
+      <if test="fromId != null" >
+        #{fromId,jdbcType=BIGINT},
+      </if>
+      <if test="toId != null" >
+        #{toId,jdbcType=BIGINT},
+      </if>
+      <if test="message != null" >
+        #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null" >
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.jia.entity.TChatMessageExample" resultType="java.lang.Integer" >
+    select count(*) from t_chat_message
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update t_chat_message
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.consumerId != null" >
+        consumer_id = #{record.consumerId,jdbcType=BIGINT},
+      </if>
+      <if test="record.doctorId != null" >
+        doctor_id = #{record.doctorId,jdbcType=BIGINT},
+      </if>
+      <if test="record.fromId != null" >
+        from_id = #{record.fromId,jdbcType=BIGINT},
+      </if>
+      <if test="record.toId != null" >
+        to_id = #{record.toId,jdbcType=BIGINT},
+      </if>
+      <if test="record.message != null" >
+        message = #{record.message,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.gmtCreate != null" >
+        gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gmtModified != null" >
+        gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update t_chat_message
+    set id = #{record.id,jdbcType=BIGINT},
+      consumer_id = #{record.consumerId,jdbcType=BIGINT},
+      doctor_id = #{record.doctorId,jdbcType=BIGINT},
+      from_id = #{record.fromId,jdbcType=BIGINT},
+      to_id = #{record.toId,jdbcType=BIGINT},
+      message = #{record.message,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER},
+      gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jia.entity.TChatMessage" >
+    update t_chat_message
+    <set >
+      <if test="consumerId != null" >
+        consumer_id = #{consumerId,jdbcType=BIGINT},
+      </if>
+      <if test="doctorId != null" >
+        doctor_id = #{doctorId,jdbcType=BIGINT},
+      </if>
+      <if test="fromId != null" >
+        from_id = #{fromId,jdbcType=BIGINT},
+      </if>
+      <if test="toId != null" >
+        to_id = #{toId,jdbcType=BIGINT},
+      </if>
+      <if test="message != null" >
+        message = #{message,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jia.entity.TChatMessage" >
+    update t_chat_message
+    set consumer_id = #{consumerId,jdbcType=BIGINT},
+      doctor_id = #{doctorId,jdbcType=BIGINT},
+      from_id = #{fromId,jdbcType=BIGINT},
+      to_id = #{toId,jdbcType=BIGINT},
+      message = #{message,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

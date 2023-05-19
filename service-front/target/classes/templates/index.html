@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎界面</title>
+    <!--响应式框架-->
+    <link rel='stylesheet' href='css/bootstrap.min.css' th:href="@{/index/css/bootstrap.min.css}">
+    <!--图标库-->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css'>
+    <!--主要样式-->
+    <link rel="stylesheet" href="css/style.css" th:href="@{/index/css/style.css}">
+
+</head>
+<body>
+
+<main class="site-wrapper">
+
+    <div class="pt-table desktop-768">
+
+        <div class="pt-tablecell page-home relative"
+             style="background-image: url(p.jpg);background-position:center;background-size: cover;">
+
+            <div class="overlay"></div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                        <div class="page-title  home text-center">
+                                <span class="heading-page">
+                                    欢迎访问主页
+                                </span>
+                            <!--                            <p class="mt20"></p>-->
+                        </div>
+
+                        <div class="hexagon-menu clear">
+                            <div class="hexagon-item">
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <a href="/consumer/login" class="hex-content">
+                                        <span class="hex-content-inner">
+                                            <span class="icon">
+                                                <i class="fa fa-universal-access"></i>
+                                            </span>
+                                            <span class="title">登录注册</span>
+                                        </span>
+                                    <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
+                                              fill="#1e2530"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="hexagon-item">
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <a href="/home/home" class="hex-content">
+                                        <span class="hex-content-inner">
+                                            <span class="icon">
+                                                <i class="fa fa-bullseye"></i>
+                                            </span>
+                                            <span class="title">首页</span>
+                                        </span>
+                                    <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
+                                              fill="#1e2530"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="hexagon-item">
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <a href="" class="hex-content">
+                                        <span class="hex-content-inner">
+                                            <span class="icon">
+                                                <i class="fa fa-braille"></i>
+                                            </span>
+                                            <span class="title">网站指南</span>
+                                        </span>
+                                    <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
+                                              fill="#1e2530"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="hexagon-item">
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <a th:href="@{/consumerOrder/touristOrder}" class="hex-content">
+                                        <span class="hex-content-inner">
+                                            <span class="icon">
+                                                <i class="fa fa-id-badge"></i>
+                                            </span>
+                                            <span class="title">门诊预约</span>
+                                        </span>
+                                    <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
+                                              fill="#1e2530"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="hexagon-item">
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <a href="/consumer/login" class="hex-content">
+                                        <span class="hex-content-inner">
+                                            <span class="icon">
+                                                <i class="fa fa-life-ring"></i>
+                                            </span>
+                                            <span class="title">体检预约</span>
+                                        </span>
+                                    <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
+                                              fill="#1e2530"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="hexagon-item">
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <a href="/medicalShop/home" class="hex-content">
+                                        <span class="hex-content-inner">
+                                            <span class="icon">
+                                                <i class="fa fa-clipboard"></i>
+                                            </span>
+                                            <span class="title">药品商城</span>
+                                        </span>
+                                    <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
+                                              fill="#1e2530"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="hexagon-item">
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="hex-item">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <a href="/consumer/login" class="hex-content">
+                                        <span class="hex-content-inner">
+                                            <span class="icon">
+                                                <i class="fa fa-map-signs"></i>
+                                            </span>
+                                            <span class="title">关于我们</span>
+                                        </span>
+                                    <svg viewBox="0 0 173.20508075688772 200" height="200" width="174" version="1.1"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z"
+                                              fill="#1e2530"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+</body>
+</html>

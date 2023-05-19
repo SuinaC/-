@@ -1,0 +1,6 @@
+2023-04-29 16:20:20,095 INFO [dump-all-ok] userservice-dev.yml+DEFAULT_GROUP, 1678182807084, length=227, md5=356a7c6ae8e6b488181799364ff7026a
+
+2023-04-29 16:20:20,095 INFO [dump-all-ok] bookservice-dev.yml+DEFAULT_GROUP, 1678182828188, length=227, md5=356a7c6ae8e6b488181799364ff7026a
+
+2023-04-29 16:20:20,095 INFO [dump-all-ok] borrowservice-dev.yml+DEFAULT_GROUP, 1678182850105, length=227, md5=356a7c6ae8e6b488181799364ff7026a
+

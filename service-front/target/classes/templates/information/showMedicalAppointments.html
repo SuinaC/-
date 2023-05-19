@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- START: Head-->
+<head>
+    <meta charset="UTF-8">
+    <title>体检预约</title>
+    <link rel="shortcut icon" href="dist/images/favicon.ico" th:href="@{/information/images/favicon.ico}"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- START: Template CSS-->
+    <link rel="stylesheet" href="dist/vendors/bootstrap/css/bootstrap.min.css"
+          th:href="@{/information/vendors/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="dist/vendors/jquery-ui/jquery-ui.min.css"
+          th:href="@{/information/vendors/jquery-ui/jquery-ui.min.css}">
+    <link rel="stylesheet" href="dist/vendors/jquery-ui/jquery-ui.theme.min.css"
+          th:href="@{/information/vendors/jquery-ui/jquery-ui.theme.min.css}">
+    <link rel="stylesheet" href="dist/vendors/simple-line-icons/css/simple-line-icons.css"
+          th:href="@{/information/vendors/simple-line-icons/css/simple-line-icons.css}">
+    <link rel="stylesheet" href="dist/vendors/flags-icon/css/flag-icon.min.css"
+          th:href="@{/information/vendors/flags-icon/css/flag-icon.min.css}">
+    <link rel="stylesheet" href="dist/vendors/flag-select/css/flags.css"
+          th:href="@{/information/vendors/flag-select/css/flags.css}">
+    <!-- END Template CSS-->
+
+    <!-- START: Page CSS-->
+    <link rel="stylesheet" href="dist/vendors/chartjs/Chart.min.css"
+          th:href="@{/information/vendors/chartjs/Chart.min.css}">
+    <link rel="stylesheet" href="dist/vendors/icofont/icofont.min.css"
+          th:href="@{/information/vendors/icofont/icofont.min.css}">
+    <!-- END: Page CSS-->
+
+    <!-- START: Page CSS-->
+    <link rel="stylesheet" href="dist/vendors/morris/morris.css" th:href="@{/information/vendors/morris/morris.css}">
+    <link rel="stylesheet" href="dist/vendors/weather-icons/css/pe-icon-set-weather.min.css"
+          th:href="@{/information/vendors/weather-icons/css/pe-icon-set-weather.min.css}">
+    <link rel="stylesheet" href="dist/vendors/chartjs/Chart.min.css"
+          th:href="@{/information/vendors/chartjs/Chart.min.css}">
+    <link rel="stylesheet" href="dist/vendors/starrr/starrr.css" th:href="@{/information/vendors/starrr/starrr.css}">
+    <link rel="stylesheet" href="dist/vendors/fontawesome/css/all.min.css"
+          th:href="@{/information/vendors/fontawesome/css/all.min.css}">
+    <link rel="stylesheet" href="dist/vendors/ionicons/css/ionicons.min.css"
+          th:href="@{/information/vendors/ionicons/css/ionicons.min.css}">
+    <link rel="stylesheet" href="dist/vendors/jquery-jvectormap/jquery-jvectormap-2.0.3.css"
+          th:href="@{/information/vendors/jquery-jvectormap/jquery-jvectormap-2.0.3.css}">
+    <!-- END: Page CSS-->
+
+    <!-- START: Custom CSS-->
+    <link rel="stylesheet" href="dist/css/main.css" th:href="@{/information/css/main.css}">
+    <!-- END: Custom CSS-->
+    <!--    <link href="./assets/bootstrap/css/bootstrap.css" th:href="@{/calendar/assets/bootstrap/css/bootstrap.css}" rel="stylesheet">-->
+    <link href="./src/gm-date-selector.css" th:href="@{/calendar/src/gm-date-selector.css}" rel="stylesheet"/>
+</head>
+<!-- END Head-->
+
+<!-- START: Body-->
+<body id="main-container" class="default">
+
+<!-- START: Pre Loader-->
+<div class="se-pre-con">
+    <img src="dist/images/logo.png" th:src="@{/information/images/logo.png}" alt="logo" width="23" class="img-fluid"/>
+</div>
+<!-- END: Pre Loader-->
+
+<!-- START: Header-->
+<div id="header-fix" class="header fixed-top">
+    <nav class="navbar navbar-expand-lg  p-0">
+        <div class="navbar-header h4 mb-0 align-self-center logo-bar text-center">
+            <a href="index.html" class="horizontal-logo text-center">
+                <span class="h3 align-self-center mb-0 ">体检预约</span>
+            </a>
+        </div>
+        <div class="navbar-header h4 mb-0 text-center h-100 collapse-menu-bar">
+            <a href="#" class="sidebarCollapse" id="collapse"><i class="icon-menu body-color"></i></a>
+        </div>
+
+        <form class="float-left d-none d-lg-block search-form">
+            <div class="form-group mb-0 position-relative">
+                <input type="text" class="form-control border-0 rounded bg-search pl-5"
+                       placeholder="请输入病症">
+                <div class="btn-search position-absolute top-0">
+                    <a th:onclick="'javascript:searchDisease('+${tConsumer.id}+')'"><i
+                            class="h5 icon-magnifier body-color"></i></a>
+                </div>
+                <a href="#" class="position-absolute close-button mobilesearch d-lg-none" data-toggle="dropdown"
+                   aria-expanded="false"><i class="icon-close h5"></i>
+                </a>
+
+            </div>
+        </form>
+        <div class="navbar-right ml-auto h-100">
+            <ul class="ml-auto p-0 m-0 list-unstyled d-flex top-icon h-100">
+                <li class="d-inline-block align-self-center  d-block d-lg-none">
+                    <a href="#" class="nav-link mobilesearch" data-toggle="dropdown" aria-expanded="false"><i
+                            class="icon-magnifier h4"></i>
+                    </a>
+                </li>
+                <li class="dropdown user-profile align-self-center d-inline-block">
+                    <a href="#" class="nav-link py-0" data-toggle="dropdown" aria-expanded="false">
+                        <div class="media">
+                            <img src="dist/images/author.jpg" th:src="@{${tConsumer.img}}" alt=""
+                                 class="d-flex img-fluid rounded-circle" width="29">
+                        </div>
+                    </a>
+
+                    <div class="dropdown-menu  dropdown-menu-right p-0">
+                        <a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}"
+                           class="dropdown-item px-2 align-self-center d-flex">
+                            <span class="icon-pencil mr-2 h6 mb-0"></span> 编辑个人资料</a>
+                        <a th:href="@{/consumerInformation/information(id=${tConsumer.id})}"
+                           class="dropdown-item px-2 align-self-center d-flex">
+                            <span class="icon-user mr-2 h6 mb-0"></span> 查看资料</a>
+                        <div class="dropdown-divider"></div>
+
+                        <div class="dropdown-divider"></div>
+                        <a href="/consumer/login" class="dropdown-item px-2 text-danger align-self-center d-flex">
+                            <span class="icon-logout mr-2 h6  mb-0"></span>登出</a>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</div>
+<!-- END: Header-->
+
+<!-- START: Main Menu-->
+<div class="sidebar">
+    <div class="media d-block text-center user-profile">
+        <img class="img-fluid" src="dist/images/author1.jpg" style="width: 100px; hight:100px"
+             th:src="@{${tConsumer.img}}" alt="">
+        <div class="media-body text-center mt-0 color-primary mt-2">
+            <a href="#" class="nav-link py-0" data-toggle="dropdown" aria-expanded="false">
+                <h6 class="mb-0 font-weight-bold" th:text="${tConsumer.name}">姓名</h6>
+                <p th:text="${tConsumer.nativePlace}"></p>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right p-0" style="">
+                <a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}"
+                   class="dropdown-item px-2 align-self-center d-flex">
+                    <span class="icon-pencil mr-2 h6 mb-0"></span> 编辑个人资料</a>
+                <a th:href="@{/consumerInformation/information(id=${tConsumer.id})}"
+                   class="dropdown-item px-2 align-self-center d-flex">
+                    <span class="icon-user mr-2 h6 mb-0"></span> 查看资料</a>
+                <div class="dropdown-divider"></div>
+
+                <div class="dropdown-divider"></div>
+                <a href="/consumer/login" class="dropdown-item px-2 text-danger align-self-center d-flex">
+                    <span class="icon-logout mr-2 h6  mb-0"></span> 登出</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- START: Menu-->
+    <ul id="side-menu" class="sidebar-menu">
+        <li class="dropdown active"><a href="#">首页</a>
+            <ul>
+                <li class="active"><a href="index.html" th:href="@{/consumerInformation/index(id=${tConsumer.id})}"><i
+                        class="icon-rocket"></i> 首页</a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="#">应用</a>
+            <ul>
+                <li><a th:href="@{/consumerInformation/calendar(id=${tConsumer.id})}"><i class="icon-calendar"></i>
+                    日历备忘录</a></li>
+
+                <li class="dropdown"><a href="#"><i class="icon-envelope"></i>邮箱</a>
+                    <ul class="sub-menu">
+                        <li><a th:href="@{/mailInbox/mail(id=${tConsumer.id})}"><i class="icon-envelope"></i> 收件箱</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a th:href="@{/consumerOrder/consumerOrder(id=${tConsumer.id})}"><i
+                        class="icon icofont-ui-copy"></i> 预约</a></li>
+                <li><a th:href="@{/consumerOrder/medicalOrder(id=${tConsumer.id})}"><i
+                        class="icon icofont-first-aid"></i> 体检预约</a></li>
+                <li><a th:href="@{/consumerInformation/prescriptionList(id=${tConsumer.id})}"><i
+                        class="icon icofont-ui-clip-board"></i> 查看处方</a></li>
+                <li><a th:href="@{/consumerInformation/searchDoctor(id=${tConsumer.id})}"><i
+                        class="icon icofont-doctor"></i> 查找医生</a></li>
+                <li><a th:href="@{/consumerInformation/doctorCollection(id=${tConsumer.id})}"><i
+                        class="icon icofont-heart"></i> 医生收藏</a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="#">信息</a>
+            <ul>
+                <li class="dropdown"><a href="#"><i class="icon-user"></i>个人信息</a>
+                    <ul class="sub-menu">
+                        <li><a th:href="@{/consumerInformation/information(id=${tConsumer.id})}"><i
+                                class="icon-disc"></i> 查看个人信息</a></li>
+                        <li><a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}"><i
+                                class="icon-disc"></i> 修改个人信息</a></li>
+                        <li><a th:href="@{/consumerInformation/updatePassword(id=${tConsumer.id})}"><i
+                                class="icon-disc"></i> 修改密码</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><i class="icon-paper-clip"></i>病历</a>
+                    <ul class="sub-menu">
+                        <li><a th:href="@{/consumerInformation/medical(id=${tConsumer.id})}"><i class="icon-disc"></i>历史病历</a>
+                        </li>
+                        <li><a th:href="@{/consumerInformation/existingMedical(id=${tConsumer.id})}"><i
+                                class="icon-cursor-move"></i>现有病历</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><i class="icon icofont-restaurant-menu"></i>预约信息</a>
+                    <ul class="sub-menu">
+                        <li><a th:href="@{/consumerInformation/consumerOrderList(id=${tConsumer.id})}"><i
+                                class="icon-disc"></i> 预约列表</a></li>
+                        <li><a th:href="@{/consumerOrder/medicalAppointmentList(id=${tConsumer.id})}"><i
+                                class="icon-disc"></i> 体检预约列表</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <!-- END: Menu-->
+</div>
+<!-- END: Main Menu-->
+
+
+<!-- START: Main Content-->
+<main>
+    <div class="container-fluid">
+        <!-- START: Breadcrumbs-->
+        <div class="row ">
+            <div class="col-12  align-self-center">
+                <div class="sub-header mt-3 py-3 px-3 align-self-center d-sm-flex w-100 rounded">
+                </div>
+            </div>
+        </div>
+        <!-- END: Breadcrumbs-->
+        <!--startprint-->
+        <!-- START: Card Data-->
+        <div class="row">
+            <div class="col-12 mt-4">
+                <div class="card">
+                    <div class="card-header" style="display: inline">
+                        <h4 class="card-title" th:text="(${tConsumer.name} + '体检预约')">xxx体检预约</h4>
+                        <button class="btn btn-warning" style="float: right;margin-right: 20px" onclick="print_page()">打印</button>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <form>
+                                        <div class="row">
+                                            <input hidden="hidden" id="consumerId" th:value="${tConsumer.id}">
+                                            <input hidden="hidden" id="id" th:value="${tMedicalAppointment.id}">
+                                            <label for="name" class="col-sm-2 col-form-label">姓名</label>
+                                            <div class="col-sm-10">
+                                                <div class="input-group mb-3 col-md-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text bg-transparent border-right-0"
+                                                              id="basic-addon11"><i class="icon-user"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" disabled="disabled"
+                                                           th:value="${tConsumer.name}" aria-label="name"
+                                                           aria-describedby="basic-addon1" id="name" name="name">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="sex" class="col-sm-2 col-form-label">性别</label>
+                                            <div class="col-sm-10">
+                                                <div class="input-group mb-3 col-md-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text bg-transparent border-right-0"
+                                                              id="basic-sex1"><i class="icon-people icons"></i></span>
+                                                    </div>
+                                                    <input th:if="${tConsumer.sex} == false" th:value="男"
+                                                           disabled="disabled" type="text" class="form-control"
+                                                           aria-label="sex" id="sex" name="sex"
+                                                           aria-describedby="basic-email">
+                                                    <input th:if="${tConsumer.sex} == true" th:value="女"
+                                                           disabled="disabled" type="text" class="form-control"
+                                                           aria-label="sex" id="sex" name="sex"
+                                                           aria-describedby="basic-email">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="age" class="col-sm-2 col-form-label">年龄</label>
+                                            <div class="col-sm-10">
+                                                <div class="input-group mb-3 col-md-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text bg-transparent border-right-0"
+                                                              id="basic-age1"><i class="ion-calendar"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" id="age" name="age"
+                                                           disabled="disabled" th:value="${tConsumer.age}"
+                                                           aria-label="age" aria-describedby="basic-age">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label for="idCard" class="col-sm-2 col-form-label">身份证</label>
+                                            <div class="col-sm-10">
+                                                <div class="input-group mb-3 col-md-3">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text bg-transparent border-right-0"><i
+                                                                class="ion-card"></i></span>
+                                                    </div>
+                                                    <input type="text" class="form-control" id="idCard" name="idCard"
+                                                           disabled="disabled" th:value="${tConsumer.idCard}"
+                                                           aria-label="idCard" aria-describedby="basic-idCard">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-sm-2 col-form-label">预约体检时间</label>
+                                            <div class="col-sm-10">
+                                                <div class="input-group mb-3 col-md-3">
+                                                    <input type="text" class="form-control time" id="time" name="time"
+                                                           th:value="${tMedicalAppointment.time}" disabled="disabled">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-md-12 col-form-label"><b>&Delta;一般检查</b></label>
+                                            <div class="col-md-10  mb-3 ">
+                                                <div th:each="g : ${generalInspection}">
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${g} eq 0">
+                                                        <input type="checkbox" class="custom-control-input general"
+                                                               checked="checked" disabled="disabled" th:value="00"
+                                                               id="height">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="height">身高</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${g} eq 1">
+                                                        <input type="checkbox" class="custom-control-input general"
+                                                               checked="checked" disabled="disabled" th:value="01"
+                                                               id="weight">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="weight">体重</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${g} eq 2">
+                                                        <input type="checkbox" class="custom-control-input general"
+                                                               checked="checked" disabled="disabled" th:value="02"
+                                                               id="bmi">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="bmi">体重指数</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${g} eq 3">
+                                                        <input type="checkbox" class="custom-control-input general"
+                                                               checked="checked" disabled="disabled" th:value="03"
+                                                               id="vision">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="vision">视力</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${g} eq 4">
+                                                        <input type="checkbox" class="custom-control-input general"
+                                                               checked="checked" disabled="disabled" th:value="04"
+                                                               id="color">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="color">辨色力</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${g} eq 5">
+                                                        <input type="checkbox" class="custom-control-input general"
+                                                               checked="checked" disabled="disabled" th:value="05"
+                                                               id="bloodPressure">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="bloodPressure">血压</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-md-12 col-form-label"><b>&Delta;内科检查</b></label>
+                                            <div class="col-md-10  mb-3 ">
+                                                <div th:each="m : ${medicalExamination}">
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${m} eq 6">
+                                                        <input type="checkbox" class="custom-control-input medical"
+                                                               checked="checked" disabled="disabled" th:value="06"
+                                                               id="respiratoryRate">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="respiratoryRate">呼吸频率</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${m} eq 7">
+                                                        <input type="checkbox" class="custom-control-input medical"
+                                                               checked="checked" disabled="disabled" th:value="07"
+                                                               id="lungAuscultation">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="lungAuscultation">肺部听诊</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${m} eq 8">
+                                                        <input type="checkbox" class="custom-control-input medical"
+                                                               checked="checked" disabled="disabled" th:value="08"
+                                                               id="heartRate">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="heartRate">心率</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${m} eq 9">
+                                                        <input type="checkbox" class="custom-control-input medical"
+                                                               checked="checked" disabled="disabled" th:value="09"
+                                                               id="rhythm">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="rhythm">心律</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${m} eq 10">
+                                                        <input type="checkbox" class="custom-control-input medical"
+                                                               checked="checked" disabled="disabled" th:value="10"
+                                                               id="nerveReflex">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="nerveReflex">神经反射</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${m} eq 11">
+                                                        <input type="checkbox" class="custom-control-input medical"
+                                                               checked="checked" disabled="disabled" th:value="11"
+                                                               id="LiverPressure">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="LiverPressure">肝脏触诊</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${m} eq 12">
+                                                        <input type="checkbox" class="custom-control-input medical"
+                                                               checked="checked" disabled="disabled" th:value="12"
+                                                               id="gallbladderPressure">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="gallbladderPressure">胆囊触诊</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${m} eq 13">
+                                                        <input type="checkbox" class="custom-control-input medical"
+                                                               checked="checked" disabled="disabled" th:value="13"
+                                                               id="palpableSpleens">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="palpableSpleens">脾脏触诊</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-md-12 col-form-label"><b>&Delta;外科检查</b></label>
+                                            <div class="col-md-12  mb-3 ">
+                                                <div th:each="s : ${surgicalExamination}">
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${s} eq 14">
+                                                        <input type="checkbox" class="custom-control-input surgical"
+                                                               checked="checked" disabled="disabled" th:value="14"
+                                                               id="skin">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="skin">皮肤</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${s} eq 15">
+                                                        <input type="checkbox" class="custom-control-input surgical"
+                                                               checked="checked" disabled="disabled" th:value="15"
+                                                               id="mucousMembrane">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               checked="checked" disabled="disabled"
+                                                               for="mucousMembrane">黏膜</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${s} eq 16">
+                                                        <input type="checkbox" class="custom-control-input surgical"
+                                                               checked="checked" disabled="disabled" th:value="16"
+                                                               id="superficialLymph">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="superficialLymph">浅表淋巴结</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${s} eq 17">
+                                                        <input type="checkbox" class="custom-control-input surgical"
+                                                               checked="checked" disabled="disabled" th:value="17"
+                                                               id="limbMotion">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="limbMotion">四肢关节活动度</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${s} eq 18">
+                                                        <input type="checkbox" class="custom-control-input surgical"
+                                                               checked="checked" disabled="disabled" th:value="18"
+                                                               id="footArtery">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="footArtery">足背动脉</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${s} eq 19">
+                                                        <input type="checkbox" class="custom-control-input surgical"
+                                                               checked="checked" disabled="disabled" th:value="19"
+                                                               id="spineCurve">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="spineCurve">脊柱生理弯曲</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${s} eq 20">
+                                                        <input type="checkbox" class="custom-control-input surgical"
+                                                               checked="checked" disabled="disabled" th:value="20"
+                                                               id="thyroid">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="thyroid">甲状腺</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${s} eq 21">
+                                                        <input type="checkbox" class="custom-control-input surgical"
+                                                               checked="checked" disabled="disabled" th:value="21"
+                                                               id="lowerVein">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="lowerVein">下肢浅表静脉</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${s} eq 22">
+                                                        <input type="checkbox" class="custom-control-input surgical"
+                                                               checked="checked" disabled="disabled" th:value="22"
+                                                               id="leftPercussion">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="leftPercussion">左肾叩诊</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${s} eq 23">
+                                                        <input type="checkbox" class="custom-control-input surgical"
+                                                               checked="checked" disabled="disabled" th:value="23"
+                                                               id="rightPercussion">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="rightPercussion">右肾叩诊</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${s} eq 24">
+                                                        <input type="checkbox" class="custom-control-input surgical"
+                                                               checked="checked" disabled="disabled" th:value="24"
+                                                               id="colonicMass">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="colonicMass">地位结肠肿物</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${s} eq 25">
+                                                        <input type="checkbox" class="custom-control-input surgical"
+                                                               checked="checked" disabled="disabled" th:value="25"
+                                                               id="internalHemorrhoids">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="internalHemorrhoids">内痔</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${s} eq 26">
+                                                        <input type="checkbox" class="custom-control-input surgical"
+                                                               checked="checked" disabled="disabled" th:value="26"
+                                                               id="externalHemorrhoids">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="externalHemorrhoids">外痔</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${s} eq 27">
+                                                        <input type="checkbox" class="custom-control-input surgical"
+                                                               checked="checked" disabled="disabled" th:value="27"
+                                                               id="analFissure">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="analFissure">肛裂</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${s} eq 28">
+                                                        <input type="checkbox" class="custom-control-input surgical"
+                                                               checked="checked" disabled="disabled" th:value="28"
+                                                               id="analFistula">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="analFistula">肛瘘</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${s} eq 29">
+                                                        <input type="checkbox" class="custom-control-input surgical"
+                                                               checked="checked" disabled="disabled" th:value="29"
+                                                               id="mixedHemorrhoids">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="mixedHemorrhoids">混合痔</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-md-12 col-form-label"><b>&Delta;心电图检查</b></label>
+                                            <div class="col-md-12  mb-3 ">
+                                                <div th:each="e:${ecgExamination}">
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${e} eq 30">
+                                                        <input type="checkbox" class="custom-control-input ecg"
+                                                               checked="checked" disabled="disabled" th:value="30"
+                                                               id="12-leadElectrocardiogram">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="12-leadElectrocardiogram">十二导联心电图</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-md-12 col-form-label"><b>&Delta;胸透检查</b></label>
+                                            <div class="col-md-12  mb-3 ">
+                                                <div th:each="x:${xRayExamination}">
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${x} eq 31">
+                                                        <input type="checkbox" class="custom-control-input x-ray"
+                                                               checked="checked" disabled="disabled" th:value="31"
+                                                               id="heart">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="heart">心</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${x} eq 32">
+                                                        <input type="checkbox" class="custom-control-input x-ray"
+                                                               checked="checked" disabled="disabled" th:value="32"
+                                                               id="lung">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="lung">双肺</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${x} eq 33">
+                                                        <input type="checkbox" class="custom-control-input x-ray"
+                                                               checked="checked" disabled="disabled" th:value="33"
+                                                               id="mediastinum">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="mediastinum">纵膈</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${x} eq 34">
+                                                        <input type="checkbox" class="custom-control-input x-ray"
+                                                               checked="checked" disabled="disabled" th:value="34"
+                                                               id="diaphragm">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="diaphragm">横膈</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <label class="col-sm-2 col-form-label"><b>&Delta;血液常规检查</b></label>
+                                            <div class="col-md-12  mb-3 ">
+                                                <div th:each="b:${bloodRoutineExamination}">
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 35">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="35"
+                                                               id="TWBC">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="TWBC">白细胞总数</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 36">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="36"
+                                                               id="TLC">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="TLC">淋巴细胞总数</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 37">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="37"
+                                                               id="mid">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="mid">中间细胞数目</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 38">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="38"
+                                                               id="grdn">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="grdn">中性粒细胞数目</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 39">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="39"
+                                                               id="LYM">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="LYM">淋巴细胞百分比</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 40">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="40"
+                                                               id="MXD">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="MXD">中间细胞百分比</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 41">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="41"
+                                                               id="NEU">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="NEU">中性粒细胞百分比</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 42">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="42"
+                                                               id="RBC">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="RBC">红细胞数目</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 43">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="43"
+                                                               id="hemoglobin">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="hemoglobin">血红蛋白</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 44">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="44"
+                                                               id="hematocrit">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="hematocrit">红细胞压积</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 45">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="45"
+                                                               id="MCV">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="MCV">平均红细胞体积</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 46">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="46"
+                                                               id="MCH">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="MCH">平均红细胞血红蛋白</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 47">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="47"
+                                                               id="MCHC">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="MCHC">平均红细胞血红蛋白浓度</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 48">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="48"
+                                                               id="redVariationCoefficient">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="redVariationCoefficient">红细胞分布宽度变异系数</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 49">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="49"
+                                                               id="RDW-SD">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="RDW-SD">红细胞分布宽度标准差</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 50">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="50"
+                                                               id="plateletCount">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="plateletCount">血小板数目</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 51">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="51"
+                                                               id="mpv">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="mpv">平均血小板体积</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 52">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="52"
+                                                               id="pwd">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="pwd">血小板分布宽度</label>
+                                                    </div>
+                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                         th:if="${b} eq 53">
+                                                        <input type="checkbox" class="custom-control-input blood"
+                                                               checked="checked" disabled="disabled" th:value="53"
+                                                               id="PCT">
+                                                        <label class="custom-control-label checkbox-primary outline"
+                                                               for="PCT">血小板压积</label>
+                                                    </div>
+                                                    <div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <label class="col-md-12 col-form-label"><b>&Delta;尿液常规检查</b></label>
+                                                    <div class="col-md-12  mb-3 ">
+                                                        <div th:each="u:${urineRoutineExamination}">
+                                                            <div class="custom-control custom-checkbox custom-control-inline"
+                                                                 th:if="${u} eq 54">
+                                                                <input type="checkbox"
+                                                                       class="custom-control-input urine"
+                                                                       checked="checked" disabled="disabled"
+                                                                       th:value="54" id="protein">
+                                                                <label class="custom-control-label checkbox-primary outline"
+                                                                       for="protein">蛋白质</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox custom-control-inline"
+                                                                 th:if="${u} eq 55">
+                                                                <input type="checkbox"
+                                                                       class="custom-control-input urine"
+                                                                       checked="checked" disabled="disabled"
+                                                                       th:value="55" id="glucose">
+                                                                <label class="custom-control-label checkbox-primary outline"
+                                                                       for="glucose">葡萄糖</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox custom-control-inline"
+                                                                 th:if="${u} eq 56">
+                                                                <input type="checkbox"
+                                                                       class="custom-control-input urine"
+                                                                       checked="checked" disabled="disabled"
+                                                                       th:value="56" id="bilirubin">
+                                                                <label class="custom-control-label checkbox-primary outline"
+                                                                       for="bilirubin">胆红素</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox custom-control-inline"
+                                                                 th:if="${u} eq 57">
+                                                                <input type="checkbox"
+                                                                       class="custom-control-input urine"
+                                                                       checked="checked" disabled="disabled"
+                                                                       th:value="57" id="urobilinogen">
+                                                                <label class="custom-control-label checkbox-primary outline"
+                                                                       for="urobilinogen">尿胆原</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox custom-control-inline"
+                                                                 th:if="${u} eq 58">
+                                                                <input type="checkbox"
+                                                                       class="custom-control-input urine"
+                                                                       checked="checked" disabled="disabled"
+                                                                       th:value="58" id="ketone">
+                                                                <label class="custom-control-label checkbox-primary outline"
+                                                                       for="ketone">酮体</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox custom-control-inline"
+                                                                 th:if="${u} eq 59">
+                                                                <input type="checkbox"
+                                                                       class="custom-control-input urine"
+                                                                       checked="checked" disabled="disabled"
+                                                                       th:value="59" id="nitrite">
+                                                                <label class="custom-control-label checkbox-primary outline"
+                                                                       for="nitrite">亚硝酸盐</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox custom-control-inline"
+                                                                 th:if="${u} eq 60">
+                                                                <input type="checkbox"
+                                                                       class="custom-control-input urine"
+                                                                       checked="checked" disabled="disabled"
+                                                                       th:value="60" id="whiteBloodCell">
+                                                                <label class="custom-control-label checkbox-primary outline"
+                                                                       for="whiteBloodCell">白细胞</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox custom-control-inline"
+                                                                 th:if="${u} eq 61">
+                                                                <input type="checkbox"
+                                                                       class="custom-control-input urine"
+                                                                       checked="checked" disabled="disabled"
+                                                                       th:value="61" id="urineSpecificGravity">
+                                                                <label class="custom-control-label checkbox-primary outline"
+                                                                       for="urineSpecificGravity">尿比重</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox custom-control-inline"
+                                                                 th:if="${u} eq 62">
+                                                                <input type="checkbox"
+                                                                       class="custom-control-input urine"
+                                                                       checked="checked" disabled="disabled"
+                                                                       th:value="62" id="u-PH">
+                                                                <label class="custom-control-label checkbox-primary outline"
+                                                                       for="u-PH">尿酸碱度</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox custom-control-inline"
+                                                                 th:if="${u} eq 63">
+                                                                <input type="checkbox"
+                                                                       class="custom-control-input urine"
+                                                                       checked="checked" disabled="disabled"
+                                                                       th:value="63" id="redBloodCell">
+                                                                <label class="custom-control-label checkbox-primary outline"
+                                                                       for="redBloodCell">红细胞</label>
+                                                            </div>
+                                                            <div class="custom-control custom-checkbox custom-control-inline"
+                                                                 th:if="${u} eq 64">
+                                                                <input type="checkbox"
+                                                                       class="custom-control-input urine"
+                                                                       checked="checked" disabled="disabled"
+                                                                       th:value="64" id="vitaminc">
+                                                                <label class="custom-control-label checkbox-primary outline"
+                                                                       for="vitaminc">维C</label>
+                                                            </div>
+                                                            <div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <label class="col-md-12 col-form-label"><b>&Delta;肝功能检查</b></label>
+                                                            <div class="col-md-12  mb-3 ">
+                                                                <div th:each="h:${hepaticExamination}">
+                                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                                         th:if="${h} eq 65">
+                                                                        <input type="checkbox"
+                                                                               class="custom-control-input hepatic"
+                                                                               checked="checked" disabled="disabled"
+                                                                               th:value="65" id="gpt">
+                                                                        <label class="custom-control-label checkbox-primary outline"
+                                                                               for="gpt">谷氨酸转氨酶</label>
+                                                                    </div>
+                                                                    <div class="custom-control custom-checkbox custom-control-inline"
+                                                                         th:if="${h} eq 66">
+                                                                        <input type="checkbox"
+                                                                               class="custom-control-input hepatic"
+                                                                               checked="checked" disabled="disabled"
+                                                                               th:value="66" id="ast">
+                                                                        <label class="custom-control-label checkbox-primary outline"
+                                                                               for="ast">谷草转氨酶</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--endprint-->
+        <!-- END: Card DATA-->
+    </div>
+</main>
+<!-- END: Content-->
+
+
+<!-- START: Back to top-->
+<a href="#" class="scrollup text-center">
+    <i class="icon-arrow-up"></i>
+</a>
+<!-- END: Back to top-->
+
+<!-- START: Template JS-->
+<script src="dist/vendors/jquery/jquery-3.3.1.min.js"
+        th:src="@{/information/vendors/jquery/jquery-3.3.1.min.js}"></script>
+<script src="dist/vendors/jquery-ui/jquery-ui.min.js"
+        th:src="@{/information/vendors/jquery-ui/jquery-ui.min.js}"></script>
+<script src="dist/vendors/moment/moment.js" th:src="@{/information/vendors/moment/moment.js}"></script>
+<script src="dist/vendors/bootstrap/js/bootstrap.bundle.min.js"
+        th:src="@{/information/vendors/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<script src="dist/vendors/slimscroll/jquery.slimscroll.min.js"
+        th:src="@{/information/vendors/slimscroll/jquery.slimscroll.min.js}"></script>
+<script src="dist/vendors/flag-select/js/jquery.flagstrap.min.js"
+        th:src="@{/information/vendors/flag-select/js/jquery.flagstrap.min.js}"></script>
+<!-- END: Template JS-->
+<script src="./assets/bootstrap/js/bootstrap.js" th:src="@{/calendar/assets/bootstrap/js/bootstrap.js}"></script>
+
+<!-- my date-selector script -->
+<script src="./src/gm-date-selector.js" th:src="@{/calendar/src/gm-date-selector.js}"></script>
+<!-- START: APP JS-->
+<script src="dist/js/app.js" th:src="@{/information/js/app.js}"></script>
+<!-- END: APP JS-->
+
+<script type="text/javascript">
+    function medicalOrder() {
+        var general = "";
+        $("input.general:checked").each(function () {
+            general = general + "、" + $(this).val();
+        });
+        var medical = "";
+        $("input.medical:checked").each(function () {
+            medical = medical + "、" + $(this).val();
+        });
+        var surgical = "";
+        $("input.surgical:checked").each(function () {
+            surgical = surgical + "、" + $(this).val();
+        });
+        var ecg = "";
+        $("input.ecg:checked").each(function () {
+            ecg = ecg + "、" + $(this).val();
+        });
+        var xRay = "";
+        $("input.x-ray:checked").each(function () {
+            xRay = xRay + "、" + $(this).val();
+        });
+        var blood = "";
+        $("input.blood:checked").each(function () {
+            blood = blood + "、" + $(this).val();
+        });
+        var urine = "";
+        $("input.urine:checked").each(function () {
+            urine = urine + "、" + $(this).val();
+        });
+        var hepatic = "";
+        $("input.hepatic:checked").each(function () {
+            hepatic = hepatic + "、" + $(this).val();
+        });
+        var tMedicalAppointment = {
+            "consumerId": $("#consumerId").val(),
+            "time": $("#time").val(),
+            "generalInspection": general,
+            "medicalExamination": medical,
+            "surgicalExamination": surgical,
+            "ecgExamination": ecg,
+            "xRayExamination": xRay,
+            "bloodRoutineExamination": blood,
+            "urineRoutineExamination": urine,
+            "hepaticExamination": hepatic
+        }
+        $.post(
+            "/consumerOrder/addMedicalOrder",
+            tMedicalAppointment,
+            function (data) {
+                if (data === "error") {
+                    swal({
+                        title: "提示",
+                        text: "服务器错误",
+                        type: "error",
+                        showLoaderOnConfirm: '确定'
+                    }, function () {
+                    });
+                } else {
+                    swal({
+                        title: "提示",
+                        text: "预约成功",
+                        type: "error",
+                        showLoaderOnConfirm: '确定'
+                    }, function () {
+                        var s = data.split(":");
+                        location.href = "/consumerInformation/index?id=" + s[1];
+                    });
+                }
+            }
+        )
+    }
+</script>
+<script type="text/javascript">
+    // $(function(){
+    //     print_page();
+    // });
+
+    function print_page() {
+        if (!!window.ActiveXObject || "ActiveXObject" in window) {
+            remove_ie_header_and_footer();
+        }
+        bdhtml=window.document.body.innerHTML; //获取当前页的html代码
+        sprnstr="<!--startprint-->"; //设置打印开始区域
+        eprnstr="<!--endprint-->";//设置打印结束区域
+        prnhtml=bdhtml.substr(bdhtml.indexOf(sprnstr)+17);//从开始代码向后取html
+        prnhtml=prnhtml.substring(0,prnhtml.indexOf(eprnstr));//从结束代码向前取html
+        window.document.body.innerHTML=prnhtml;
+        window.print();
+        // 这里延迟关闭是因为在加载的东西比较多的时候，可能dom需要的数据还没加载完就关闭了。这样会导致数据显示不全，所以采用延迟关闭的方法防止数据不全。具体延迟多长时间自己控制。
+        setTimeout(cancle,2000);
+    };
+
+    function remove_ie_header_and_footer() {
+        var hkey_root, hkey_path, hkey_key;
+        hkey_path = "HKEY_CURRENT_USER\\Software\\Microsoft\\Internet Explorer\\PageSetup\\";
+        try {
+            var RegWsh = new ActiveXObject("WScript.Shell");
+            RegWsh.RegWrite(hkey_path + "header", "");
+            RegWsh.RegWrite(hkey_path + "footer", "");
+        } catch (e) {}
+    }
+
+    function cancle(){
+        var id = $("#id").val();
+        var consumerId = $("#consumerId").val();
+        location.href="/consumerOrder/showMedicalAppointments?id=" + id + "&consumerId=" + consumerId;
+    }
+</script>
+</body>
+<!-- END: Body-->
+</html>

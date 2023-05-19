@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>重置密码</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" th:href="@{/signup/css/modalbox.css}"/>
+    <link href="http://cdn.bootstrapmb.com/fontawesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="modalbox-dialog signin-form reset-password">
+    <h3>重置密码</h3>
+    <input type="text" id="phone" name="phone" th:value="${tConsumer.phone}" style="display: none">
+    <input type="password" placeholder="密码" name="password" id="password">
+    <input type="password" placeholder="重复密码" name="repeatPassword" id="repeatPassword">
+    <br/>
+    <input type="submit" onclick="reset()" value="重置密码">
+</div>
+
+</body>
+<script src="/static/signup/js/jquery.min.js" th:src="@{/signup/js/jquery.min.js}"></script>
+<script src="/static/signup/js/jquery.min.js" th:src="@{/signup/js/index.js}"></script>
+<script src="/static/signup/js/jquery.js" th:src="@{/signup/js/jquery.js}"></script>
+<script src="/static/signup/js/message.js" th:src="@{/signup/js/message.js}"></script>
+<script type="text/javascript" src="/static/signup/js/multiselect.js" th:src="@{/signup/js/multiselect.js}"></script>
+<script src="https://cdn.bootcss.com/js-sha1/0.6.0/sha1.js"></script>
+<script>
+    function reset() {
+        var password1 = $("#password").val();
+        var password2 = $("#repeatPassword").val();
+        if (password1 == '') {
+            alert("密码不能为空");
+            return;
+        }
+        if (password2 == '') {
+            alert("重复输入密码不能为空");
+            return;
+        }
+        var pwd = sha1(password1)
+        var phone = $("#phone").val();
+        if (Number(password1) == Number(password2)) {
+            $.post("/consumer/reset", {pwd: pwd, phone: phone}, function (res) {
+                if (res == "success") {
+                    alert("重置成功");
+                    window.location.href = "/consumer/login";
+                } else if (res == "error1") {
+                    alert("您输入的密码跟近几次设置的密码一致，请重新输入");
+                } else {
+                    alert("重置失败，请检查数据")
+                }
+            })
+        } else {
+            alert("两次密码不一致！");
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- START: Head-->
+<head>
+    <meta charset="UTF-8">
+    <title>预约</title>
+    <link rel="shortcut icon" href="dist/images/favicon.ico" th:href="@{/information/images/favicon.ico}"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- START: Template CSS-->
+    <link rel="stylesheet" href="dist/vendors/bootstrap/css/bootstrap.min.css"
+          th:href="@{/information/vendors/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="dist/vendors/jquery-ui/jquery-ui.min.css"
+          th:href="@{/information/vendors/jquery-ui/jquery-ui.min.css}">
+    <link rel="stylesheet" href="dist/vendors/jquery-ui/jquery-ui.theme.min.css"
+          th:href="@{/information/vendors/jquery-ui/jquery-ui.theme.min.css}">
+    <link rel="stylesheet" href="dist/vendors/simple-line-icons/css/simple-line-icons.css"
+          th:href="@{/information/vendors/simple-line-icons/css/simple-line-icons.css}">
+    <link rel="stylesheet" href="dist/vendors/flags-icon/css/flag-icon.min.css"
+          th:href="@{/information/vendors/flags-icon/css/flag-icon.min.css}">
+    <link rel="stylesheet" href="dist/vendors/flag-select/css/flags.css"
+          th:href="@{/information/vendors/flag-select/css/flags.css}">
+    <link rel="stylesheet" href="dist/vendors/sweetalert/sweetalert.css"
+          th:href="@{/information/vendors/sweetalert/sweetalert.css}">
+    <!-- END Template CSS-->
+
+    <!-- START: Page CSS-->
+    <link rel="stylesheet" href="dist/vendors/chartjs/Chart.min.css"
+          th:href="@{/information/vendors/chartjs/Chart.min.css}">
+    <link rel="stylesheet" href="dist/vendors/chartjs/Chart.min.css"
+          th:href="@{/information/css/loading.css}">
+    <!-- END: Page CSS-->
+
+    <!-- START: Page CSS-->
+    <link rel="stylesheet" href="dist/vendors/morris/morris.css" th:href="@{/information/vendors/morris/morris.css}">
+    <link rel="stylesheet" href="dist/vendors/weather-icons/css/pe-icon-set-weather.min.css"
+          th:href="@{/information/vendors/weather-icons/css/pe-icon-set-weather.min.css}">
+    <link rel="stylesheet" href="dist/vendors/chartjs/Chart.min.css"
+          th:href="@{/information/vendors/chartjs/Chart.min.css}">
+    <link rel="stylesheet" href="dist/vendors/starrr/starrr.css" th:href="@{/information/vendors/starrr/starrr.css}">
+    <link rel="stylesheet" href="dist/vendors/fontawesome/css/all.min.css"
+          th:href="@{/information/vendors/fontawesome/css/all.min.css}">
+    <link rel="stylesheet" href="dist/vendors/ionicons/css/ionicons.min.css"
+          th:href="@{/information/vendors/ionicons/css/ionicons.min.css}">
+    <link rel="stylesheet" href="dist/vendors/jquery-jvectormap/jquery-jvectormap-2.0.3.css"
+          th:href="@{/information/vendors/jquery-jvectormap/jquery-jvectormap-2.0.3.css}">
+    <!-- END: Page CSS-->
+
+    <!-- START: Custom CSS-->
+    <link rel="stylesheet" href="dist/css/main.css" th:href="@{/information/css/main.css}">
+    <link rel="stylesheet" href="dist/vendors/icofont/icofont.min.css"
+          th:href="@{/information/vendors/icofont/icofont.min.css}">
+    <link rel="stylesheet" href="dist/css/main.css" th:href="@{/information/css/address.css}">
+    <!-- END: Custom CSS-->
+</head>
+<!-- END Head-->
+
+<!-- START: Body-->
+<body id="main-container" class="default">
+
+<!-- START: Pre Loader-->
+<div class="se-pre-con">
+    <img src="dist/images/logo.png" th:src="@{${tConsumer.img}}" alt="logo" width="23" class="img-fluid"/>
+</div>
+<!-- END: Pre Loader-->
+
+<!-- START: Header-->
+<div id="header-fix" class="header fixed-top">
+    <nav class="navbar navbar-expand-lg  p-0">
+        <div class="navbar-header h4 mb-0 align-self-center logo-bar text-center">
+            <a href="index.html" class="horizontal-logo text-center">
+                <span class="h3 align-self-center mb-0 ">个人信息</span>
+            </a>
+        </div>
+        <div class="navbar-header h4 mb-0 text-center h-100 collapse-menu-bar">
+            <a href="#" class="sidebarCollapse" id="collapse"><i class="icon-menu body-color"></i></a>
+        </div>
+
+        <form class="float-left d-none d-lg-block search-form">
+            <div class="form-group mb-0 position-relative">
+                <input type="text" class="form-control border-0 rounded bg-search pl-5"
+                       placeholder="请输入病症">
+                <div class="btn-search position-absolute top-0">
+                    <a th:onclick="'javascript:searchDisease('+${tConsumer.id}+')'" ><i class="h5 icon-magnifier body-color"></i></a>
+                </div>
+                <a href="#" class="position-absolute close-button mobilesearch d-lg-none" data-toggle="dropdown"
+                   aria-expanded="false"><i class="icon-close h5"></i>
+                </a>
+
+            </div>
+        </form>
+        <div class="navbar-right ml-auto h-100">
+            <ul class="ml-auto p-0 m-0 list-unstyled d-flex top-icon h-100">
+                <li class="d-inline-block align-self-center  d-block d-lg-none">
+                    <a href="#" class="nav-link mobilesearch" data-toggle="dropdown" aria-expanded="false"><i
+                            class="icon-magnifier h4"></i>
+                    </a>
+                </li>
+                <li class="dropdown user-profile align-self-center d-inline-block">
+                    <a href="#" class="nav-link py-0" data-toggle="dropdown" aria-expanded="false">
+                        <div class="media">
+                            <img src="dist/images/author.jpg" th:src="@{${tConsumer.img}}" alt=""
+                                 class="d-flex img-fluid rounded-circle" width="29">
+                        </div>
+                    </a>
+
+                    <div class="dropdown-menu  dropdown-menu-right p-0">
+                        <a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}"
+                           class="dropdown-item px-2 align-self-center d-flex">
+                            <span class="icon-pencil mr-2 h6 mb-0"></span> 编辑个人资料</a>
+                        <a th:href="@{/consumerInformation/information(id=${tConsumer.id})}"
+                           class="dropdown-item px-2 align-self-center d-flex">
+                            <span class="icon-user mr-2 h6 mb-0"></span> 查看资料</a>
+                        <div class="dropdown-divider"></div>
+
+                        <div class="dropdown-divider"></div>
+                        <a href="/consumer/login" class="dropdown-item px-2 text-danger align-self-center d-flex">
+                            <span class="icon-logout mr-2 h6  mb-0"></span>登出</a>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</div>
+<!-- END: Header-->
+
+<!-- START: Main Menu-->
+<div class="sidebar">
+    <div class="media d-block text-center user-profile">
+        <img class="img-fluid" src="dist/images/author1.jpg" style="width: 100px;hight: 100px;" th:src="@{${tConsumer.img}}" alt="">
+        <div class="media-body text-center mt-0 color-primary mt-2">
+            <a href="#" class="nav-link py-0" data-toggle="dropdown" aria-expanded="false">
+                <input hidden="hidden" id="consumerId" name="consumerId" th:value="${tConsumer.id}" >
+                <h6 class="mb-0 font-weight-bold" th:text="${tConsumer.name}">姓名</h6>
+                <p th:text="${tConsumer.nativePlace}"></p>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right p-0" style="">
+                <a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}"
+                   class="dropdown-item px-2 align-self-center d-flex">
+                    <span class="icon-pencil mr-2 h6 mb-0"></span> 编辑个人资料</a>
+                <a th:href="@{/consumerInformation/information(id=${tConsumer.id})}"
+                   class="dropdown-item px-2 align-self-center d-flex">
+                    <span class="icon-user mr-2 h6 mb-0"></span> 查看资料</a>
+                <div class="dropdown-divider"></div>
+
+                <div class="dropdown-divider"></div>
+                <a href="/consumer/login" class="dropdown-item px-2 text-danger align-self-center d-flex">
+                    <span class="icon-logout mr-2 h6  mb-0"></span> 登出</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- START: Menu-->
+    <ul id="side-menu" class="sidebar-menu">
+        <li class="dropdown active"><a href="#">首页</a>
+            <ul>
+                <li class="active"><a href="index.html" th:href="@{/consumerInformation/index(id=${tConsumer.id})}"><i class="icon-rocket"></i> 首页</a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="#">应用</a>
+            <ul>
+                <li><a th:href="@{/consumerInformation/calendar(id=${tConsumer.id})}"><i class="icon-calendar"></i> 日历备忘录</a></li>
+
+                <li class="dropdown"><a href="#"><i class="icon-envelope"></i>邮箱</a>
+                    <ul class="sub-menu">
+                        <li><a th:href="@{/mailInbox/mail(id=${tConsumer.id})}"><i class="icon-envelope"></i> 收件箱</a></li>
+                    </ul>
+                </li>
+                <li><a th:href="@{/consumerOrder/consumerOrder(id=${tConsumer.id})}"><i class="icon icofont-ui-copy"></i> 预约</a></li>
+                        <li><a th:href="@{/consumerOrder/medicalOrder(id=${tConsumer.id})}"><i class="icon icofont-first-aid"></i> 体检预约</a></li>
+                <li><a th:href="@{/consumerInformation/prescriptionList(id=${tConsumer.id})}"><i class="icon icofont-ui-clip-board"></i> 查看处方</a></li>
+                <li><a th:href="@{/consumerInformation/searchDoctor(id=${tConsumer.id})}"><i class="icon icofont-doctor"></i> 查找医生</a></li>
+               <li><a th:href="@{/consumerInformation/doctorCollection(id=${tConsumer.id})}"><i class="icon icofont-heart"></i> 医生收藏</a></li>
+                        <li><a th:href="@{/drug/drugOrderList(id=${tConsumer.id})}"><i class="icon icofont-ticket"></i> 查看药品订单列表</a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="#">信息</a>
+            <ul>
+                <li class="dropdown"><a href="#"><i class="icon-user"></i>个人信息</a>
+                    <ul class="sub-menu">
+                        <li><a th:href="@{/consumerInformation/information(id=${tConsumer.id})}"><i class="icon-disc"></i> 查看个人信息</a></li>
+                        <li><a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}"><i class="icon-disc"></i> 修改个人信息</a></li>
+                        <li><a th:href="@{/consumerInformation/updatePassword(id=${tConsumer.id})}"><i class="icon-disc"></i> 修改密码</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><i class="icon-paper-clip"></i>病历</a>
+                    <ul class="sub-menu">
+                        <li><a th:href="@{/consumerInformation/medical(id=${tConsumer.id})}"><i class="icon-disc"></i>历史病历</a></li>
+                        <li><a th:href="@{/consumerInformation/existingMedical(id=${tConsumer.id})}"><i class="icon-cursor-move"></i>现有病历</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><i class="icon icofont-restaurant-menu"></i>预约信息</a>
+                    <ul class="sub-menu">
+                       <li><a th:href="@{/consumerOrder/appointmentProgress(id=${tConsumer.id})}"><i class="icon-disc"></i> 预约进度</a></li>
+                                <li><a th:href="@{/consumerInformation/consumerOrderList(id=${tConsumer.id})}"><i class="icon-disc"></i> 预约列表</a></li>
+                        <li><a th:href="@{/consumerOrder/medicalAppointmentList(id=${tConsumer.id})}"><i class="icon-disc"></i> 体检预约列表</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <!-- END: Menu-->
+</div>
+<!-- END: Main Menu-->
+
+
+<!-- START: Main Content-->
+<main>
+    <div class="container-fluid">
+        <!-- START: Breadcrumbs-->
+        <div class="row ">
+            <div class="col-12  align-self-center">
+                <div class="sub-header mt-3 py-3 px-3 align-self-center d-sm-flex w-100 rounded">
+                    <div class="w-sm-100 mr-auto"><h4 class="mb-0">预约</h4></div>
+                </div>
+            </div>
+        </div>
+        <!-- END: Breadcrumbs-->
+
+        <!-- START: Card Data-->
+        <div class="row">
+            <div class="col-12 mt-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label for="address">选择要预约的信息</label>
+                                    <div class="input-group  col-mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-transparent border-right-0"><i
+                                                    class="ion-ios-home"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" id="address" autocomplete="off"
+                                               readonly="true"  name="address"><s></s>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="input-group  col-mb-2">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text bg-transparent border-right-0"><i
+                                                    class="ion-ios-home"></i></span>
+                                        </div>
+                                        <select type="text" class="form-control" id="department"
+                                                readonly="true"  name="department"  size="1" onblur="showOrder()">
+                                            <option value="">请选择科室</option>
+                                            <option value="12">内科</option>
+                                            <option value="13">外科</option>
+                                            <option value="14">儿科</option>
+                                            <option value="15">妇科</option>
+                                            <option value="16">眼科</option>
+                                            <option value="17">神经科</option>
+                                            <option value="18">耳鼻喉科</option>
+                                            <option value="19">口腔科</option>
+                                            <option value="20">泌尿科</option>
+                                            <option value="21">骨科</option>
+                                            <option value="22">创伤科</option>
+                                            <option value="23">内分泌科</option>
+                                            <option value="24">麻醉科</option>
+                                            <option value="25">皮肤科</option>
+                                            <option value="26">传染病科</option>
+                                            <option value="27">病理科</option>
+                                            <option value="28">神经科</option>
+                                            <option value="29">矫形外科</option>
+                                            <option value="30">心脏外科</option>
+                                            <option value="31">脑外科</option>
+                                            <option value="32">胸外科</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div id="orderHidden" name="orderHidder" hidden=true>
+                                        <div class="card schedule-widget mb-0" th:fragment="order_refresh"
+                                             th:id="id_order_refresh">
+                                            <!-- Schedule Header -->
+                                            <div class="schedule-header">
+
+                                                <!-- Schedule Nav -->
+                                                <div class="schedule-nav" >
+                                                    <ul class="nav nav-tabs nav-justified">
+                                                        <li class="nav-item" id="sunDiv" style="width: 138px">
+                                                            <a class="nav-link" data-toggle="tab" id="slotSunday"
+                                                               href="#slot_sunday">Sunday</a>
+                                                        </li>
+                                                        <li class="nav-item" id="monDiv" style="width: 141px;">
+                                                            <a class="nav-link" id="slotMonday" data-toggle="tab"
+                                                               href="#slot_monday">Monday</a>
+                                                        </li>
+                                                        <li class="nav-item" id="tueDiv" style="width:141px;">
+                                                            <a class="nav-link" id="slotTuesday" data-toggle="tab"
+                                                               href="#slot_tuesday">Tuesday</a>
+                                                        </li>
+                                                        <li class="nav-item" id="wedDiv" style="width: 141px;">
+                                                            <a class="nav-link" data-toggle="tab" id="slotWednesday"
+                                                               href="#slot_wednesday">Wednesday</a>
+                                                        </li>
+                                                        <li class="nav-item" id="thuDiv" style="width: 141px;">
+                                                            <a class="nav-link" data-toggle="tab" id="slotThursday"
+                                                               href="#slot_thursday">Thursday</a>
+                                                        </li>
+                                                        <li class="nav-item" id="friDiv" style="width: 141px;">
+                                                            <a class="nav-link" data-toggle="tab" id="slotFriday"
+                                                               href="#slot_friday">Friday</a>
+                                                        </li>
+                                                        <li class="nav-item" id="satDiv" style="width: 141px;">
+                                                            <a class="nav-link" data-toggle="tab" id="slotSaturday"
+                                                               href="#slot_saturday">Saturday</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!-- /Schedule Nav -->
+
+                                            </div>
+                                            <!-- /Schedule Header -->
+
+                                            <!-- Schedule Content -->
+                                            <div class="tab-content schedule-cont" >
+
+                                                <!-- Sunday Slot -->
+                                                <div id="slot_sunday" class="tab-pane fade" >
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>编号</th>
+                                                            <th>医生姓名</th>
+                                                            <th>开始时间</th>
+                                                            <th>结束时间</th>
+                                                            <th>状态</th>
+                                                            <th>设置时间</th>
+                                                            <th>预约时间</th>
+                                                            <th>操作</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr th:each="p : ${tAppointmentSchedules}">
+                                                            <!--                                            <th scope="row">1</th>-->
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.id}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.tDoctor.name}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.startTime}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.endTime}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                style="text-align: center" th:if="${p.status} eq 0">
+                                                                <button class="btn btn-xs btn-secondary" th:text="已预约"
+                                                                        disabled="disabled"></button>
+                                                            </td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                style="text-align: center" th:if="${p.status} eq 1">
+                                                                <button class="btn btn-xs btn-success" th:text="未预约"
+                                                                        disabled="disabled"></button>
+                                                            </td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${#dates.format(p.gmtCreate,'yyyy年MM月dd日 HH:mm:ss')}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${#dates.format(p.gmtModified,'yyyy年MM月dd日 HH:mm:ss')}"></td>
+                                                            <td >
+                                                                <a th:if="${p.status} eq 1" class="btn btn-sm btn-success"
+                                                                   th:onclick="'javascript:orderTime('+${p.id}+')' "
+                                                                   name="delete">预约</a>
+                                                                <a th:if="${p.status} eq 0" class="btn btn-sm btn-secondary" readonly="readonly"
+
+                                                                   name="delete">预约</a>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- /Sunday Slot -->
+
+                                                <!-- Monday Slot -->
+                                                <div id="slot_monday" class="tab-pane fade">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>编号</th>
+                                                            <th>医生姓名</th>
+                                                            <th>开始时间</th>
+                                                            <th>结束时间</th>
+                                                            <th>状态</th>
+                                                            <th>设置时间</th>
+                                                            <th>预约时间</th>
+                                                            <th>操作</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr th:each="p : ${tAppointmentSchedules1}">
+                                                            <!--                                            <th scope="row">1</th>-->
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.id}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.tDoctor.name}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.startTime}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.endTime}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                style="text-align: center" th:if="${p.status} eq 0">
+                                                                <button class="btn btn-xs btn-secondary" th:text="已预约"
+                                                                        disabled="disabled"></button>
+                                                            </td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                style="text-align: center" th:if="${p.status} eq 1">
+                                                                <button class="btn btn-xs btn-success" th:text="未预约"
+                                                                        disabled="disabled"></button>
+                                                            </td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${#dates.format(p.gmtCreate,'yyyy年MM月dd日 HH:mm:ss')}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${#dates.format(p.gmtModified,'yyyy年MM月dd日 HH:mm:ss')}"></td>
+                                                            <td >
+                                                                <a th:if="${p.status} eq 1" class="btn btn-sm btn-success"
+                                                                   th:onclick="'javascript:orderTime('+${p.id}+')' "
+                                                                   name="delete">预约</a>
+                                                                <a th:if="${p.status} eq 0" class="btn btn-sm btn-secondary" readonly="readonly"
+
+                                                                   name="delete">预约</a>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                    <!-- Slot List -->
+
+                                                    <!-- /Slot List -->
+
+                                                </div>
+                                                <!-- /Monday Slot -->
+
+                                                <!-- Tuesday Slot -->
+                                                <div id="slot_tuesday" class="tab-pane fade">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>编号</th>
+                                                            <th>医生姓名</th>
+                                                            <th>开始时间</th>
+                                                            <th>结束时间</th>
+                                                            <th>状态</th>
+                                                            <th>设置时间</th>
+                                                            <th>预约时间</th>
+                                                            <th>操作</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr th:each="p : ${tAppointmentSchedules2}">
+                                                            <!--                                            <th scope="row">1</th>-->
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.id}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.tDoctor.name}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.startTime}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.endTime}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                style="text-align: center" th:if="${p.status} eq 0">
+                                                                <button class="btn btn-xs btn-secondary" th:text="已预约"
+                                                                        disabled="disabled"></button>
+                                                            </td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                style="text-align: center" th:if="${p.status} eq 1">
+                                                                <button class="btn btn-xs btn-success" th:text="未预约"
+                                                                        disabled="disabled"></button>
+                                                            </td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${#dates.format(p.gmtCreate,'yyyy年MM月dd日 HH:mm:ss')}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${#dates.format(p.gmtModified,'yyyy年MM月dd日 HH:mm:ss')}"></td>
+                                                            <td >
+                                                                <a th:if="${p.status} eq 1" class="btn btn-sm btn-success"
+                                                                   th:onclick="'javascript:orderTime('+${p.id}+')' "
+                                                                   name="delete">预约</a>
+                                                                <a th:if="${p.status} eq 0" class="btn btn-sm btn-secondary" readonly="readonly"
+
+                                                                   name="delete">预约</a>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- /Tuesday Slot -->
+
+                                                <!-- Wednesday Slot -->
+                                                <div id="slot_wednesday" class="tab-pane fade" >
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>编号</th>
+                                                            <th>医生姓名</th>
+                                                            <th>开始时间</th>
+                                                            <th>结束时间</th>
+                                                            <th>状态</th>
+                                                            <th>设置时间</th>
+                                                            <th>预约时间</th>
+                                                            <th>操作</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr th:each="p : ${tAppointmentSchedules3}">
+                                                            <!--                                            <th scope="row">1</th>-->
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.id}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.tDoctor.name}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.startTime}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.endTime}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                style="text-align: center" th:if="${p.status} eq 0">
+                                                                <button class="btn btn-xs btn-secondary" th:text="已预约"
+                                                                        disabled="disabled"></button>
+                                                            </td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                style="text-align: center" th:if="${p.status} eq 1">
+                                                                <button class="btn btn-xs btn-success" th:text="未预约"
+                                                                        disabled="disabled"></button>
+                                                            </td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${#dates.format(p.gmtCreate,'yyyy年MM月dd日 HH:mm:ss')}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${#dates.format(p.gmtModified,'yyyy年MM月dd日 HH:mm:ss')}"></td>
+                                                            <td >
+                                                                <a th:if="${p.status} eq 1" class="btn btn-sm btn-success"
+                                                                   th:onclick="'javascript:orderTime('+${p.id}+')' "
+                                                                   name="delete">预约</a>
+                                                                <a th:if="${p.status} eq 0" class="btn btn-sm btn-secondary" readonly="readonly"
+
+                                                                   name="delete">预约</a>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- /Wednesday Slot -->
+
+                                                <!-- Thursday Slot -->
+                                                <div id="slot_thursday" class="tab-pane fade" >
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>编号</th>
+                                                            <th>医生姓名</th>
+                                                            <th>开始时间</th>
+                                                            <th>结束时间</th>
+                                                            <th>状态</th>
+                                                            <th>设置时间</th>
+                                                            <th>预约时间</th>
+                                                            <th>操作</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr th:each="p : ${tAppointmentSchedules4}">
+                                                            <!--                                            <th scope="row">1</th>-->
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.id}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.tDoctor.name}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.startTime}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.endTime}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                style="text-align: center" th:if="${p.status} eq 0">
+                                                                <button class="btn btn-xs btn-secondary" th:text="已预约"
+                                                                        disabled="disabled"></button>
+                                                            </td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                style="text-align: center" th:if="${p.status} eq 1">
+                                                                <button class="btn btn-xs btn-success" th:text="未预约"
+                                                                        disabled="disabled"></button>
+                                                            </td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${#dates.format(p.gmtCreate,'yyyy年MM月dd日 HH:mm:ss')}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${#dates.format(p.gmtModified,'yyyy年MM月dd日 HH:mm:ss')}"></td>
+                                                            <td >
+                                                                <a th:if="${p.status} eq 1" class="btn btn-sm btn-success"
+                                                                   th:onclick="'javascript:orderTime('+${p.id}+')' "
+                                                                   name="delete">预约</a>
+                                                                <a th:if="${p.status} eq 0" class="btn btn-sm btn-secondary" readonly="readonly"
+
+                                                                   name="delete">预约</a>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- /Thursday Slot -->
+
+                                                <!-- Friday Slot -->
+                                                <div id="slot_friday" class="tab-pane fade" >
+
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>编号</th>
+                                                            <th>医生姓名</th>
+                                                            <th>开始时间</th>
+                                                            <th>结束时间</th>
+                                                            <th>状态</th>
+                                                            <th>设置时间</th>
+                                                            <th>预约时间</th>
+                                                            <th>操作</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr th:each="p : ${tAppointmentSchedules5}">
+                                                            <!--                                            <th scope="row">1</th>-->
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.id}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.tDoctor.name}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.startTime}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.endTime}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                style="text-align: center" th:if="${p.status} eq 0">
+                                                                <button class="btn btn-xs btn-secondary" th:text="已预约"
+                                                                        disabled="disabled"></button>
+                                                            </td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                style="text-align: center" th:if="${p.status} eq 1">
+                                                                <button class="btn btn-xs btn-success" th:text="未预约"
+                                                                        disabled="disabled"></button>
+                                                            </td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${#dates.format(p.gmtCreate,'yyyy年MM月dd日 HH:mm:ss')}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${#dates.format(p.gmtModified,'yyyy年MM月dd日 HH:mm:ss')}"></td>
+                                                            <td >
+                                                                <a th:if="${p.status} eq 1" class="btn btn-sm btn-success"
+                                                                   th:onclick="'javascript:orderTime('+${p.id}+')' "
+                                                                   name="delete">预约</a>
+                                                                <a th:if="${p.status} eq 0" class="btn btn-sm btn-secondary" readonly="readonly"
+
+                                                                   name="delete">预约</a>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- /Friday Slot -->
+
+                                                <!-- Saturday Slot -->
+                                                <div id="slot_saturday" class="tab-pane fade" >
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                        <tr>
+                                                            <th>编号</th>
+                                                            <th>医生姓名</th>
+                                                            <th>开始时间</th>
+                                                            <th>结束时间</th>
+                                                            <th>状态</th>
+                                                            <th>设置时间</th>
+                                                            <th>预约时间</th>
+                                                            <th>操作</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        <tr th:each="p : ${tAppointmentSchedules6}">
+                                                            <!--                                            <th scope="row">1</th>-->
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.id}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.tDoctor.name}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.startTime}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${p.endTime}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                style="text-align: center" th:if="${p.status} eq 0">
+                                                                <button class="btn btn-xs btn-secondary" th:text="已预约"
+                                                                        disabled="disabled"></button>
+                                                            </td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                style="text-align: center" th:if="${p.status} eq 1">
+                                                                <button class="btn btn-xs btn-success" th:text="未预约"
+                                                                        disabled="disabled"></button>
+                                                            </td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${#dates.format(p.gmtCreate,'yyyy年MM月dd日 HH:mm:ss')}"></td>
+                                                            <td onmousemove="removeClassType(this)"
+                                                                th:text="${#dates.format(p.gmtModified,'yyyy年MM月dd日 HH:mm:ss')}"></td>
+                                                            <td >
+                                                                <a th:if="${p.status} eq 1" class="btn btn-sm btn-success"
+                                                                   th:onclick="'javascript:orderTime('+${p.id}+')' "
+                                                                   name="delete">预约</a>
+                                                                <a th:if="${p.status} eq 0" class="btn btn-sm btn-secondary" readonly="readonly"
+
+                                                                   name="delete">预约</a>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!-- /Saturday Slot -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="orderShow" name="orderShow">
+                                        <h1 style="text-align: center">请先选择要预约的医院</h1>
+                                    </div>
+                                    <div id="loading" name="loading" hidden="hidden">
+                                        <div id="loader3" class="loader-container">
+                                            <div class="loader three"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: Card DATA-->
+    </div>
+</main>
+<!-- END: Content-->
+
+
+<!-- START: Back to top-->
+<a href="#" class="scrollup text-center">
+    <i class="icon-arrow-up"></i>
+</a>
+<!-- END: Back to top-->
+
+<!-- START: Template JS-->
+<script src="dist/vendors/jquery/jquery-3.3.1.min.js"
+        th:src="@{/information/vendors/jquery/jquery-3.3.1.min.js}"></script>
+<script src="dist/vendors/jquery-ui/jquery-ui.min.js"
+        th:src="@{/information/vendors/jquery-ui/jquery-ui.min.js}"></script>
+<script src="dist/vendors/moment/moment.js" th:src="@{/information/vendors/moment/moment.js}"></script>
+<script src="dist/vendors/bootstrap/js/bootstrap.bundle.min.js"
+        th:src="@{/information/vendors/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<script src="dist/vendors/slimscroll/jquery.slimscroll.min.js"
+        th:src="@{/information/vendors/slimscroll/jquery.slimscroll.min.js}"></script>
+<script src="dist/vendors/flag-select/js/jquery.flagstrap.min.js"
+        th:src="@{/information/vendors/flag-select/js/jquery.flagstrap.min.js}"></script>
+<script src="dist/vendors/sweetalert/sweetalert.min.js"
+        th:src="@{/information/vendors/sweetalert/sweetalert.min.js}"></script><!-- END: Template JS-->
+<!-- START: APP JS-->
+<script src="dist/js/app.js" th:src="@{/information/js/app.js}"></script>
+<!--地址选择-->
+<script type="text/javascript" src="js/Popt.js" th:src="@{/information/js/Popt.js}"></script>
+<script type="text/javascript" src="js/city.json.js" th:src="@{/information/js/order/city.json.js}"></script>
+<script type="text/javascript" src="js/citySet.js" th:src="@{/information/js/citySet.js}"></script>
+<!-- END: APP JS-->
+<script type="text/javascript">
+    function orderTime(id){
+       var consumerId = $("#consumerId").val();
+       if(id != '' || consumerId != ''){
+            $.post(
+                "/consumerOrder/orderTime",
+                "id=" + id  + "&consumerId=" + consumerId,
+                function (data){
+                    if(data == "error"){
+                        swal({
+                            title: "提示",
+                            text: "预约失败",
+                            type: "error",
+                            showLoaderOnConfirm: '重试'
+                        },function (){
+                            showOrderList();
+                            showDateTime();
+                        });
+                    }else if(data == "success"){
+                        swal({
+                            title: "提示",
+                            text: "预约成功",
+                            type: "success",
+                            showLoaderOnConfirm: '确定'
+                        },function (){
+                            showOrderList();
+                            showDateTime();
+                        });
+
+                    }else if(data == "error1"){
+                        swal({
+                            title: "提示",
+                            text: "您选择的预约请求已被预约，请重新选择",
+                            type: "info",
+                            showLoaderOnConfirm: '确定'
+                        },function (){
+                            showOrderList();
+                            showDateTime();
+                        });
+
+                    }
+                }
+            )
+       }
+    }
+</script>
+<script type="text/javascript">
+    $("#address").click(function (e) {
+        SelCity(this, e);
+    });
+    $("s").click(function (e) {
+        SelCity(document.getElementById("address"), e);
+    });
+</script>
+<script type="text/javascript">
+    window.onload = function () {
+        var date = new Date();
+        var date1 = new Date(date.getTime() + 86400000);
+        var date2 = new Date(date.getTime() + 86400000 * 2);
+        var date3 = new Date(date.getTime() + 86400000 * 3);
+        var date4 = new Date(date.getTime() + 86400000 * 4);
+        var date5 = new Date(date.getTime() + 86400000 * 5);
+        var date6 = new Date(date.getTime() + 86400000 * 6);
+        var day = date.getDay();
+        if (day == "1") {
+            var time = (date.getMonth() + 1) + "月" + date.getDate() + "日-星期一";
+            var time1 = (date1.getMonth() + 1) + "月" + date1.getDate() + "日-星期二";
+            var time2 = (date2.getMonth() + 1) + "月" + date2.getDate() + "日-星期三";
+            var time3 = (date3.getMonth() + 1) + "月" + date3.getDate() + "日-星期四";
+            var time4 = (date4.getMonth() + 1) + "月" + date4.getDate() + "日-星期五";
+            var time5 = (date5.getMonth() + 1) + "月" + date5.getDate() + "日-星期六";
+            var time6 = (date6.getMonth() + 1) + "月" + date6.getDate() + "日-星期日";
+            $("#slotMonday").text(time)
+            $("#slotMonday").attr("class", "nav-link active");
+            $("#slot_monday").attr("class", "tab-pane fade active show");
+            $("#slotTuesday").text(time1)
+            $("#slotWednesday").text(time2)
+            $("#slotThursday").text(time3)
+            $("#slotFriday").text(time4)
+            $("#slotSaturday").text(time5)
+            $("#slotSunday").text(time6)
+        } else if (day == "2") {
+            var time = (date.getMonth() + 1) + "月" + date.getDate() + "日-星期二";
+            var time1 = (date1.getMonth() + 1) + "月" + date1.getDate() + "日-星期三";
+            var time2 = (date2.getMonth() + 1) + "月" + date2.getDate() + "日-星期四";
+            var time3 = (date3.getMonth() + 1) + "月" + date3.getDate() + "日-星期五";
+            var time4 = (date4.getMonth() + 1) + "月" + date4.getDate() + "日-星期六";
+            var time5 = (date5.getMonth() + 1) + "月" + date5.getDate() + "日-星期日";
+            var time6 = (date6.getMonth() + 1) + "月" + date6.getDate() + "日-星期一";
+            $("#slotMonday").text(time6)
+            $("#slotTuesday").text(time)
+            $("#slotTuesday").attr("class", "nav-link active");
+            $("#slot_tuesday").attr("class", "tab-pane fade active show");
+            $("#slotWednesday").text(time1)
+            $("#slotThursday").text(time2)
+            $("#slotFriday").text(time3)
+            $("#slotSaturday").text(time4)
+            $("#slotSunday").text(time5)
+        } else if (day == "3") {
+            var time = (date.getMonth() + 1) + "月" + date.getDate() + "日-星期三";
+            var time1 = (date1.getMonth() + 1) + "月" + date1.getDate() + "日-星期四";
+            var time2 = (date2.getMonth() + 1) + "月" + date2.getDate() + "日-星期五";
+            var time3 = (date3.getMonth() + 1) + "月" + date3.getDate() + "日-星期六";
+            var time4 = (date4.getMonth() + 1) + "月" + date4.getDate() + "日-星期日";
+            var time5 = (date5.getMonth() + 1) + "月" + date5.getDate() + "日-星期一";
+            var time6 = (date6.getMonth() + 1) + "月" + date6.getDate() + "日-星期二";
+            $("#slotMonday").text(time5)
+            $("#slotTuesday").text(time6)
+            $("#slotWednesday").text(time)
+            $("#slotWednesday").attr("class", "nav-link active");
+            $("#slot_wednesday").attr("class", "tab-pane fade active show");
+            $("#slotThursday").text(time1)
+            $("#slotFriday").text(time2)
+            $("#slotSaturday").text(time3)
+            $("#slotSunday").text(time4)
+        } else if (day == "4") {
+            var time = (date.getMonth() + 1) + "月" + date.getDate() + "日-星期四";
+            var time1 = (date1.getMonth() + 1) + "月" + date1.getDate() + "日-星期五";
+            var time2 = (date2.getMonth() + 1) + "月" + date2.getDate() + "日-星期六";
+            var time3 = (date3.getMonth() + 1) + "月" + date3.getDate() + "日-星期日";
+            var time4 = (date4.getMonth() + 1) + "月" + date4.getDate() + "日-星期一";
+            var time5 = (date5.getMonth() + 1) + "月" + date5.getDate() + "日-星期二";
+            var time6 = (date6.getMonth() + 1) + "月" + date6.getDate() + "日-星期三";
+            $("#slotMonday").text(time4)
+            $("#slotTuesday").text(time5)
+            $("#slotWednesday").text(time6)
+            $("#slotThursday").text(time)
+            $("#slotThursday").attr("class", "nav-link active");
+            $("#slot_thursday").attr("class", "tab-pane fade active show");
+            $("#slotFriday").text(time1)
+            $("#slotSaturday").text(time2)
+            $("#slotSunday").text(time3)
+        } else if (day == "5") {
+            var time = (date.getMonth() + 1) + "月" + date.getDate() + "日-星期五";
+            var time1 = (date1.getMonth() + 1) + "月" + date1.getDate() + "日-星期六";
+            var time2 = (date2.getMonth() + 1) + "月" + date2.getDate() + "日-星期日";
+            var time3 = (date3.getMonth() + 1) + "月" + date3.getDate() + "日-星期一";
+            var time4 = (date4.getMonth() + 1) + "月" + date4.getDate() + "日-星期二";
+            var time5 = (date5.getMonth() + 1) + "月" + date5.getDate() + "日-星期三";
+            var time6 = (date6.getMonth() + 1) + "月" + date6.getDate() + "日-星期四";
+            $("#slotMonday").text(time3)
+            $("#slotTuesday").text(time4)
+            $("#slotWednesday").text(time5)
+            $("#slotThursday").text(time6)
+            $("#slotFriday").text(time)
+            $("#slotFriday").attr("class", "nav-link active");
+            $("#slot_friday").attr("class", "tab-pane fade active show");
+            $("#slotSaturday").text(time1)
+            $("#slotSunday").text(time2)
+        } else if (day == "6") {
+            var time = (date.getMonth() + 1) + "月" + date.getDate() + "日-星期六";
+            var time1 = (date1.getMonth() + 1) + "月" + date1.getDate() + "日-星期日";
+            var time2 = (date2.getMonth() + 1) + "月" + date2.getDate() + "日-星期一";
+            var time3 = (date3.getMonth() + 1) + "月" + date3.getDate() + "日-星期二";
+            var time4 = (date4.getMonth() + 1) + "月" + date4.getDate() + "日-星期三";
+            var time5 = (date5.getMonth() + 1) + "月" + date5.getDate() + "日-星期四";
+            var time6 = (date6.getMonth() + 1) + "月" + date6.getDate() + "日-星期五";
+            $("#slotMonday").text(time2)
+            $("#slotTuesday").text(time3)
+            $("#slotWednesday").text(time4)
+            $("#slotThursday").text(time5)
+            $("#slotFriday").text(time6)
+            $("#slotSaturday").text(time)
+            $("#slotSaturday").attr("class", "nav-link active");
+            $("#slot_saturday").attr("class", "tab-pane fade active show");
+            $("#slotSunday").text(time1)
+        } else if (day == "0") {
+            var time = (date.getMonth() + 1) + "月" + date.getDate() + "日-星期日";
+            var time1 = (date1.getMonth() + 1) + "月" + date1.getDate() + "日-星期一";
+            var time2 = (date2.getMonth() + 1) + "月" + date2.getDate() + "日-星期二";
+            var time3 = (date3.getMonth() + 1) + "月" + date3.getDate() + "日-星期三";
+            var time4 = (date4.getMonth() + 1) + "月" + date4.getDate() + "日-星期四";
+            var time5 = (date5.getMonth() + 1) + "月" + date5.getDate() + "日-星期五";
+            var time6 = (date6.getMonth() + 1) + "月" + date6.getDate() + "日-星期六";
+            $("#slotMonday").text(time1)
+            $("#slotTuesday").text(time2)
+            $("#slotWednesday").text(time3)
+            $("#slotThursday").text(time4)
+            $("#slotFriday").text(time5)
+            $("#slotSaturday").text(time6)
+            $("#slotSunday").text(time)
+            $("#slotSunday").attr("class", "nav-link active");
+            $("#slot_sunday").attr("class", "tab-pane fade active show");
+        }
+    }
+</script>
+<script type="text/javascript">
+
+</script>
+</body>
+<!-- END: Body-->
+</html>

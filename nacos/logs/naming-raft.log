@@ -1,0 +1,58 @@
+2023-05-18 15:33:55,564 INFO raft peers changed: [Member{ip='192.168.1.102', port=8858, state=UP, extendInfo={raftPort=7858}}]
+
+2023-05-18 15:33:55,574 INFO initializing Raft sub-system
+
+2023-05-18 15:33:55,609 INFO finish loading all datums, size: 1 cost 35 ms.
+
+2023-05-18 15:33:55,610 INFO cache loaded, datum count: 1, current term: 0
+
+2023-05-18 15:33:55,610 INFO finish to load data from disk, cost: 36 ms.
+
+2023-05-18 15:33:55,612 INFO timer started: leader timeout ms: 15000, heart-beat timeout ms: 5000
+
+2023-05-18 15:33:55,821 INFO add listener: com.alibaba.nacos.naming.domains.meta.00-00---000-NACOS_SWITCH_DOMAIN-000---00-00
+
+2023-05-18 15:33:55,828 INFO add listener: com.alibaba.nacos.naming.domains.meta.
+
+2023-05-18 15:34:00,562 WARN start to close old raft protocol!!!
+
+2023-05-18 15:34:00,562 WARN stop old raft protocol task for notifier
+
+2023-05-18 15:34:00,563 WARN stop old raft protocol task for master task
+
+2023-05-18 15:34:00,563 WARN stop old raft protocol task for heartbeat task
+
+2023-05-18 15:34:00,563 WARN clean old cache datum for old raft
+
+2023-05-18 15:34:00,563 WARN start to close old raft protocol!!!
+
+2023-05-18 15:34:00,563 WARN stop old raft protocol task for notifier
+
+2023-05-18 15:34:00,563 WARN stop old raft protocol task for master task
+
+2023-05-18 15:34:00,563 WARN stop old raft protocol task for heartbeat task
+
+2023-05-18 15:34:00,563 WARN clean old cache datum for old raft
+
+2023-05-18 15:34:00,563 WARN start to move old raft protocol metadata
+
+2023-05-18 15:34:00,565 WARN start to move old raft protocol metadata
+
+2023-05-18 15:34:00,565 INFO raft peers changed: [Member{ip='192.168.1.102', port=8858, state=UP, extendInfo={lastRefreshTime=1684395240565, raftPort=7858, version=1.4.3}}]
+
+2023-05-18 15:34:05,515 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@patient-service
+
+2023-05-18 15:34:08,983 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@consumer-service
+
+2023-05-18 15:34:15,155 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@other-service
+
+2023-05-18 15:34:21,780 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@doctor-service
+
+2023-05-18 15:34:27,201 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@drug-service
+
+2023-05-18 15:34:31,259 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@gateway-service
+
+2023-05-18 15:34:37,986 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@front-service
+
+2023-05-18 15:34:46,292 INFO add listener: com.alibaba.nacos.naming.iplist.public##DEFAULT_GROUP@@background-service
+

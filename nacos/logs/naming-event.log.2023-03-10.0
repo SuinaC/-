@@ -1,0 +1,214 @@
+2023-03-10 15:15:21,295 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_false,172.20.10.4:8201_false,
+
+2023-03-10 15:15:21,875 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_false,172.20.10.4:8201_false,
+
+2023-03-10 15:15:22,623 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 1, msg: tcp:ok+
+
+2023-03-10 15:15:22,623 INFO serviceName: DEFAULT_GROUP@@bookservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-10 15:15:25,594 INFO serviceName: DEFAULT_GROUP@@bookservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 1, msg: tcp:ok+
+
+2023-03-10 15:15:25,849 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-10 15:15:27,627 INFO serviceName: DEFAULT_GROUP@@bookservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-10 15:15:27,627 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 2, msg: tcp:ok+
+
+2023-03-10 15:15:30,849 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-10 15:15:30,849 INFO serviceName: DEFAULT_GROUP@@bookservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 2, msg: tcp:ok+
+
+2023-03-10 15:15:31,196 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-10 15:15:31,196 INFO serviceName: DEFAULT_GROUP@@bookservice {POS} {IP-ENABLED} valid: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-10 15:15:34,413 INFO serviceName: DEFAULT_GROUP@@bookservice {POS} {IP-ENABLED} valid: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-10 15:15:34,667 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-10 15:17:00,866 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_false,172.20.10.4:8101_false,
+
+2023-03-10 15:17:02,091 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_false,172.20.10.4:8101_false,
+
+2023-03-10 15:17:02,569 INFO serviceName: DEFAULT_GROUP@@userservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 1, msg: tcp:ok+
+
+2023-03-10 15:17:02,569 INFO serviceName: DEFAULT_GROUP@@userservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-10 15:17:04,567 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-10 15:17:04,567 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-10 15:17:05,665 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 1, msg: tcp:ok+
+
+2023-03-10 15:17:05,920 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-10 15:17:06,925 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-10 15:17:07,455 INFO serviceName: DEFAULT_GROUP@@userservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 2, msg: tcp:ok+
+
+2023-03-10 15:17:07,455 INFO serviceName: DEFAULT_GROUP@@userservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-10 15:17:07,455 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-10 15:17:10,922 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 2, msg: tcp:ok+
+
+2023-03-10 15:17:10,922 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-10 15:17:11,229 INFO serviceName: DEFAULT_GROUP@@userservice {POS} {IP-ENABLED} valid: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-10 15:17:11,229 INFO serviceName: DEFAULT_GROUP@@userservice {POS} {IP-ENABLED} valid: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-10 15:17:11,938 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-10 15:17:12,446 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-10 15:17:14,492 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-10 15:17:14,492 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-10 16:06:39,693 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8101@Zhengzhou in 1, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:39,693 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:39,693 INFO serviceName: DEFAULT_GROUP@@bookservice {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8201@Zhengzhou in 1, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:39,693 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8102@Changsha in 1, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:39,696 INFO serviceName: DEFAULT_GROUP@@bookservice {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8202@Changsha in 1, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:39,696 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8202@Changsha in 1, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:40,080 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:40,189 INFO serviceName: DEFAULT_GROUP@@userservice {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8101@Zhengzhou in 1, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:40,189 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8201@Zhengzhou in 1, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:40,189 INFO serviceName: DEFAULT_GROUP@@userservice {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8102@Changsha in 1, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:40,684 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8102@Changsha in 2, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:40,684 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8101@Zhengzhou in 2, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:40,684 INFO serviceName: DEFAULT_GROUP@@bookservice {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8202@Changsha in 2, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:40,684 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8202@Changsha in 2, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:40,684 INFO serviceName: DEFAULT_GROUP@@bookservice {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8201@Zhengzhou in 2, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:40,686 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:41,080 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:41,190 INFO serviceName: DEFAULT_GROUP@@userservice {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8102@Changsha in 2, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:41,190 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8201@Zhengzhou in 2, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:41,190 INFO serviceName: DEFAULT_GROUP@@userservice {OTHER} {IP-DISABLED} pre-invalid: 172.20.10.4:8101@Zhengzhou in 2, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:42,689 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:42,689 INFO serviceName: DEFAULT_GROUP@@bookservice {POS} {IP-DISABLED} invalid: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:42,689 INFO serviceName: DEFAULT_GROUP@@bookservice {POS} {IP-DISABLED} invalid: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:42,689 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:42,690 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:43,191 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:43,191 INFO serviceName: DEFAULT_GROUP@@userservice {POS} {IP-DISABLED} invalid: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:06:43,191 INFO serviceName: DEFAULT_GROUP@@userservice {POS} {IP-DISABLED} invalid: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:error:Network is unreachable
+
+2023-03-10 16:15:33,225 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-10 16:15:33,480 INFO serviceName: DEFAULT_GROUP@@bookservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-10 16:15:33,480 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-10 16:15:33,480 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 1, msg: tcp:ok+
+
+2023-03-10 16:15:33,480 INFO serviceName: DEFAULT_GROUP@@bookservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 1, msg: tcp:ok+
+
+2023-03-10 16:15:33,480 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 1, msg: tcp:ok+
+
+2023-03-10 16:15:33,721 INFO serviceName: DEFAULT_GROUP@@userservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 1, msg: tcp:ok+
+
+2023-03-10 16:15:33,721 INFO serviceName: DEFAULT_GROUP@@userservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-10 16:15:33,973 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-10 16:15:34,697 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-10 16:15:38,234 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-10 16:15:38,234 INFO serviceName: DEFAULT_GROUP@@bookservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 2, msg: tcp:ok+
+
+2023-03-10 16:15:38,234 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 2, msg: tcp:ok+
+
+2023-03-10 16:15:38,234 INFO serviceName: DEFAULT_GROUP@@bookservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-10 16:15:38,236 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 2, msg: tcp:ok+
+
+2023-03-10 16:15:38,237 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-10 16:15:38,724 INFO serviceName: DEFAULT_GROUP@@userservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-10 16:15:38,724 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-10 16:15:38,724 INFO serviceName: DEFAULT_GROUP@@userservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 2, msg: tcp:ok+
+
+2023-03-10 16:15:39,705 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-10 16:15:42,046 INFO serviceName: DEFAULT_GROUP@@bookservice {POS} {IP-ENABLED} valid: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-10 16:15:42,046 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-10 16:15:42,046 INFO serviceName: DEFAULT_GROUP@@bookservice {POS} {IP-ENABLED} valid: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-10 16:15:42,047 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-10 16:15:42,047 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-10 16:15:42,540 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-10 16:15:42,540 INFO serviceName: DEFAULT_GROUP@@userservice {POS} {IP-ENABLED} valid: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-10 16:15:42,540 INFO serviceName: DEFAULT_GROUP@@userservice {POS} {IP-ENABLED} valid: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-10 16:35:55,725 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-10 16:35:55,725 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-10 16:35:55,725 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-10 16:35:55,924 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-10 16:35:55,958 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-10 16:35:55,959 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-10 16:35:55,959 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 
+
+2023-03-10 16:35:56,345 INFO serviceName: DEFAULT_GROUP@@userservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-10 16:35:56,345 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-10 16:35:56,345 INFO serviceName: DEFAULT_GROUP@@userservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-10 16:35:56,597 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-10 16:35:56,669 INFO serviceName: DEFAULT_GROUP@@bookservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-10 16:35:56,669 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-10 16:35:56,669 INFO serviceName: DEFAULT_GROUP@@bookservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-10 16:35:56,925 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-10 16:35:56,925 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-10 16:36:19,995 ERROR [UPDATE-DOMAIN] Exception while taking item from LinkedBlockingDeque.
+

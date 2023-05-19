@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <!-- START: Head-->
+    <head>
+        <meta charset="UTF-8">
+        <title>邮件</title>
+        <link rel="shortcut icon" href="dist/images/favicon.ico" th:href="@{/information/}"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"> 
+
+        <!-- START: Template CSS-->
+        <link rel="stylesheet" href="dist/vendors/bootstrap/css/bootstrap.min.css" th:href="@{/information/vendors/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" href="dist/vendors/jquery-ui/jquery-ui.min.css" th:href="@{/information/vendors/jquery-ui/jquery-ui.min.css}">
+        <link rel="stylesheet" href="dist/vendors/jquery-ui/jquery-ui.theme.min.css" th:href="@{/information/vendors/jquery-ui/jquery-ui.theme.min.css}">
+        <link rel="stylesheet" href="dist/vendors/simple-line-icons/css/simple-line-icons.css" th:href="@{/information/vendors/simple-line-icons/css/simple-line-icons.css}">
+        <link rel="stylesheet" href="dist/vendors/flags-icon/css/flag-icon.min.css" th:href="@{/information/vendors/flags-icon/css/flag-icon.min.css}">
+        <link rel="stylesheet" href="dist/vendors/flag-select/css/flags.css" th:href="@{/information/vendors/flag-select/css/flags.css}">
+        <link rel="stylesheet" href="dist/vendors/sweetalert/sweetalert.css"
+              th:href="@{/information/vendors/sweetalert/sweetalert.css}">
+        <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css"
+        th:href="@{/information/css/style.css}">
+        <link rel="stylesheet" href="assets/css/style.css" th:href="@{/information/css/all.min.css}">
+        <link rel="stylesheet" href="assets/css/style.css" th:href="@{/information/css/fontawesome.min.css}">
+        <!-- END Template CSS-->
+
+        <!-- START: Custom CSS-->
+        <link rel="stylesheet" href="dist/css/main.css" th:href="@{/information/css/main.css}">
+        <link rel="stylesheet" href="dist/vendors/icofont/icofont.min.css" th:href="@{/information/vendors/icofont/icofont.min.css}">
+        <!-- END: Custom CSS-->
+    </head>
+    <!-- END Head-->
+
+    <!-- START: Body-->    
+    <body id="main-container" class="default">
+        <!-- START: Pre Loader-->
+        <div class="se-pre-con">
+            <img src="dist/images/logo.png" th:src="@{/information/images/logo.png}" alt="logo" width="23" class="img-fluid"/>
+        </div>
+        <!-- END: Pre Loader-->
+
+        <!-- START: Header-->
+        <div id="header-fix" class="header fixed-top">
+            <nav class="navbar navbar-expand-lg  p-0">
+                <div class="navbar-header h4 mb-0 align-self-center logo-bar text-center">
+                    <a href="index.html" class="horizontal-logo text-center">
+                        <span class="h3 align-self-center mb-0 ">用户主页</span>
+                    </a>
+                </div>
+                <div class="navbar-header h4 mb-0 text-center h-100 collapse-menu-bar">
+                    <a href="#" class="sidebarCollapse" id="collapse"><i class="icon-menu body-color"></i></a>
+                </div>
+
+                <form class="float-left d-none d-lg-block search-form">
+                    <div class="form-group mb-0 position-relative">
+                        <input type="text" class="form-control border-0 rounded bg-search pl-5" id="searchDisease" th:onblur="'javascript:searchDisease('+${tConsumer.id}+')'" placeholder="请输入病症">
+                        <div class="btn-search position-absolute top-0">
+                            <a th:onclick="'javascript:searchDisease('+${tConsumer.id}+')'" ><i class="h5 icon-magnifier body-color"></i></a>
+                        </div>
+                        <a href="#" class="position-absolute close-button mobilesearch d-lg-none" data-toggle="dropdown" aria-expanded="false"><i class="icon-close h5"></i>
+                        </a>
+
+                    </div>
+                </form>
+                <div class="navbar-right ml-auto h-100">
+                    <ul class="ml-auto p-0 m-0 list-unstyled d-flex top-icon h-100">
+                        <li class="d-inline-block align-self-center  d-block d-lg-none">
+                            <a href="#" class="nav-link mobilesearch" data-toggle="dropdown" aria-expanded="false"><i class="icon-magnifier h4"></i>
+                            </a>
+                        </li>
+                        <li class="dropdown user-profile align-self-center d-inline-block">
+                            <a href="#" class="nav-link py-0" data-toggle="dropdown" aria-expanded="false">
+                                <div class="media">
+                                    <img src="dist/images/author.jpg" th:src="@{${tConsumer.img}}" alt="" class="d-flex img-fluid rounded-circle" width="29">
+                                </div>
+                            </a>
+
+                            <div class="dropdown-menu  dropdown-menu-right p-0">
+                                <a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}" class="dropdown-item px-2 align-self-center d-flex">
+                                    <span class="icon-pencil mr-2 h6 mb-0"></span> 编辑个人资料</a>
+                                <a th:href="@{/consumerInformation/information(id=${tConsumer.id})}" class="dropdown-item px-2 align-self-center d-flex">
+                                    <span class="icon-user mr-2 h6 mb-0"></span> 查看资料</a>
+                                <div class="dropdown-divider"></div>
+
+                                <div class="dropdown-divider"></div>
+                                <a href="/consumer/login" class="dropdown-item px-2 text-danger align-self-center d-flex">
+                                    <span class="icon-logout mr-2 h6  mb-0"></span>登出</a>
+                            </div>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- END: Header-->
+
+        <!-- START: Main Menu-->
+        <div class="sidebar">
+            <div class="media d-block text-center user-profile">
+                <img class="img-fluid" src="dist/images/author1.jpg" style="width: 100px; hight:100px" th:src="@{${tConsumer.img}}" alt="">
+                <div class="media-body text-center mt-0 color-primary mt-2">
+                    <a href="#" class="nav-link py-0" data-toggle="dropdown" aria-expanded="false">
+                        <h6 class="mb-0 font-weight-bold" th:text="${tConsumer.name}">姓名</h6>
+                        <p th:text="${tConsumer.nativePlace}"></p>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right p-0" style="">
+                        <a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}" class="dropdown-item px-2 align-self-center d-flex">
+                            <span class="icon-pencil mr-2 h6 mb-0"></span> 编辑个人资料</a>
+                        <a th:href="@{/consumerInformation/information(id=${tConsumer.id})}" class="dropdown-item px-2 align-self-center d-flex">
+                            <span class="icon-user mr-2 h6 mb-0"></span> 查看资料</a>
+                        <div class="dropdown-divider"></div>
+
+                        <div class="dropdown-divider"></div>
+                        <a href="/consumer/login" class="dropdown-item px-2 text-danger align-self-center d-flex">
+                            <span class="icon-logout mr-2 h6  mb-0"></span> 登出</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- START: Menu-->
+            <ul id="side-menu" class="sidebar-menu">
+                <li class="dropdown active"><a href="#">首页</a>
+                    <ul>
+                        <li class="active"><a href="index.html" th:href="@{/consumerInformation/index(id=${tConsumer.id})}"><i class="icon-rocket"></i> 首页</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">应用</a>
+                    <ul>
+                        <li><a th:href="@{/consumerInformation/calendar(id=${tConsumer.id})}"><i class="icon-calendar"></i> 日历备忘录</a></li>
+
+                        <li class="dropdown"><a href="#"><i class="icon-envelope"></i>邮箱</a>
+                            <ul class="sub-menu">
+                                <li><a th:href="@{/mailInbox/mail(id=${tConsumer.id})}"><i class="icon-envelope"></i> 收件箱</a></li>
+                            </ul>
+                        </li>
+                        <li><a th:href="@{/consumerOrder/consumerOrder(id=${tConsumer.id})}"><i class="icon icofont-ui-copy"></i> 预约</a></li>
+                        <li><a th:href="@{/consumerOrder/medicalOrder(id=${tConsumer.id})}"><i class="icon icofont-first-aid"></i> 体检预约</a></li>
+                        <li><a th:href="@{/consumerInformation/prescriptionList(id=${tConsumer.id})}"><i class="icon icofont-ui-clip-board"></i> 查看处方</a></li>
+                        <li><a th:href="@{/consumerInformation/searchDoctor(id=${tConsumer.id})}"><i class="icon icofont-doctor"></i> 查找医生</a></li>
+                       <li><a th:href="@{/consumerInformation/doctorCollection(id=${tConsumer.id})}"><i class="icon icofont-heart"></i> 医生收藏</a></li>
+                        <li><a th:href="@{/drug/drugOrderList(id=${tConsumer.id})}"><i class="icon icofont-ticket"></i> 查看药品订单列表</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">信息</a>
+                    <ul>
+                        <li class="dropdown"><a href="#"><i class="icon-user"></i>个人信息</a>
+                            <ul class="sub-menu">
+                                <li><a th:href="@{/consumerInformation/information(id=${tConsumer.id})}"><i class="icon-disc"></i> 查看个人信息</a></li>
+                                <li><a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}"><i class="icon-disc"></i> 修改个人信息</a></li>
+                                <li><a th:href="@{/consumerInformation/updatePassword(id=${tConsumer.id})}"><i class="icon-disc"></i> 修改密码</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><i class="icon-paper-clip"></i>病历</a>
+                            <ul class="sub-menu">
+                                <li><a th:href="@{/consumerInformation/medical(id=${tConsumer.id})}"><i class="icon-disc"></i>历史病历</a></li>
+                                <li><a th:href="@{/consumerInformation/existingMedical(id=${tConsumer.id})}"><i class="icon-cursor-move"></i>现有病历</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><i class="icon icofont-restaurant-menu"></i>预约信息</a>
+                            <ul class="sub-menu">
+                               <li><a th:href="@{/consumerOrder/appointmentProgress(id=${tConsumer.id})}"><i class="icon-disc"></i> 预约进度</a></li>
+                                <li><a th:href="@{/consumerInformation/consumerOrderList(id=${tConsumer.id})}"><i class="icon-disc"></i> 预约列表</a></li>
+                        <li><a th:href="@{/consumerOrder/medicalAppointmentList(id=${tConsumer.id})}"><i class="icon-disc"></i> 体检预约列表</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- END: Menu-->
+        </div>
+        <!-- END: Main Menu-->
+
+        <!-- START: Main Content-->
+        <main>
+            <!-- START: Card Data-->
+            <div class="row">
+                <div class="col-12 col-lg-3 col-xl-2 mb-4 mt-3 pr-lg-0">
+                    <div class="card border h-100">
+                        <div class="media d-block  d-flex p-3 bg-primary">
+                            <a href="#"><img th:src="${tConsumer.img}" alt="" class="img-fluid rounded-circle mr-3" width="50"></a>
+                            <div class="media-body align-self-center">
+                                <h5 class="mb-0 w-100"><a  class="text-white">[[${tConsumer.name}]]</a></h5>
+                                <small><a class="text-white">[[${tConsumer.email}]]</a></small>
+                            </div>
+                        </div>
+                        <ul class="list-unstyled inbox-nav  mb-0 py-4">
+                            <li><a th:href="@{/mailInbox/mail(id=${tConsumer.id})}" class="h6 d-block px-3 my-3"><i class="icon-envelope pr-2"></i> 收信箱</a></li>
+                            <li><a th:href="@{/mailInbox/sendMail(id=${tConsumer.id})}" class="h6 d-block px-3  my-3"><i class="icon-paper-plane pr-2"></i> 发邮件</a></li>
+                        </ul>
+                        <div class="eagle-divider"></div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-9 col-xl-10 mb-4 mt-3 pl-lg-0">
+                    <div class="card border border-left-0 h-100">
+                        <div class="card-body p-0">
+                            <div class="scrollertodo">
+                                <ul class="tasks chat-menu mail-app">
+                                    <li  class="task  py-3 px-2 border-left border-primary" th:each="map : ${mailList}">
+                                        <div class="media mb-3 d-flex w-100">
+                                            <div class="media-body align-self-center pl-2">
+                                                <b class="mb-0" th:text="${map.get('form')}">发件人</b><br/>
+                                                <p class="mb-0 text-muted" th:text="${map.get('formId')}">发件人邮箱</p>
+                                            </div>
+                                            <div class="ml-auto mail-tools">
+                                                <a th:href="${map.get('url')}" target="view_window" data-toggle="tooltip" title="打开邮件" data-placement="bottom"><i class="icon-envelope"></i></a>
+                                                <a href="#" data-toggle="tooltip" title="Save as draft" data-placement="bottom" class="ml-2"><i class="icon-pencil"></i></a>
+                                                <a href="#" data-toggle="tooltip" title="Make Archive" data-placement="bottom" class="ml-2"><i class="icon-folder-alt"></i></a>
+                                                <a href="#" data-toggle="tooltip" title="Delete Email" data-placement="bottom" class="ml-2"><i class="icon-trash"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-self-center">
+                                            <label class=""></i>
+                                               <b >[[${map.get('subject')}]]</b>
+                                                <span class="checkmark small"></span>
+                                            </label>
+                                            <div class="ml-auto d-flex font-weight-bold" th:text="${map.get('send date')}">邮件时间
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END: Card DATA-->
+        </main>
+        <!-- END: Content-->
+
+        
+
+        <!-- START: Back to top-->
+        <a href="#" class="scrollup text-center"> 
+            <i class="icon-arrow-up"></i>
+        </a>
+        <!-- END: Back to top-->
+
+        <!-- START: Template JS-->
+        <script src="dist/vendors/jquery/jquery-3.3.1.min.js" th:src="@{/information/vendors/jquery/jquery-3.3.1.min.js}"></script>
+        <script src="dist/vendors/jquery-ui/jquery-ui.min.js" th:src="@{/information/vendors/jquery-ui/jquery-ui.min.js}"></script>
+        <script src="dist/vendors/moment/moment.js" th:src="@{/information/vendors/moment/moment.js}"></script>
+        <script src="dist/vendors/bootstrap/js/bootstrap.bundle.min.js" th:src="@{/information/vendors/bootstrap/js/bootstrap.bundle.min.js}"></script>
+        <script src="dist/vendors/slimscroll/jquery.slimscroll.min.js" th:src="@{/information/vendors/slimscroll/jquery.slimscroll.min.js}"></script>
+        <script src="dist/vendors/flag-select/js/jquery.flagstrap.min.js" th:src="@{/information/vendors/flag-select/js/jquery.flagstrap.min.js}"></script>
+        <script src="dist/vendors/sweetalert/sweetalert.min.js" th:src="@{/information/vendors/sweetalert/sweetalert.min.js}"></script>
+        <!-- END: Template JS-->
+        <!-- END: Template JS-->
+
+        <!-- START: APP JS-->
+        <script src="dist/js/app.js" th:src="@{/information/js/app.js}"></script>
+        <!-- END: APP JS-->
+        <script type="text/javascript">
+
+        </script>
+    </body>
+    <!-- END: Body-->
+</html>

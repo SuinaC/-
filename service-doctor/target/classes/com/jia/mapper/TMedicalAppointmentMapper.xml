@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jia.mapper.TMedicalAppointmentMapper" >
+  <resultMap id="BaseResultMap" type="com.jia.entity.TMedicalAppointment" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="consumer_id" property="consumerId" jdbcType="BIGINT" />
+    <result column="doctor_id" property="doctorId" jdbcType="BIGINT" />
+    <result column="time" property="time" jdbcType="VARCHAR" />
+    <result column="general_inspection" property="generalInspection" jdbcType="VARCHAR" />
+    <result column="medical_examination" property="medicalExamination" jdbcType="VARCHAR" />
+    <result column="surgical_examination" property="surgicalExamination" jdbcType="VARCHAR" />
+    <result column="ecg_examination" property="ecgExamination" jdbcType="VARCHAR" />
+    <result column="x_ray_examination" property="xRayExamination" jdbcType="VARCHAR" />
+    <result column="blood_routine_examination" property="bloodRoutineExamination" jdbcType="VARCHAR" />
+    <result column="urine_routine_examination" property="urineRoutineExamination" jdbcType="VARCHAR" />
+    <result column="hepatic_examination" property="hepaticExamination" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMap" type="com.jia.entity.TMedicalAppointment" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="consumer_id" property="consumerId" jdbcType="BIGINT" />
+    <result column="doctor_id" property="doctorId" jdbcType="BIGINT" />
+    <result column="time" property="time" jdbcType="VARCHAR" />
+    <result column="general_inspection" property="generalInspection" jdbcType="VARCHAR" />
+    <result column="medical_examination" property="medicalExamination" jdbcType="VARCHAR" />
+    <result column="surgical_examination" property="surgicalExamination" jdbcType="VARCHAR" />
+    <result column="ecg_examination" property="ecgExamination" jdbcType="VARCHAR" />
+    <result column="x_ray_examination" property="xRayExamination" jdbcType="VARCHAR" />
+    <result column="blood_routine_examination" property="bloodRoutineExamination" jdbcType="VARCHAR" />
+    <result column="urine_routine_examination" property="urineRoutineExamination" jdbcType="VARCHAR" />
+    <result column="hepatic_examination" property="hepaticExamination" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+    <collection property="tConsumer" ofType="com.jia.entity.TConsumer" javaType="com.jia.entity.TConsumer">
+      <id column="c_id" property="id" jdbcType="BIGINT" />
+      <result column="c_name" property="name" jdbcType="VARCHAR" />
+      <result column="c_address" property="address" jdbcType="VARCHAR" />
+      <result column="c_img" property="img" jdbcType="VARCHAR" />
+      <result column="c_phone" property="phone" jdbcType="BIGINT" />
+      <result column="c_email" property="email" jdbcType="VARCHAR" />
+      <result column="c_id_card" property="idCard" jdbcType="VARCHAR" />
+      <result column="c_native_place" property="nativePlace" jdbcType="VARCHAR" />
+    </collection>
+    <collection property="tDoctor" ofType="com.jia.entity.TDoctor" javaType="com.jia.entity.TDoctor">
+      <id column="d_id" property="id" jdbcType="BIGINT"/>
+      <result column="d_name" property="name" jdbcType="VARCHAR"/>
+      <result column="d_department" property="department" jdbcType="VARCHAR"/>
+      <result column="d_title" property="title" jdbcType="VARCHAR"/>
+      <result column="d_address" property="address" jdbcType="VARCHAR"/>
+    </collection>
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, consumer_id, doctor_id, time, general_inspection, medical_examination, surgical_examination, 
+    ecg_examination, x_ray_examination, blood_routine_examination, urine_routine_examination, 
+    hepatic_examination, status, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.jia.entity.TMedicalAppointmentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_medical_appointment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_medical_appointment
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectByConsumerId" resultMap="ResultMap" parameterType="java.lang.Long">
+    SELECT t_medical_appointment.id,t_medical_appointment.consumer_id AS c_id,t_medical_appointment.time,
+           t_medical_appointment.general_inspection,t_medical_appointment.medical_examination,
+           t_medical_appointment.surgical_examination,t_medical_appointment.ecg_examination,
+           t_medical_appointment.x_ray_examination,t_medical_appointment.blood_routine_examination,
+           t_medical_appointment.urine_routine_examination,t_medical_appointment.hepatic_examination,
+           t_medical_appointment.gmt_create,t_consumer.name AS c_name,t_consumer.img AS c_img,
+           t_medical_appointment.status
+    FROM t_medical_appointment,t_consumer
+    WHERE t_consumer.id = t_medical_appointment.consumer_id AND t_consumer.id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_medical_appointment
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.jia.entity.TMedicalAppointmentExample" >
+    delete from t_medical_appointment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.jia.entity.TMedicalAppointment" >
+    insert into t_medical_appointment (id, consumer_id, doctor_id, 
+      time, general_inspection, medical_examination, 
+      surgical_examination, ecg_examination, x_ray_examination, 
+      blood_routine_examination, urine_routine_examination, 
+      hepatic_examination, status, gmt_create, 
+      gmt_modified)
+    values (#{id,jdbcType=BIGINT}, #{consumerId,jdbcType=BIGINT}, #{doctorId,jdbcType=BIGINT}, 
+      #{time,jdbcType=VARCHAR}, #{generalInspection,jdbcType=VARCHAR}, #{medicalExamination,jdbcType=VARCHAR}, 
+      #{surgicalExamination,jdbcType=VARCHAR}, #{ecgExamination,jdbcType=VARCHAR}, #{xRayExamination,jdbcType=VARCHAR}, 
+      #{bloodRoutineExamination,jdbcType=VARCHAR}, #{urineRoutineExamination,jdbcType=VARCHAR}, 
+      #{hepaticExamination,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, #{gmtCreate,jdbcType=TIMESTAMP}, 
+      #{gmtModified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jia.entity.TMedicalAppointment" >
+    insert into t_medical_appointment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="consumerId != null" >
+        consumer_id,
+      </if>
+      <if test="doctorId != null" >
+        doctor_id,
+      </if>
+      <if test="time != null" >
+        time,
+      </if>
+      <if test="generalInspection != null" >
+        general_inspection,
+      </if>
+      <if test="medicalExamination != null" >
+        medical_examination,
+      </if>
+      <if test="surgicalExamination != null" >
+        surgical_examination,
+      </if>
+      <if test="ecgExamination != null" >
+        ecg_examination,
+      </if>
+      <if test="xRayExamination != null" >
+        x_ray_examination,
+      </if>
+      <if test="bloodRoutineExamination != null" >
+        blood_routine_examination,
+      </if>
+      <if test="urineRoutineExamination != null" >
+        urine_routine_examination,
+      </if>
+      <if test="hepaticExamination != null" >
+        hepatic_examination,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create,
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="consumerId != null" >
+        #{consumerId,jdbcType=BIGINT},
+      </if>
+      <if test="doctorId != null" >
+        #{doctorId,jdbcType=BIGINT},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="generalInspection != null" >
+        #{generalInspection,jdbcType=VARCHAR},
+      </if>
+      <if test="medicalExamination != null" >
+        #{medicalExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="surgicalExamination != null" >
+        #{surgicalExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="ecgExamination != null" >
+        #{ecgExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="xRayExamination != null" >
+        #{xRayExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="bloodRoutineExamination != null" >
+        #{bloodRoutineExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="urineRoutineExamination != null" >
+        #{urineRoutineExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="hepaticExamination != null" >
+        #{hepaticExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null" >
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.jia.entity.TMedicalAppointmentExample" resultType="java.lang.Integer" >
+    select count(*) from t_medical_appointment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update t_medical_appointment
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.consumerId != null" >
+        consumer_id = #{record.consumerId,jdbcType=BIGINT},
+      </if>
+      <if test="record.doctorId != null" >
+        doctor_id = #{record.doctorId,jdbcType=BIGINT},
+      </if>
+      <if test="record.time != null" >
+        time = #{record.time,jdbcType=VARCHAR},
+      </if>
+      <if test="record.generalInspection != null" >
+        general_inspection = #{record.generalInspection,jdbcType=VARCHAR},
+      </if>
+      <if test="record.medicalExamination != null" >
+        medical_examination = #{record.medicalExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="record.surgicalExamination != null" >
+        surgical_examination = #{record.surgicalExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ecgExamination != null" >
+        ecg_examination = #{record.ecgExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="record.xRayExamination != null" >
+        x_ray_examination = #{record.xRayExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="record.bloodRoutineExamination != null" >
+        blood_routine_examination = #{record.bloodRoutineExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="record.urineRoutineExamination != null" >
+        urine_routine_examination = #{record.urineRoutineExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="record.hepaticExamination != null" >
+        hepatic_examination = #{record.hepaticExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.gmtCreate != null" >
+        gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gmtModified != null" >
+        gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update t_medical_appointment
+    set id = #{record.id,jdbcType=BIGINT},
+      consumer_id = #{record.consumerId,jdbcType=BIGINT},
+      doctor_id = #{record.doctorId,jdbcType=BIGINT},
+      time = #{record.time,jdbcType=VARCHAR},
+      general_inspection = #{record.generalInspection,jdbcType=VARCHAR},
+      medical_examination = #{record.medicalExamination,jdbcType=VARCHAR},
+      surgical_examination = #{record.surgicalExamination,jdbcType=VARCHAR},
+      ecg_examination = #{record.ecgExamination,jdbcType=VARCHAR},
+      x_ray_examination = #{record.xRayExamination,jdbcType=VARCHAR},
+      blood_routine_examination = #{record.bloodRoutineExamination,jdbcType=VARCHAR},
+      urine_routine_examination = #{record.urineRoutineExamination,jdbcType=VARCHAR},
+      hepatic_examination = #{record.hepaticExamination,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER},
+      gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jia.entity.TMedicalAppointment" >
+    update t_medical_appointment
+    <set >
+      <if test="consumerId != null" >
+        consumer_id = #{consumerId,jdbcType=BIGINT},
+      </if>
+      <if test="doctorId != null" >
+        doctor_id = #{doctorId,jdbcType=BIGINT},
+      </if>
+      <if test="time != null" >
+        time = #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="generalInspection != null" >
+        general_inspection = #{generalInspection,jdbcType=VARCHAR},
+      </if>
+      <if test="medicalExamination != null" >
+        medical_examination = #{medicalExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="surgicalExamination != null" >
+        surgical_examination = #{surgicalExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="ecgExamination != null" >
+        ecg_examination = #{ecgExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="xRayExamination != null" >
+        x_ray_examination = #{xRayExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="bloodRoutineExamination != null" >
+        blood_routine_examination = #{bloodRoutineExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="urineRoutineExamination != null" >
+        urine_routine_examination = #{urineRoutineExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="hepaticExamination != null" >
+        hepatic_examination = #{hepaticExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jia.entity.TMedicalAppointment" >
+    update t_medical_appointment
+    set consumer_id = #{consumerId,jdbcType=BIGINT},
+      doctor_id = #{doctorId,jdbcType=BIGINT},
+      time = #{time,jdbcType=VARCHAR},
+      general_inspection = #{generalInspection,jdbcType=VARCHAR},
+      medical_examination = #{medicalExamination,jdbcType=VARCHAR},
+      surgical_examination = #{surgicalExamination,jdbcType=VARCHAR},
+      ecg_examination = #{ecgExamination,jdbcType=VARCHAR},
+      x_ray_examination = #{xRayExamination,jdbcType=VARCHAR},
+      blood_routine_examination = #{bloodRoutineExamination,jdbcType=VARCHAR},
+      urine_routine_examination = #{urineRoutineExamination,jdbcType=VARCHAR},
+      hepatic_examination = #{hepaticExamination,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

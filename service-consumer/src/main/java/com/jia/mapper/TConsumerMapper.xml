@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jia.mapper.TConsumerMapper" >
+  <resultMap id="BaseResultMap" type="com.jia.entity.TConsumer" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="BIT" />
+    <result column="age" property="age" jdbcType="TINYINT" />
+    <result column="phone" property="phone" jdbcType="BIGINT" />
+    <result column="native_place" property="nativePlace" jdbcType="VARCHAR" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="wchat" property="wchat" jdbcType="VARCHAR" />
+    <result column="medical_record" property="medicalRecord" jdbcType="BIGINT" />
+    <result column="id_card" property="idCard" jdbcType="CHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="email" property="email" jdbcType="VARCHAR" />
+    <result column="img" property="img" jdbcType="VARCHAR" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, name, sex, age, phone, native_place, address, wchat, medical_record, id_card, 
+    username, password, email, gmt_create, gmt_modified ,img
+  </sql>
+  <select useCache="false" flushCache="true" id="selectByExample" resultMap="BaseResultMap" parameterType="com.jia.entity.TConsumerExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from t_consumer
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectCount" resultType="java.lang.Integer">
+    select count(*)
+    from t_consumer
+  </select>
+  <select useCache="false" flushCache="true" id="selectByPrimaryKeyAndPassword" resultMap="BaseResultMap" parameterType="com.jia.entity.TConsumer">
+    select *
+    from t_consumer
+    where username = #{username,jdbcType=VARCHAR} and password = #{password,jdbcType=VARCHAR}
+  </select>
+  <select useCache="false" flushCache="true" id="selectIdByUsernameAndPassword" resultType="java.lang.Long" parameterType="com.jia.entity.TConsumerExample">
+    select id
+    from t_consumer
+    where username = #{username,jdbcType=VARCHAR} and password = #{password,jdbcType=VARCHAR};
+  </select>
+  <select useCache="false" flushCache="true" id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_consumer
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select useCache="false" flushCache="true"  id="selectByPhone" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select
+    *
+    from t_consumer
+    where phone = #{phone,jdbcType=BIGINT}
+  </select>
+  <select useCache="false" flushCache="true"  id="selectByEmail" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    *
+    from t_consumer
+    where email = #{email,jdbcType=VARCHAR}
+  </select>
+  <select useCache="false" flushCache="true"  id="selectByIdCard" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    *
+    from t_consumer
+    where id_card = #{idCard,jdbcType=CHAR}
+  </select>
+  <select id="selectByAddress" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select *
+    from t_consumer
+    where native_place like concat('%',#{nativePlace,jdbcType=VARCHAR},'%')
+  </select>
+  <select useCache="false" flushCache="true"  id="selectByWchat" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    *
+    from t_consumer
+    where wchat = #{wchat,jdbcType=VARCHAR}
+  </select>
+  <select id="selectByNameAndAddress" resultMap="BaseResultMap" parameterType="com.jia.entity.TConsumer">
+    select * from t_consumer
+    where name like concat('%',#{name,jdbcType=VARCHAR},'%') and address like concat('%',#{address,jdbcType=VARCHAR},'%')
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select * from t_consumer
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from t_consumer
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.jia.entity.TConsumerExample" >
+    delete from t_consumer
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.jia.entity.TConsumer" >
+    insert into t_consumer (id, name, sex, age, 
+      phone, native_place, address, 
+      wchat, medical_record, id_card, 
+      username, password, email, img,
+      gmt_create, gmt_modified)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{sex,jdbcType=BIT}, #{age,jdbcType=TINYINT}, 
+      #{phone,jdbcType=BIGINT}, #{nativePlace,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+      #{wchat,jdbcType=VARCHAR}, #{medicalRecord,jdbcType=BIGINT}, #{idCard,jdbcType=CHAR}, 
+      #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},#{img,jdbcType=VARCHAR},
+      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jia.entity.TConsumer" >
+    insert into t_consumer
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="nativePlace != null" >
+        native_place,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="wchat != null" >
+        wchat,
+      </if>
+      <if test="medicalRecord != null" >
+        medical_record,
+      </if>
+      <if test="idCard != null" >
+        id_card,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="email != null" >
+        email,
+      </if>
+      <if test="img != null" >
+        img,
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create,
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=BIT},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=TINYINT},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=BIGINT},
+      </if>
+      <if test="nativePlace != null" >
+        #{nativePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="wchat != null" >
+        #{wchat,jdbcType=VARCHAR},
+      </if>
+      <if test="medicalRecord != null" >
+        #{medicalRecord,jdbcType=BIGINT},
+      </if>
+      <if test="idCard != null" >
+        #{idCard,jdbcType=CHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="img != null" >
+        #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null" >
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.jia.entity.TConsumerExample" resultType="java.lang.Integer" >
+    select count(*) from t_consumer
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update t_consumer
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
+      </if>
+      <if test="record.sex != null" >
+        sex = #{record.sex,jdbcType=BIT},
+      </if>
+      <if test="record.age != null" >
+        age = #{record.age,jdbcType=TINYINT},
+      </if>
+      <if test="record.phone != null" >
+        phone = #{record.phone,jdbcType=BIGINT},
+      </if>
+      <if test="record.nativePlace != null" >
+        native_place = #{record.nativePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        address = #{record.address,jdbcType=VARCHAR},
+      </if>
+      <if test="record.wchat != null" >
+        wchat = #{record.wchat,jdbcType=VARCHAR},
+      </if>
+      <if test="record.medicalRecord != null" >
+        medical_record = #{record.medicalRecord,jdbcType=BIGINT},
+      </if>
+      <if test="record.idCard != null" >
+        id_card = #{record.idCard,jdbcType=CHAR},
+      </if>
+      <if test="record.username != null" >
+        username = #{record.username,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null" >
+        password = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.email != null" >
+        email = #{record.email,jdbcType=VARCHAR},
+      </if>
+      <if test="record.img != null" >
+        img = #{record.img,jdbcType=VARCHAR},
+      </if>
+      <if test="record.gmtCreate != null" >
+        gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gmtModified != null" >
+        gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update t_consumer
+    set id = #{record.id,jdbcType=BIGINT},
+      name = #{record.name,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=BIT},
+      age = #{record.age,jdbcType=TINYINT},
+      phone = #{record.phone,jdbcType=BIGINT},
+      native_place = #{record.nativePlace,jdbcType=VARCHAR},
+      address = #{record.address,jdbcType=VARCHAR},
+      wchat = #{record.wchat,jdbcType=VARCHAR},
+      medical_record = #{record.medicalRecord,jdbcType=BIGINT},
+      id_card = #{record.idCard,jdbcType=CHAR},
+      username = #{record.username,jdbcType=VARCHAR},
+      password = #{record.password,jdbcType=VARCHAR},
+      email = #{record.email,jdbcType=VARCHAR},
+      img = #{record.img,jdbcType=VARCHAR},
+      gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jia.entity.TConsumer" >
+    update t_consumer
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=BIT},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=TINYINT},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=BIGINT},
+      </if>
+      <if test="nativePlace != null" >
+        native_place = #{nativePlace,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="wchat != null" >
+        wchat = #{wchat,jdbcType=VARCHAR},
+      </if>
+      <if test="medicalRecord != null" >
+        medical_record = #{medicalRecord,jdbcType=BIGINT},
+      </if>
+      <if test="idCard != null" >
+        id_card = #{idCard,jdbcType=CHAR},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null" >
+        email = #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="img != null" >
+        img = #{img,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jia.entity.TConsumer" >
+    update t_consumer
+    set name = #{name,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=BIT},
+      age = #{age,jdbcType=TINYINT},
+      phone = #{phone,jdbcType=BIGINT},
+      native_place = #{nativePlace,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR},
+      wchat = #{wchat,jdbcType=VARCHAR},
+      medical_record = #{medicalRecord,jdbcType=BIGINT},
+      id_card = #{idCard,jdbcType=CHAR},
+      username = #{username,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      email = #{email,jdbcType=VARCHAR},
+      img = #{img,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

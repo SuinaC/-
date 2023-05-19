@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <!-- START: Head-->
+    <head>
+        <meta charset="UTF-8">
+        <title>医生收藏表</title>
+        <link rel="shortcut icon" href="dist/images/favicon.ico" th:href="@{/information/}"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"> 
+
+        <!-- START: Template CSS-->
+        <link rel="stylesheet" href="dist/vendors/bootstrap/css/bootstrap.min.css" th:href="@{/information/vendors/bootstrap/css/bootstrap.min.css}">
+        <link rel="stylesheet" href="dist/vendors/jquery-ui/jquery-ui.min.css" th:href="@{/information/vendors/jquery-ui/jquery-ui.min.css}">
+        <link rel="stylesheet" href="dist/vendors/jquery-ui/jquery-ui.theme.min.css" th:href="@{/information/vendors/jquery-ui/jquery-ui.theme.min.css}">
+        <link rel="stylesheet" href="dist/vendors/simple-line-icons/css/simple-line-icons.css" th:href="@{/information/vendors/simple-line-icons/css/simple-line-icons.css}">
+        <link rel="stylesheet" href="dist/vendors/flags-icon/css/flag-icon.min.css" th:href="@{/information/vendors/flags-icon/css/flag-icon.min.css}">
+        <link rel="stylesheet" href="dist/vendors/flag-select/css/flags.css" th:href="@{/information/vendors/flag-select/css/flags.css}">
+        <link rel="stylesheet" href="dist/vendors/sweetalert/sweetalert.css"
+              th:href="@{/information/vendors/sweetalert/sweetalert.css}">
+        <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css"
+        th:href="@{/information/css/style.css}">
+        <link rel="stylesheet" href="assets/css/style.css" th:href="@{/information/css/all.min.css}">
+        <link rel="stylesheet" href="assets/css/style.css" th:href="@{/information/css/fontawesome.min.css}">
+        <!-- END Template CSS-->
+
+        <!-- START: Custom CSS-->
+        <link rel="stylesheet" href="dist/css/main.css" th:href="@{/information/css/main.css}">
+        <link rel="stylesheet" href="dist/vendors/icofont/icofont.min.css" th:href="@{/information/vendors/icofont/icofont.min.css}">
+        <!-- END: Custom CSS-->
+    </head>
+    <!-- END Head-->
+
+    <!-- START: Body-->    
+    <body id="main-container" class="default">
+        <!-- START: Pre Loader-->
+        <div class="se-pre-con">
+            <img src="dist/images/logo.png" th:src="@{/information/images/logo.png}" alt="logo" width="23" class="img-fluid"/>
+        </div>
+        <!-- END: Pre Loader-->
+
+        <!-- START: Header-->
+        <div id="header-fix" class="header fixed-top">
+            <nav class="navbar navbar-expand-lg  p-0">
+                <div class="navbar-header h4 mb-0 align-self-center logo-bar text-center">
+                    <a href="index.html" class="horizontal-logo text-center">
+                        <span class="h3 align-self-center mb-0 ">用户主页</span>
+                    </a>
+                </div>
+                <div class="navbar-header h4 mb-0 text-center h-100 collapse-menu-bar">
+                    <a href="#" class="sidebarCollapse" id="collapse"><i class="icon-menu body-color"></i></a>
+                </div>
+
+                <form class="float-left d-none d-lg-block search-form">
+                    <div class="form-group mb-0 position-relative">
+                        <input type="text" class="form-control border-0 rounded bg-search pl-5" id="searchDisease" th:onblur="'javascript:searchDisease('+${tConsumer.id}+')'" placeholder="请输入病症">
+                        <div class="btn-search position-absolute top-0">
+                            <a th:onclick="'javascript:searchDisease('+${tConsumer.id}+')'" ><i class="h5 icon-magnifier body-color"></i></a>
+                        </div>
+                        <a href="#" class="position-absolute close-button mobilesearch d-lg-none" data-toggle="dropdown" aria-expanded="false"><i class="icon-close h5"></i>
+                        </a>
+
+                    </div>
+                </form>
+                <div class="navbar-right ml-auto h-100">
+                    <ul class="ml-auto p-0 m-0 list-unstyled d-flex top-icon h-100">
+                        <li class="d-inline-block align-self-center  d-block d-lg-none">
+                            <a href="#" class="nav-link mobilesearch" data-toggle="dropdown" aria-expanded="false"><i class="icon-magnifier h4"></i>
+                            </a>
+                        </li>
+                        <li class="dropdown user-profile align-self-center d-inline-block">
+                            <a href="#" class="nav-link py-0" data-toggle="dropdown" aria-expanded="false">
+                                <div class="media">
+                                    <img src="dist/images/author.jpg" th:src="@{${tConsumer.img}}" alt="" class="d-flex img-fluid rounded-circle" width="29">
+                                </div>
+                            </a>
+
+                            <div class="dropdown-menu  dropdown-menu-right p-0">
+                                <a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}" class="dropdown-item px-2 align-self-center d-flex">
+                                    <span class="icon-pencil mr-2 h6 mb-0"></span> 编辑个人资料</a>
+                                <a th:href="@{/consumerInformation/information(id=${tConsumer.id})}" class="dropdown-item px-2 align-self-center d-flex">
+                                    <span class="icon-user mr-2 h6 mb-0"></span> 查看资料</a>
+                                <div class="dropdown-divider"></div>
+
+                                <div class="dropdown-divider"></div>
+                                <a href="/consumer/login" class="dropdown-item px-2 text-danger align-self-center d-flex">
+                                    <span class="icon-logout mr-2 h6  mb-0"></span>登出</a>
+                            </div>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- END: Header-->
+
+        <!-- START: Main Menu-->
+        <div class="sidebar">
+            <div class="media d-block text-center user-profile">
+                <img class="img-fluid" src="dist/images/author1.jpg" style="width: 100px; hight:100px" th:src="@{${tConsumer.img}}" alt="">
+                <div class="media-body text-center mt-0 color-primary mt-2">
+                    <a href="#" class="nav-link py-0" data-toggle="dropdown" aria-expanded="false">
+                        <h6 class="mb-0 font-weight-bold" th:text="${tConsumer.name}">姓名</h6>
+                        <p th:text="${tConsumer.nativePlace}"></p>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right p-0" style="">
+                        <a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}" class="dropdown-item px-2 align-self-center d-flex">
+                            <span class="icon-pencil mr-2 h6 mb-0"></span> 编辑个人资料</a>
+                        <a th:href="@{/consumerInformation/information(id=${tConsumer.id})}" class="dropdown-item px-2 align-self-center d-flex">
+                            <span class="icon-user mr-2 h6 mb-0"></span> 查看资料</a>
+                        <div class="dropdown-divider"></div>
+
+                        <div class="dropdown-divider"></div>
+                        <a href="/consumer/login" class="dropdown-item px-2 text-danger align-self-center d-flex">
+                            <span class="icon-logout mr-2 h6  mb-0"></span> 登出</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- START: Menu-->
+            <ul id="side-menu" class="sidebar-menu">
+                <li class="dropdown active"><a href="#">首页</a>
+                    <ul>
+                        <li class="active"><a href="index.html" th:href="@{/consumerInformation/index(id=${tConsumer.id})}"><i class="icon-rocket"></i> 首页</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">应用</a>
+                    <ul>
+                        <li><a th:href="@{/consumerInformation/calendar(id=${tConsumer.id})}"><i class="icon-calendar"></i> 日历备忘录</a></li>
+
+                        <li class="dropdown"><a href="#"><i class="icon-envelope"></i>邮箱</a>
+                            <ul class="sub-menu">
+                                <li><a th:href="@{/mailInbox/mail(id=${tConsumer.id})}"><i class="icon-envelope"></i> 收件箱</a></li>
+                            </ul>
+                        </li>
+                        <li><a th:href="@{/consumerOrder/consumerOrder(id=${tConsumer.id})}"><i class="icon icofont-ui-copy"></i> 预约</a></li>
+                        <li><a th:href="@{/consumerOrder/medicalOrder(id=${tConsumer.id})}"><i class="icon icofont-first-aid"></i> 体检预约</a></li>
+                        <li><a th:href="@{/consumerInformation/prescriptionList(id=${tConsumer.id})}"><i class="icon icofont-ui-clip-board"></i> 查看处方</a></li>
+                        <li><a th:href="@{/consumerInformation/searchDoctor(id=${tConsumer.id})}"><i class="icon icofont-doctor"></i> 查找医生</a></li>
+                       <li><a th:href="@{/consumerInformation/doctorCollection(id=${tConsumer.id})}"><i class="icon icofont-heart"></i> 医生收藏</a></li>
+                        <li><a th:href="@{/drug/drugOrderList(id=${tConsumer.id})}"><i class="icon icofont-ticket"></i> 查看药品订单列表</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#">信息</a>
+                    <ul>
+                        <li class="dropdown"><a href="#"><i class="icon-user"></i>个人信息</a>
+                            <ul class="sub-menu">
+                                <li><a th:href="@{/consumerInformation/information(id=${tConsumer.id})}"><i class="icon-disc"></i> 查看个人信息</a></li>
+                                <li><a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}"><i class="icon-disc"></i> 修改个人信息</a></li>
+                                <li><a th:href="@{/consumerInformation/updatePassword(id=${tConsumer.id})}"><i class="icon-disc"></i> 修改密码</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><i class="icon-paper-clip"></i>病历</a>
+                            <ul class="sub-menu">
+                                <li><a th:href="@{/consumerInformation/medical(id=${tConsumer.id})}"><i class="icon-disc"></i>历史病历</a></li>
+                                <li><a th:href="@{/consumerInformation/existingMedical(id=${tConsumer.id})}"><i class="icon-cursor-move"></i>现有病历</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="#"><i class="icon icofont-restaurant-menu"></i>预约信息</a>
+                            <ul class="sub-menu">
+                               <li><a th:href="@{/consumerOrder/appointmentProgress(id=${tConsumer.id})}"><i class="icon-disc"></i> 预约进度</a></li>
+                                <li><a th:href="@{/consumerInformation/consumerOrderList(id=${tConsumer.id})}"><i class="icon-disc"></i> 预约列表</a></li>
+                        <li><a th:href="@{/consumerOrder/medicalAppointmentList(id=${tConsumer.id})}"><i class="icon-disc"></i> 体检预约列表</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- END: Menu-->
+        </div>
+        <!-- END: Main Menu-->
+
+        <!-- START: Main Content-->
+        <main>
+            <div class="container-fluid">
+                <!-- START: Breadcrumbs-->
+                <div class="row ">
+                    <input hidden="hidden" id="id" name="id" th:value="${tConsumer.id}">
+                    <div class="col-12  align-self-center">
+                        <div class="sub-header mt-3 py-3 px-3 align-self-center d-sm-flex w-100 rounded">
+                            <div class="w-sm-100 mr-auto"><h4 class="mb-0">医生收藏表</h4></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END: Breadcrumbs-->
+
+                <!-- START: Card Data-->
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Doctor Widget -->
+                            <div class="row row-grid">
+                                <div class="col-md-6 col-lg-4 col-xl-3" th:each="p:${tDoctorCollections}">
+                                    <div class="profile-widget">
+                                        <div class="doc-img">
+                                            <a th:href="@{/doctorInformation/doctorProfile(id=${p.tDoctor.id},consumerId=${tConsumer.id})}">
+                                                <img class="img-fluid" alt="User Image" style="width: 630px;height: 240px;" th:src="${p.tDoctor.img}">
+                                            </a>
+                                            <a href="javascript:void(0)" th:onclick="|addCollection('${p.tDoctor.id}','${tConsumer.id}')|" style="background: deeppink;color: white"  class="fav-btn">
+                                                <i class="far fa-bookmark"></i>
+                                            </a>
+                                        </div>
+                                        <div class="pro-content">
+                                            <h3 class="title">
+                                                <a th:href="@{/doctorInformation/doctorProfile(id=${p.tDoctor.id},consumerId=${tConsumer.id})}" th:text="${p.tDoctor.name}">姓名</a>
+                                                <i class="fas fa-check-circle verified"></i>
+                                            </h3>
+                                            <p class="speciality" th:text="${p.tDoctor.title}">职称</p>
+                                            <div class="rating">
+                                                <i class="fas fa-star filled" th:text="${p.tDoctor.evaluate}"></i>
+                                                <span class="d-inline-block average-rating" th:text="'('+ ${p.tDoctor.evaluateSum} + ')'"></span>
+                                            </div>
+                                            <ul class="available-info">
+                                                <li>
+                                                    <i class="fas fa-map-marker-alt"></i> [[${p.tDoctor.address}]]
+                                                </li>
+                                                <li>
+                                                    <i class="far fa-clock"></i> [[${p.tDoctor.email}]]
+                                                </li>
+                                            </ul>
+                                            <div class="row row-sm">
+                                                <div class="col-6">
+                                                    <a th:href="@{/doctorInformation/doctorProfile(id=${p.tDoctor.id},consumerId=${tConsumer.id})}" class="btn view-btn">查看详情</a>
+                                                </div>
+                                                <div class="col-6">
+                                                    <a th:href="@{/doctorInformation/doctorOrder(id=${tConsumer.id},doctorId=${p.tDoctor.id})}" class="btn book-btn">预约</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- /Doctor Widget -->
+
+                    </div>
+
+                    </div>
+                <!-- END: Card DATA-->
+            </div>
+        </main>
+        <!-- END: Content-->
+
+        
+
+        <!-- START: Back to top-->
+        <a href="#" class="scrollup text-center"> 
+            <i class="icon-arrow-up"></i>
+        </a>
+        <!-- END: Back to top-->
+
+        <!-- START: Template JS-->
+        <script src="dist/vendors/jquery/jquery-3.3.1.min.js" th:src="@{/information/vendors/jquery/jquery-3.3.1.min.js}"></script>
+        <script src="dist/vendors/jquery-ui/jquery-ui.min.js" th:src="@{/information/vendors/jquery-ui/jquery-ui.min.js}"></script>
+        <script src="dist/vendors/moment/moment.js" th:src="@{/information/vendors/moment/moment.js}"></script>
+        <script src="dist/vendors/bootstrap/js/bootstrap.bundle.min.js" th:src="@{/information/vendors/bootstrap/js/bootstrap.bundle.min.js}"></script>
+        <script src="dist/vendors/slimscroll/jquery.slimscroll.min.js" th:src="@{/information/vendors/slimscroll/jquery.slimscroll.min.js}"></script>
+        <script src="dist/vendors/flag-select/js/jquery.flagstrap.min.js" th:src="@{/information/vendors/flag-select/js/jquery.flagstrap.min.js}"></script>
+        <script src="dist/vendors/sweetalert/sweetalert.min.js" th:src="@{/information/vendors/sweetalert/sweetalert.min.js}"></script>
+        <!-- END: Template JS-->
+        <!-- END: Template JS-->
+
+        <!-- START: APP JS-->
+        <script src="dist/js/app.js" th:src="@{/information/js/app.js}"></script>
+        <!-- END: APP JS-->
+        <script type="text/javascript">
+
+        </script>
+        <script type="text/javascript">
+            function addCollection(doctorId,consumerId){
+                $.post(
+                    "/doctorInformation/addCollection",
+                    {
+                        consumerId,doctorId
+                    },
+                    function (data){
+                        if(data == "error"){
+                            swal({
+                                title: "提示",
+                                text: "取消收藏失败",
+                                type: "error",
+                                confirmButtonText: '重试'
+                            });
+                        }else {
+                            swal({
+                                title: "提示",
+                                text: "取消收藏成功",
+                                type: "success",
+                                showLoaderOnConfirm: '确定'
+                            },function (){
+                                location.href="/consumerInformation/doctorCollection?id=" + consumerId;
+                            });
+                        }
+                    }
+                )
+            }
+        </script>
+    </body>
+    <!-- END: Body-->
+</html>

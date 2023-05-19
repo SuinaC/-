@@ -1,0 +1,1544 @@
+2023-03-07 15:43:25,488 ERROR [UPDATE-DOMAIN] Exception while taking item from LinkedBlockingDeque.
+
+2023-03-07 15:46:40,976 ERROR [UPDATE-DOMAIN] Exception while taking item from LinkedBlockingDeque.
+
+2023-03-07 16:09:47,581 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8201:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:09:47,583 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8201_true,
+
+2023-03-07 16:09:52,509 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8401:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:09:52,509 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8401_true,
+
+2023-03-07 16:09:55,914 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:09:55,914 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 16:13:39,496 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:13:39,496 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 
+
+2023-03-07 16:13:46,554 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:13:46,554 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 16:19:01,568 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8201:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:19:01,568 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:19:01,602 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8401:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:19:01,602 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:19:01,611 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:19:01,611 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 
+
+2023-03-07 16:20:02,998 ERROR [UPDATE-DOMAIN] Exception while taking item from LinkedBlockingDeque.
+
+2023-03-07 16:21:08,395 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8102:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:21:08,396 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,
+
+2023-03-07 16:21:09,622 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8102:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:21:09,622 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:21:10,778 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8202:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:21:10,778 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,
+
+2023-03-07 16:21:12,048 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8201:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:21:12,048 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8201_true,172.20.10.4:8202_true,
+
+2023-03-07 16:21:13,115 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8101:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:21:13,115 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8101_true,
+
+2023-03-07 16:21:14,125 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:21:14,125 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 16:21:21,130 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8102:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:21:21,130 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 16:23:12,778 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:23:12,779 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 
+
+2023-03-07 16:23:21,204 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:23:21,204 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 16:23:37,626 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:23:37,626 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 
+
+2023-03-07 16:24:16,545 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:24:16,545 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 16:24:30,809 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:24:30,809 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 
+
+2023-03-07 16:25:16,701 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8202:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:25:16,702 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8201_true,
+
+2023-03-07 16:25:16,721 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8201:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:25:16,722 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:25:16,738 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8102:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:25:16,738 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8101_true,
+
+2023-03-07 16:25:16,758 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8101:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:25:16,758 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:36:52,015 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8202:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:36:52,015 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,
+
+2023-03-07 16:36:53,036 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8201:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:36:53,036 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8201_true,172.20.10.4:8202_true,
+
+2023-03-07 16:36:54,115 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8102:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:36:54,115 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,
+
+2023-03-07 16:36:55,292 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8101:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:36:55,292 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 16:36:56,234 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:36:56,234 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 16:37:29,286 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8202:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:37:29,286 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8201_true,
+
+2023-03-07 16:37:29,299 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8201:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:37:29,299 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:37:29,319 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8102:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:37:29,319 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8101_true,
+
+2023-03-07 16:37:29,337 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8101:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:37:29,337 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:37:29,365 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:37:29,365 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 
+
+2023-03-07 16:37:48,500 ERROR [UPDATE-DOMAIN] Exception while taking item from LinkedBlockingDeque.
+
+2023-03-07 16:38:09,522 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8202:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:38:09,524 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,
+
+2023-03-07 16:38:10,417 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8201:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:38:10,417 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8201_true,172.20.10.4:8202_true,
+
+2023-03-07 16:38:11,490 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8102:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:38:11,490 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,
+
+2023-03-07 16:38:12,424 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8101:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:38:12,424 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 16:38:13,419 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:38:13,419 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 16:39:51,556 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8202:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:39:51,556 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8201_true,
+
+2023-03-07 16:39:51,572 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8201:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:39:51,572 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:39:51,580 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8102:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:39:51,580 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8101_true,
+
+2023-03-07 16:39:51,613 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8101:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:39:51,613 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:39:51,641 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:39:51,641 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 
+
+2023-03-07 16:39:58,083 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8102:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:39:58,084 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,
+
+2023-03-07 16:39:59,355 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8101:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:39:59,355 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 16:40:00,284 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:40:00,284 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 16:40:02,943 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8202:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:40:02,943 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,
+
+2023-03-07 16:40:03,766 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8201:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:40:03,767 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8201_true,172.20.10.4:8202_true,
+
+2023-03-07 16:41:52,868 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8202:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:41:52,868 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8201_true,
+
+2023-03-07 16:41:52,882 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8201:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:41:52,882 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:41:52,894 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8102:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:41:52,894 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8101_true,
+
+2023-03-07 16:41:52,912 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8101:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:41:52,912 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:41:52,927 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:41:52,928 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 
+
+2023-03-07 16:41:59,849 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 16:41:59,849 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,
+
+2023-03-07 16:42:00,811 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 16:42:00,811 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 16:42:02,138 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 16:42:02,138 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,
+
+2023-03-07 16:42:03,334 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 16:42:03,334 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 16:42:04,303 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:42:04,303 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 16:42:19,591 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8202@Changsha@DEFAULT_GROUP@@bookservice, region: unknown, msg: client timeout after 15000, last beat: 1678178519848
+
+2023-03-07 16:42:19,597 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8201@Zhengzhou@DEFAULT_GROUP@@bookservice, region: unknown, msg: client timeout after 15000, last beat: 1678178520811
+
+2023-03-07 16:42:21,649 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8102@Changsha@DEFAULT_GROUP@@userservice, region: unknown, msg: client timeout after 15000, last beat: 1678178522135
+
+2023-03-07 16:42:21,649 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8101@Zhengzhou@DEFAULT_GROUP@@userservice, region: unknown, msg: client timeout after 15000, last beat: 1678178523333
+
+2023-03-07 16:42:34,716 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 16:42:34,716 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8201_false,
+
+2023-03-07 16:42:34,716 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 16:42:34,716 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:42:36,664 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 16:42:36,664 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8101_false,
+
+2023-03-07 16:42:36,665 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 16:42:36,665 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:44:06,457 ERROR [UPDATE-DOMAIN] Exception while taking item from LinkedBlockingDeque.
+
+2023-03-07 16:44:29,637 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:44:29,639 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 16:45:07,502 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:45:07,511 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:45:07,526 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:45:07,542 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:45:07,568 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:45:07,568 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 
+
+2023-03-07 16:45:16,777 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 16:45:16,777 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,
+
+2023-03-07 16:45:17,983 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 16:45:17,983 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 16:45:19,394 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:45:19,394 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 16:45:20,076 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 16:45:20,076 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,
+
+2023-03-07 16:45:20,839 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 16:45:20,839 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 16:45:32,810 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8102@Changsha@DEFAULT_GROUP@@userservice, region: unknown, msg: client timeout after 15000, last beat: 1678178716776
+
+2023-03-07 16:45:36,600 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8202@Changsha@DEFAULT_GROUP@@bookservice, region: unknown, msg: client timeout after 15000, last beat: 1678178720075
+
+2023-03-07 16:45:36,600 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8201@Zhengzhou@DEFAULT_GROUP@@bookservice, region: unknown, msg: client timeout after 15000, last beat: 1678178720839
+
+2023-03-07 16:45:37,814 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8101@Zhengzhou@DEFAULT_GROUP@@userservice, region: unknown, msg: client timeout after 15000, last beat: 1678178717982
+
+2023-03-07 16:45:47,898 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 16:45:47,898 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8101_false,
+
+2023-03-07 16:45:51,614 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 16:45:51,614 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8201_false,
+
+2023-03-07 16:45:51,614 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 16:45:51,614 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:45:52,892 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 16:45:52,892 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:46:26,300 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:46:28,072 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:46:33,521 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:46:36,042 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:46:37,838 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 16:46:37,839 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8201_true,
+
+2023-03-07 16:46:38,626 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 16:46:38,626 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 16:46:44,844 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 16:46:44,844 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,
+
+2023-03-07 16:46:46,496 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 16:46:46,496 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 16:46:56,665 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8202@Changsha@DEFAULT_GROUP@@bookservice, region: unknown, msg: client timeout after 15000, last beat: 1678178798625
+
+2023-03-07 16:46:56,666 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8201@Zhengzhou@DEFAULT_GROUP@@bookservice, region: unknown, msg: client timeout after 15000, last beat: 1678178797837
+
+2023-03-07 16:47:02,944 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8102@Changsha@DEFAULT_GROUP@@userservice, region: unknown, msg: client timeout after 15000, last beat: 1678178804844
+
+2023-03-07 16:47:02,945 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8101@Zhengzhou@DEFAULT_GROUP@@userservice, region: unknown, msg: client timeout after 15000, last beat: 1678178806495
+
+2023-03-07 16:47:11,687 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 16:47:11,688 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_false,
+
+2023-03-07 16:47:11,688 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 16:47:11,688 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:47:17,959 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 16:47:17,960 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8101_false,
+
+2023-03-07 16:47:17,961 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 16:47:17,961 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:47:50,963 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:47:50,987 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:47:51,004 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:47:51,024 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:47:51,046 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 16:47:51,046 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 
+
+2023-03-07 16:48:05,596 ERROR [UPDATE-DOMAIN] Exception while taking item from LinkedBlockingDeque.
+
+2023-03-07 16:51:47,316 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 16:51:47,318 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,
+
+2023-03-07 16:51:48,197 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 16:51:48,197 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 16:51:49,242 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 16:51:49,242 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,
+
+2023-03-07 16:51:50,206 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 16:51:50,206 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 16:51:51,181 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8301:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 16:51:51,181 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 16:51:51,182 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 16:51:54,538 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 16:51:57,884 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 16:52:00,395 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 16:52:02,228 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8202@Changsha@DEFAULT_GROUP@@bookservice, region: unknown, msg: client timeout after 15000, last beat: 1678179107183
+
+2023-03-07 16:52:04,255 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8102@Changsha@DEFAULT_GROUP@@userservice, region: unknown, msg: client timeout after 15000, last beat: 1678179109240
+
+2023-03-07 16:52:07,235 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8201@Zhengzhou@DEFAULT_GROUP@@bookservice, region: unknown, msg: client timeout after 15000, last beat: 1678179108196
+
+2023-03-07 16:52:09,259 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8101@Zhengzhou@DEFAULT_GROUP@@userservice, region: unknown, msg: client timeout after 15000, last beat: 1678179110205
+
+2023-03-07 16:52:17,324 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 16:52:17,324 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8201_false,
+
+2023-03-07 16:52:19,265 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 16:52:19,265 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8101_false,
+
+2023-03-07 16:52:22,318 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 16:52:22,318 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:52:24,272 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 16:52:24,273 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:53:57,210 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 16:53:58,196 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 16:54:06,037 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8301:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 16:54:06,037 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_false,172.20.10.4:8301_true,
+
+2023-03-07 16:54:07,521 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 16:54:11,255 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 16:54:13,867 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 16:54:58,235 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8301:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 16:54:58,236 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 16:54:58,838 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:54:58,853 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:54:58,874 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:54:58,902 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:54:59,225 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 16:55:07,584 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 16:55:07,584 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8201_true,
+
+2023-03-07 16:55:08,725 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 16:55:08,725 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,
+
+2023-03-07 16:55:09,897 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 16:55:09,897 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 16:55:11,131 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8301:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 16:55:11,131 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_false,172.20.10.4:8301_true,
+
+2023-03-07 16:55:11,652 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 16:55:11,652 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 16:55:12,293 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 16:55:16,096 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 16:55:19,454 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 16:55:22,913 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8201@Zhengzhou@DEFAULT_GROUP@@bookservice, region: unknown, msg: client timeout after 15000, last beat: 1678179307583
+
+2023-03-07 16:55:26,048 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8102@Changsha@DEFAULT_GROUP@@userservice, region: unknown, msg: client timeout after 15000, last beat: 1678179308724
+
+2023-03-07 16:55:26,048 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8101@Zhengzhou@DEFAULT_GROUP@@userservice, region: unknown, msg: client timeout after 15000, last beat: 1678179309897
+
+2023-03-07 16:55:27,915 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8202@Changsha@DEFAULT_GROUP@@bookservice, region: unknown, msg: client timeout after 15000, last beat: 1678179311652
+
+2023-03-07 16:55:37,929 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 16:55:37,929 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_false,
+
+2023-03-07 16:55:41,061 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 16:55:41,061 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8101_false,
+
+2023-03-07 16:55:41,062 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 16:55:41,062 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:55:42,931 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 16:55:42,931 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:58:14,295 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8301:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 16:58:14,295 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 16:58:15,276 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 16:58:26,031 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8301:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 16:58:26,031 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_false,172.20.10.4:8301_true,
+
+2023-03-07 16:58:28,347 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 16:58:32,147 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 16:58:35,249 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 16:59:01,889 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8301:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 16:59:01,889 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 16:59:02,189 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:59:02,218 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 16:59:02,235 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:59:02,253 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 
+
+2023-03-07 16:59:02,874 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 16:59:41,516 ERROR [UPDATE-DOMAIN] Exception while taking item from LinkedBlockingDeque.
+
+2023-03-07 17:00:50,016 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8301:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:00:50,018 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:00:50,690 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:00:50,690 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:00:53,903 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:04:49,215 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:04:49,216 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,
+
+2023-03-07 17:04:49,944 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:04:49,945 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:04:54,397 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_false,
+
+2023-03-07 17:04:54,754 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:04:59,761 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:05:03,318 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:05:04,139 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8202@Changsha@DEFAULT_GROUP@@bookservice, region: unknown, msg: client timeout after 15000, last beat: 1678179889125
+
+2023-03-07 17:05:09,147 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8201@Zhengzhou@DEFAULT_GROUP@@bookservice, region: unknown, msg: client timeout after 15000, last beat: 1678179889944
+
+2023-03-07 17:05:19,165 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 17:05:19,165 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8201_false,
+
+2023-03-07 17:05:24,172 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 17:05:24,173 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 17:07:54,877 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:07:55,609 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 17:07:55,623 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 17:07:56,113 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:08:19,835 ERROR [UPDATE-DOMAIN] Exception while taking item from LinkedBlockingDeque.
+
+2023-03-07 17:09:30,126 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8301:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:09:30,128 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:09:30,792 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:09:30,792 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:09:33,211 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:09:36,239 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:09:36,239 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,
+
+2023-03-07 17:09:37,029 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:09:37,029 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:09:38,543 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:09:38,543 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,
+
+2023-03-07 17:09:39,455 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:09:39,455 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:09:40,350 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_false,
+
+2023-03-07 17:09:43,774 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:09:48,221 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:09:51,112 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:09:51,166 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8202@Changsha@DEFAULT_GROUP@@bookservice, region: unknown, msg: client timeout after 15000, last beat: 1678180176154
+
+2023-03-07 17:09:53,553 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8102@Changsha@DEFAULT_GROUP@@user-service, region: unknown, msg: client timeout after 15000, last beat: 1678180178541
+
+2023-03-07 17:09:56,172 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8201@Zhengzhou@DEFAULT_GROUP@@bookservice, region: unknown, msg: client timeout after 15000, last beat: 1678180177027
+
+2023-03-07 17:09:58,559 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8101@Zhengzhou@DEFAULT_GROUP@@user-service, region: unknown, msg: client timeout after 15000, last beat: 1678180179454
+
+2023-03-07 17:10:06,268 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 17:10:06,268 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8201_false,
+
+2023-03-07 17:10:08,572 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 17:10:08,572 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8101_false,
+
+2023-03-07 17:10:11,260 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 17:10:11,260 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 17:10:13,582 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 17:10:13,582 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 
+
+2023-03-07 17:14:23,611 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:14:24,181 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 17:14:24,190 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 
+
+2023-03-07 17:14:24,201 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 
+
+2023-03-07 17:14:24,229 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 
+
+2023-03-07 17:14:24,596 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:14:33,803 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:14:33,803 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,
+
+2023-03-07 17:14:34,852 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:14:34,852 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:14:50,193 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8102@Changsha@DEFAULT_GROUP@@user-service, region: unknown, msg: client timeout after 15000, last beat: 1678180473802
+
+2023-03-07 17:14:50,194 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8101@Zhengzhou@DEFAULT_GROUP@@user-service, region: unknown, msg: client timeout after 15000, last beat: 1678180474851
+
+2023-03-07 17:15:05,210 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 17:15:05,210 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_false,
+
+2023-03-07 17:15:05,211 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 17:15:05,211 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 
+
+2023-03-07 17:19:26,117 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:19:26,117 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,
+
+2023-03-07 17:19:27,666 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:19:27,666 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:19:28,637 INFO DEFAULT_GROUP@@borrow-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8301:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:19:28,638 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:19:28,638 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:19:28,688 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:19:31,976 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:19:33,941 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:19:35,057 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:19:37,428 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:19:37,694 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:19:41,125 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8202@Changsha@DEFAULT_GROUP@@book-service, region: unknown, msg: client timeout after 15000, last beat: 1678180766115
+
+2023-03-07 17:19:46,131 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8201@Zhengzhou@DEFAULT_GROUP@@book-service, region: unknown, msg: client timeout after 15000, last beat: 1678180767664
+
+2023-03-07 17:19:56,139 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 17:19:56,139 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8201_false,
+
+2023-03-07 17:20:01,140 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 17:20:01,141 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 
+
+2023-03-07 17:21:06,881 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 
+
+2023-03-07 17:21:06,896 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 
+
+2023-03-07 17:21:09,770 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 
+
+2023-03-07 17:21:09,803 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 
+
+2023-03-07 17:21:18,665 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:21:18,665 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8201_true,
+
+2023-03-07 17:21:19,766 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:21:19,766 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:21:22,058 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:21:22,058 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,
+
+2023-03-07 17:21:22,839 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:21:22,839 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:21:36,204 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8202@Changsha@DEFAULT_GROUP@@book-service, region: unknown, msg: client timeout after 15000, last beat: 1678180879764
+
+2023-03-07 17:21:36,205 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8201@Zhengzhou@DEFAULT_GROUP@@book-service, region: unknown, msg: client timeout after 15000, last beat: 1678180878664
+
+2023-03-07 17:21:41,005 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8102@Changsha@DEFAULT_GROUP@@user-service, region: unknown, msg: client timeout after 15000, last beat: 1678180882057
+
+2023-03-07 17:21:41,006 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8101@Zhengzhou@DEFAULT_GROUP@@user-service, region: unknown, msg: client timeout after 15000, last beat: 1678180882838
+
+2023-03-07 17:21:51,221 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 17:21:51,222 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8201_false,
+
+2023-03-07 17:21:51,222 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 17:21:51,222 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 
+
+2023-03-07 17:21:56,021 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 17:21:56,022 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8101_false,
+
+2023-03-07 17:21:56,022 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 17:21:56,022 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 
+
+2023-03-07 17:24:50,507 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:24:50,537 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:24:51,492 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:24:58,000 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 
+
+2023-03-07 17:25:00,047 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 
+
+2023-03-07 17:25:02,111 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 
+
+2023-03-07 17:25:04,166 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 
+
+2023-03-07 17:25:16,819 ERROR [UPDATE-DOMAIN] Exception while taking item from LinkedBlockingDeque.
+
+2023-03-07 17:26:25,904 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8301:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:26:25,906 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:26:25,911 INFO DEFAULT_GROUP@@borrow-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8301:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:26:25,911 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:26:26,571 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:26:26,572 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:26:26,572 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:26:26,572 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:26:28,621 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:26:28,735 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:26:33,446 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:26:33,446 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,
+
+2023-03-07 17:26:34,522 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:26:34,522 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:26:35,668 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:26:35,668 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,
+
+2023-03-07 17:26:36,627 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:26:36,628 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:26:37,529 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_false,
+
+2023-03-07 17:26:38,589 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:26:38,975 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:26:42,632 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:26:43,068 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:26:45,466 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:26:46,191 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:26:48,350 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8202@Changsha@DEFAULT_GROUP@@book-service, region: unknown, msg: client timeout after 15000, last beat: 1678181193325
+
+2023-03-07 17:26:50,690 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8102@Changsha@DEFAULT_GROUP@@user-service, region: unknown, msg: client timeout after 15000, last beat: 1678181195666
+
+2023-03-07 17:26:53,359 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8201@Zhengzhou@DEFAULT_GROUP@@book-service, region: unknown, msg: client timeout after 15000, last beat: 1678181194521
+
+2023-03-07 17:26:55,699 INFO {POS} {IP-DISABLED} valid: 172.20.10.4:8101@Zhengzhou@DEFAULT_GROUP@@user-service, region: unknown, msg: client timeout after 15000, last beat: 1678181196623
+
+2023-03-07 17:27:03,460 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 17:27:03,461 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8201_false,
+
+2023-03-07 17:27:05,718 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-DEAD} cluster: Changsha, dead ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_false_false_Changsha]
+
+2023-03-07 17:27:05,718 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8101_false,
+
+2023-03-07 17:27:08,455 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 17:27:08,455 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 
+
+2023-03-07 17:27:10,726 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-DEAD} cluster: Zhengzhou, dead ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 17:27:10,726 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 
+
+2023-03-07 17:27:38,372 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 
+
+2023-03-07 17:27:38,389 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 
+
+2023-03-07 17:27:40,592 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 
+
+2023-03-07 17:27:40,606 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 
+
+2023-03-07 17:27:47,537 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:27:47,537 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,
+
+2023-03-07 17:27:48,746 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 1, msg: tcp:ok+
+
+2023-03-07 17:27:48,827 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:27:48,827 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:27:50,019 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:27:50,019 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,
+
+2023-03-07 17:27:50,023 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:27:50,767 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:27:50,767 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:27:52,026 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:27:52,856 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 1, msg: tcp:ok+
+
+2023-03-07 17:27:53,203 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:27:53,857 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 2, msg: tcp:ok+
+
+2023-03-07 17:27:54,030 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:27:55,629 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:27:55,883 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:27:57,042 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 2, msg: tcp:ok+
+
+2023-03-07 17:27:57,939 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:28:00,055 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:29:22,348 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:29:22,486 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:29:23,336 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:29:30,947 INFO DEFAULT_GROUP@@borrow-service {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 17:29:30,947 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_false,172.20.10.4:8301_true,
+
+2023-03-07 17:29:31,626 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:29:32,469 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:29:35,478 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:29:36,403 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:29:38,116 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:29:38,967 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:32:22,522 INFO DEFAULT_GROUP@@borrow-service {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 17:32:22,522 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:32:22,522 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:32:22,747 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:32:23,047 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:32:23,151 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:32:23,152 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:32:23,515 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:32:23,515 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:32:24,035 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:32:24,137 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:32:24,137 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:32:43,313 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:32:43,313 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,
+
+2023-03-07 17:32:43,313 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,
+
+2023-03-07 17:32:43,949 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:32:43,949 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:32:45,289 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:32:45,544 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 1, msg: tcp:ok+
+
+2023-03-07 17:32:46,548 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:32:48,225 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:32:48,225 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,
+
+2023-03-07 17:32:48,226 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,
+
+2023-03-07 17:32:48,891 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:32:48,973 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:32:48,973 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:32:49,140 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 2, msg: tcp:ok+
+
+2023-03-07 17:32:49,391 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:32:49,755 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:32:50,010 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 1, msg: tcp:ok+
+
+2023-03-07 17:32:50,010 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:32:50,913 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 2, msg: tcp:ok+
+
+2023-03-07 17:32:52,911 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:32:53,168 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:32:53,996 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:32:54,354 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:32:54,788 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:32:56,419 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:33:33,527 INFO DEFAULT_GROUP@@borrow-service {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 17:33:33,527 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_false,172.20.10.4:8301_true,
+
+2023-03-07 17:33:36,885 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:33:37,825 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:33:41,904 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:33:42,842 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:33:45,840 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:33:46,465 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:35:19,710 INFO DEFAULT_GROUP@@borrow-service {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 17:35:19,710 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:35:19,820 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:35:20,783 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:35:31,467 INFO DEFAULT_GROUP@@borrow-service {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 17:35:31,468 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:35:32,732 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:35:33,527 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:35:36,754 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:35:37,650 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:35:39,761 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:35:40,661 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:37:39,474 INFO DEFAULT_GROUP@@borrow-service {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 17:37:39,474 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@borrow-service, ips: 
+
+2023-03-07 17:37:39,559 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:37:40,463 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:37:50,426 INFO DEFAULT_GROUP@@borrow-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8301:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:37:50,426 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:37:52,628 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:37:53,527 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:37:54,123 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:37:56,673 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:37:57,579 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:37:57,800 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:37:59,688 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:38:05,038 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:38:05,038 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:38:05,160 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:38:05,173 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:38:05,230 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:38:05,325 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:38:05,649 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:38:05,717 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:38:05,717 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:38:05,818 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:38:06,029 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:38:06,029 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:38:06,121 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:38:06,165 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:38:06,217 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:38:06,314 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:38:13,996 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_false,172.20.10.4:8201_false,
+
+2023-03-07 17:38:14,796 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:38:15,052 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_false,172.20.10.4:8101_false,
+
+2023-03-07 17:38:15,243 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:38:15,439 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:38:16,135 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_false,
+
+2023-03-07 17:38:17,024 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_false,172.20.10.4:8201_false,
+
+2023-03-07 17:38:17,647 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:38:17,796 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_false,172.20.10.4:8101_false,
+
+2023-03-07 17:38:18,301 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 1, msg: tcp:ok+
+
+2023-03-07 17:38:18,529 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:38:18,626 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 1, msg: tcp:ok+
+
+2023-03-07 17:38:18,843 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:38:18,981 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:38:18,981 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 2, msg: tcp:ok+
+
+2023-03-07 17:38:18,981 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 2, msg: tcp:ok+
+
+2023-03-07 17:38:19,130 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:38:19,206 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:38:19,461 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:38:21,683 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:38:22,353 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:38:22,679 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:38:22,894 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:38:23,033 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:38:23,081 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:38:23,279 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:38:23,437 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:38:26,313 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:38:57,606 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:38:57,813 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:38:57,988 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:38:58,592 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:39:06,542 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_false,
+
+2023-03-07 17:39:06,897 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:39:07,027 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:39:07,911 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:39:10,659 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:39:10,665 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:39:11,468 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:39:13,555 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:39:41,962 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:39:42,419 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:39:42,503 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:39:42,955 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:39:45,166 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:39:45,166 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:39:45,322 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:39:45,349 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:39:45,587 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:39:45,658 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:39:45,731 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:39:45,781 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:39:46,158 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:39:46,158 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:39:46,310 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:39:46,335 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:40:16,168 ERROR [UPDATE-DOMAIN] Exception while taking item from LinkedBlockingDeque.
+
+2023-03-07 17:40:34,753 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8301:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:40:34,754 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:40:34,760 INFO DEFAULT_GROUP@@borrow-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8301:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:40:34,760 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:40:34,760 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:40:34,761 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 17:40:34,761 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_false,
+
+2023-03-07 17:40:34,761 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:40:34,761 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_false_false_Zhengzhou]
+
+2023-03-07 17:40:34,761 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_false,
+
+2023-03-07 17:40:35,399 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_false,
+
+2023-03-07 17:40:35,401 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_false,
+
+2023-03-07 17:40:35,401 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_false,
+
+2023-03-07 17:40:35,402 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_false,
+
+2023-03-07 17:40:35,402 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:40:35,402 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:40:35,403 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:40:35,403 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:40:37,257 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:40:37,974 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:40:38,131 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:40:38,263 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:40:41,766 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 1, msg: tcp:ok+
+
+2023-03-07 17:40:41,787 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:40:41,787 INFO DEFAULT_GROUP@@book-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:40:41,787 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:40:41,798 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:40:41,799 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:40:42,717 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:40:43,809 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:40:43,809 INFO DEFAULT_GROUP@@user-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:40:43,809 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:40:43,814 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:40:43,814 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:40:44,176 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:40:44,794 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:40:45,095 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 1, msg: tcp:ok+
+
+2023-03-07 17:40:45,606 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_false,
+
+2023-03-07 17:40:45,850 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 1, msg: tcp:ok+
+
+2023-03-07 17:40:46,105 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 2, msg: tcp:ok+
+
+2023-03-07 17:40:46,374 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:40:46,436 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 2, msg: tcp:ok+
+
+2023-03-07 17:40:46,565 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:40:46,565 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:40:47,455 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:40:48,055 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:40:48,310 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:40:48,360 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:40:48,551 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:40:48,805 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:40:48,835 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:40:49,491 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:40:50,667 INFO serviceName: DEFAULT_GROUP@@borrowservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:40:51,083 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:40:52,448 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:40:53,398 INFO serviceName: DEFAULT_GROUP@@borrowservice {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:40:53,689 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:40:56,941 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:45:25,633 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:45:26,707 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:45:35,729 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:45:39,650 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:45:42,495 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:46:20,466 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:46:29,793 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:46:33,532 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:46:36,396 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:49:29,095 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:49:37,303 INFO DEFAULT_GROUP@@borrow-service {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8301:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:49:37,303 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:49:37,304 INFO DEFAULT_GROUP@@borrow-service {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 17:49:37,304 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,172.20.10.4:8301_true,
+
+2023-03-07 17:49:38,421 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:49:40,093 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:49:42,156 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:49:43,134 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:55:07,649 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:55:07,741 INFO DEFAULT_GROUP@@borrow-service {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 17:55:07,741 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@borrow-service, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:55:08,280 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:55:08,456 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@book-service, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:55:08,457 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:55:08,458 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@user-service, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:55:08,637 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:55:08,736 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:55:09,440 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:55:09,440 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:55:09,440 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:55:16,821 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8202:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:55:16,822 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,
+
+2023-03-07 17:55:16,822 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,
+
+2023-03-07 17:55:17,718 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 1, msg: tcp:ok+
+
+2023-03-07 17:55:18,593 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 17:55:18,593 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:55:19,706 INFO DEFAULT_GROUP@@bookservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8201:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:55:19,706 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:55:19,927 INFO serviceName: DEFAULT_GROUP@@bookservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 1, msg: tcp:ok+
+
+2023-03-07 17:55:20,717 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: Changsha, new ips size: 1, content: [172.20.10.4:8102:unknown:Changsha_1.0_true_false_Changsha]
+
+2023-03-07 17:55:20,717 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,
+
+2023-03-07 17:55:20,717 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,
+
+2023-03-07 17:55:21,345 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:55:21,429 INFO DEFAULT_GROUP@@userservice {SYNC} {IP-NEW} cluster: Zhengzhou, new ips size: 1, content: [172.20.10.4:8101:unknown:Zhengzhou_1.0_true_false_Zhengzhou]
+
+2023-03-07 17:55:21,429 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:55:21,543 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 2, msg: tcp:ok+
+
+2023-03-07 17:55:21,798 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:55:22,509 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:55:22,509 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 1, msg: tcp:ok+
+
+2023-03-07 17:55:22,510 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:55:22,776 INFO serviceName: DEFAULT_GROUP@@bookservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 2, msg: tcp:ok+
+
+2023-03-07 17:55:24,260 INFO serviceName: DEFAULT_GROUP@@bookservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:55:24,465 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:55:24,719 INFO serviceName: DEFAULT_GROUP@@userservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:55:24,907 INFO serviceName: DEFAULT_GROUP@@bookservice {POS} {IP-ENABLED} valid: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:55:25,144 INFO serviceName: DEFAULT_GROUP@@userservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 1, msg: tcp:ok+
+
+2023-03-07 17:55:25,397 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:55:25,848 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:55:26,311 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:55:26,311 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:55:26,313 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 2, msg: tcp:ok+
+
+2023-03-07 17:55:27,755 INFO serviceName: DEFAULT_GROUP@@userservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:55:28,837 INFO serviceName: DEFAULT_GROUP@@bookservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:55:29,281 INFO serviceName: DEFAULT_GROUP@@userservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 2, msg: tcp:ok+
+
+2023-03-07 17:55:29,415 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:55:29,415 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-ENABLED} valid: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:55:29,415 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-ENABLED} valid: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:55:29,842 INFO serviceName: DEFAULT_GROUP@@userservice {POS} {IP-ENABLED} valid: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:55:32,290 INFO serviceName: DEFAULT_GROUP@@bookservice {POS} {IP-ENABLED} valid: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:55:32,498 INFO serviceName: DEFAULT_GROUP@@userservice {POS} {IP-ENABLED} valid: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:56:35,301 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 17:56:35,301 INFO [IP-UPDATED] namespace: d2876e2b-26c2-44c2-b4aa-4c3f3559dcd0, service: DEFAULT_GROUP@@borrowservice, ips: 
+
+2023-03-07 17:56:35,585 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:56:36,334 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:56:47,304 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 17:56:47,304 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 172.20.10.4:8301_true,
+
+2023-03-07 17:56:48,550 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 17:56:49,336 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 2, msg: tcp:ok+
+
+2023-03-07 17:56:52,565 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:56:53,151 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-ENABLED} valid: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:ok+
+
+2023-03-07 17:57:09,155 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:57:09,155 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:57:09,156 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@userservice, ips: 172.20.10.4:8102_true,172.20.10.4:8101_true,
+
+2023-03-07 17:57:09,156 INFO DEFAULT_GROUP@@borrowservice {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [172.20.10.4:8301:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2023-03-07 17:57:09,156 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@borrowservice, ips: 
+
+2023-03-07 17:57:09,157 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@bookservice, ips: 172.20.10.4:8202_true,172.20.10.4:8201_true,
+
+2023-03-07 17:57:09,394 INFO serviceName: DEFAULT_GROUP@@userservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:57:09,431 INFO serviceName: DEFAULT_GROUP@@userservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:57:09,619 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:57:09,619 INFO serviceName: DEFAULT_GROUP@@bookservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:57:09,960 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:57:10,146 INFO serviceName: DEFAULT_GROUP@@book-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8201@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:57:10,147 INFO serviceName: DEFAULT_GROUP@@borrow-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8301@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:57:10,147 INFO serviceName: DEFAULT_GROUP@@bookservice {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8202@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:57:10,147 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8102@Changsha, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 17:57:10,147 INFO serviceName: DEFAULT_GROUP@@user-service {POS} {IP-DISABLED} invalid-now: 172.20.10.4:8101@Zhengzhou, region: unknown, msg: tcp:unable2connect:Connection refused
+
+2023-03-07 18:06:06,981 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8102@Changsha in 1, msg: tcp:ok+
+
+2023-03-07 18:06:06,981 INFO serviceName: DEFAULT_GROUP@@borrow-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8301@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 18:06:06,981 INFO serviceName: DEFAULT_GROUP@@book-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8201@Zhengzhou in 1, msg: tcp:ok+
+
+2023-03-07 18:06:06,981 INFO serviceName: DEFAULT_GROUP@@bookservice {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8202@Changsha in 1, msg: tcp:ok+
+
+2023-03-07 18:06:06,981 INFO serviceName: DEFAULT_GROUP@@user-service {OTHER} {IP-ENABLED} pre-valid: 172.20.10.4:8101@Zhengzhou in 1, msg: tcp:ok+
+

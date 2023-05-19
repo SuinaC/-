@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>基本信息</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link href="css/style.css" th:href="@{/signup/css/style.css}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" th:href="@{/signup/css/iconfont.css}"/>
+    <link rel="stylesheet" type="text/css" href="css/multiselect.css" th:href="@{/signup/css/multiselect.css}"/>
+    <link href="zyzn_1.css" type="text/css" th:href="@{/signup/css/zyzn_1.css}" rel="stylesheet">
+</head>
+<body>
+
+
+<div class="jq22-register-popup">
+    <div class="jq22-register-box">
+        <!-- partial:index.partial.html -->
+        <!-- partial -->
+        <div class="jq22-register-logo">
+            基本信息
+        </div>
+        <div class="jq22-register-form" id="verifyCheck">
+            <!--            <form th:action="@{/message/saveMessage}" method:"post" >-->
+            <div class="jq22-register-form-item">
+                <input type="text" placeholder="姓名" name="name" id="name" data-valid="isNonEmpty||isZh"
+                       data-error="<i class='icon-tips'></i>姓名不能为空||<i class='icon-tips'></i>请输入中文"
+                       class="txt02 f-r3 f-fl required" tabindex="2"/>
+                <label class="focus valid"></label>
+            </div>
+            <div class="jq22-register-form-item">
+                <input type="text" placeholder="年龄" name="age" id="age" data-valid="isNonEmpty||isInt"
+                       data-error="<i class='icon-tips'></i>年龄不能为空||<i class='icon-tips'></i>请输入数字"
+                       class="txt02 f-r3 f-fl required" tabindex="2"/>
+                <label class="focus valid"></label>
+            </div>
+
+            <div class="jq22-register-form-item">
+                <div id="sex1" name="sex"></div>
+                <input type="text" id="sex" name="sex" style="display:none"/>
+                <label class="focus valid"></label>
+            </div>
+            <div class="jq22-register-form-item">
+                <div class="picker">
+                    <p>选择籍贯</p>
+                    <!--                        <input type="text" id="nativePlace" name="nativePlace" class="txt03 f-r3 required" value="" data-value=""  data-valid="isNonEmpty" data-error="<i class='icon-tips'></i>籍贯不能为空" onclick="appendCity(this,'danxuan')" />-->
+                    <div class="wrap"><input class="text" name="nativePlace" id="nativePlace" type="text"
+                                             placeholder="请选择" autocomplete="off" readonly="true">
+                        <s1></s1>
+                    </div>
+                </div>
+                <label class="focus valid"></label>
+            </div>
+            <div class="jq22-register-form-item">
+                <div class="picker">
+                    <p>选择现住址</p>
+                    <div class="wrap"><input class="text" name="address" id="address" type="text" placeholder="请选择"
+                                             autocomplete="off" readonly="true"><s></s></div>
+                    <!--                        <input type="text" id="address" name="address" class="txt03 f-r3 required" value="" data-value=""  data-valid="isNonEmpty" data-error="<i class='icon-tips'></i>现住址不能为空" onclick="appendCity(this,'danxuan')" />-->
+                </div>
+                <label class="focus valid"></label>
+            </div>
+            <div class="jq22-register-form-item">
+                <input type="text" name="wchat" id="wchat" placeholder="微信" class="txt03 f-r3 required"
+                       data-valid="isNonEmpty" data-error="<i class='icon-tips'></i>微信不能为空">
+                <label class="focus valid"></label>
+            </div>
+            <div class="jq22-register-form-item">
+                <input type="text" name="idCard" id="idCard" placeholder="身份证" class="txt03 f-r3 required"
+                       data-valid="isNonEmpty||isCard"
+                       data-error="<i class='icon-tips'></i>身份证不能为空||<i class='icon-tips'></i>请输入正确的身份证号">
+                <label class="focus valid"></label>
+            </div>
+            <div class="jq22-register-form-item">
+                <input type="text" name="email" id="email" placeholder="电子邮箱" class="txt03 f-r3 required"
+                       data-valid="isNonEmpty||isEmail"
+                       data-error="<i class='icon-tips'></i>电子邮箱不能为空||<i class='icon-tips'></i>电子邮箱格式错误">
+                <label class="focus valid"></label>
+            </div>
+            <div class="jq22-register-form-item">
+                <input readonly="readonly" id="jq22-btn-reg" class="jq22-btn-reg" onclick="saveMessage()" value="提交">
+            </div>
+            <!--            </form>-->
+        </div>
+    </div>
+
+</div>
+</body>
+<script src="js/jquery.min.js" th:src="@{/signup/js/jquery.min.js}"></script>
+<script type="text/javascript" src="js/register.js" th:src="@{/signup/js/information.js}"></script>
+<script type="text/javascript" src="js/multiselect.js" th:src="@{/signup/js/multiselect.js}"></script>
+<script type="text/javascript" src="City_data.js" th:src="@{/signup/js/City_data.js}"></script>
+<script type="text/javascript" src="areadata.js" th:src="@{/signup/js/areadata.js}"></script>
+<script type="text/javascript" src="js/Popt.js" th:src="@{/signup/js/Popt.js}"></script>
+<script type="text/javascript" src="js/city.json.js" th:src="@{/signup/js/city.json.js}"></script>
+<script type="text/javascript" src="js/citySet.js" th:src="@{/signup/js/citySet.js}"></script>
+<script src="./script.js" th:src="@{/signup/js/background.js}"></script>
+<script type="text/javascript">
+    $("#sex1").multiselectInit({
+        "selectData": [{"colId": 0, "colValue": "男"}, {"colId": 1, "colValue": "女"}],
+        "isMulti": false,//是否多选
+        "inputId": "sex",//输入框的id
+        "checkStyle": "yx"//选择的样式
+    });
+</script>
+<script>
+    window.onbeforeunload = function (e) {
+        var e = window.event || e;
+        // e.returnValue=("确定离开当前页面吗？");
+        $("#name").val("");
+        $("#age").val("");
+        $("#sex").val("");
+        $("#nativePlace").val("");
+        $("#address").val("");
+        $("#wchat").val("");
+        $("#idCard").val("");
+        $("#email").val("");
+    }
+</script>
+<script type="text/javascript">
+    function TConsumer() {
+        this.name = $("#name").val(),
+            this.age = $("#age").val(),
+            this.sex = $("#sex").val(),
+            this.nativePlace = $("#nativePlace").val(),
+            this.address = $("#address").val(),
+            this.wchat = $("#wchat").val(),
+            this.idCard = $("#idCard").val(),
+            this.email = $("#email").val()
+    }
+
+    // var tConsumer = new TConsumer();
+    function saveMessage() {
+
+        var tConsumer = {
+            name: $("#name").val(),
+            age: $("#age").val(),
+            sex: $("#sex").val(),
+            nativePlace: $("#nativePlace").val(),
+            address: $("#address").val(),
+            wchat: $("#wchat").val(),
+            idCard: $("#idCard").val(),
+            email: $("#email").val()
+        }
+        $.post(
+            "/message/saveMessage",
+            tConsumer,
+            function (data) {
+                if (data == "error") {
+                    alert("用户信息错误，请重新登录");
+                } else if (data == "error1") {
+                    $("#idCard").val("");
+                    alert("身份证已存在，请重新尝试");
+                } else if (data == "error2") {
+                    $("#email").val("");
+                    alert("电子邮箱已存在，请重新尝试");
+                } else if (data == "error3") {
+                    $("#wchat").val("");
+                    alert("微信已存在，请重新尝试");
+                } else if (data == "error4") {
+                    alert("基本信息填写错误，请重新尝试");
+                } else {
+                    url = "/home/login?id=" + data;
+                    location.href = url;
+                }
+            }
+        )
+        // $.ajax({
+        //     type:"POST",
+        //     url: "http://localhost:9090/message/saveMessage",
+        //     dataType:"json",
+        //     data:{
+        //         'name':$("#name").val(),
+        //         'age':$("#age").val(),
+        //         'sex':$("#sex").val(),
+        //         'nativePlace':$("#nativePlace").val(),
+        //         'address':$("#address").val(),
+        //         'wchat':$("#wchat").val(),
+        //         'idCard':$("#idCard").val(),
+        //         'email':$("#email").val()
+        //     },
+        //     success:function(data){
+        //         alert(data)
+        //         if(data == "error"){
+        //             alert("用户信息错误，请重新登录");
+        //         }else if(data == "error1"){
+        //             $("#idCard").val("");
+        //             alert("身份证已存在，请重新尝试");
+        //         }else if(data == "error2"){
+        //             $("#email").val("");
+        //             alert("电子邮箱已存在，请重新尝试");
+        //         }else if(data == "error3"){
+        //             $("#wchat").val("");
+        //             alert("微信已存在，请重新尝试");
+        //         }else if(data == "error4"){
+        //             alert("基本信息填写错误，请重新尝试");
+        //         }else {
+        //             url = "/home/login?id="+data;
+        //             location.href=url;
+        //         }
+        //     }}
+        // )
+
+    }
+
+
+</script>
+<script type="text/javascript">
+    $("#nativePlace").click(function (e) {
+        SelCity(this, e);
+    });
+    $("s1").click(function (e) {
+        SelCity(document.getElementById("nativePlace"), e);
+    });
+</script>
+<script type="text/javascript">
+    $("#address").click(function (e) {
+        SelCity(this, e);
+    });
+    $("s").click(function (e) {
+        SelCity(document.getElementById("address"), e);
+    });
+</script>
+<script th=inline="javascript">
+    window.onload = function () {
+        // var error = [[${error}]];
+        alert("您是第一次登陆，请输入以下基本信息");
+    }
+</script>
+</html>

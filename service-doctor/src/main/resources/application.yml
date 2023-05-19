@@ -1,0 +1,17 @@
+server:
+  port: 8310
+
+mybatis:
+  mapperLocations: classpath:com/jia/mapper/*.xml
+Spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cmos
+    username: root
+    password: root
+  application:
+    name: doctor-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8858

@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- START: Head-->
+<head>
+    <meta charset="UTF-8">
+    <title>编辑个人信息</title>
+    <link rel="shortcut icon" href="dist/images/favicon.ico" th:href="@{/information/images/favicon.ico}"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <!-- START: Template CSS-->
+    <link rel="stylesheet" href="dist/vendors/bootstrap/css/bootstrap.min.css"
+          th:href="@{/information/vendors/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="dist/vendors/jquery-ui/jquery-ui.min.css"
+          th:href="@{/information/vendors/jquery-ui/jquery-ui.min.css}">
+    <link rel="stylesheet" href="dist/vendors/jquery-ui/jquery-ui.theme.min.css"
+          th:href="@{/information/vendors/jquery-ui/jquery-ui.theme.min.css}">
+    <link rel="stylesheet" href="dist/vendors/simple-line-icons/css/simple-line-icons.css"
+          th:href="@{/information/vendors/simple-line-icons/css/simple-line-icons.css}">
+    <link rel="stylesheet" href="dist/vendors/flags-icon/css/flag-icon.min.css"
+          th:href="@{/information/vendors/flags-icon/css/flag-icon.min.css}">
+    <link rel="stylesheet" href="dist/vendors/flag-select/css/flags.css"
+          th:href="@{/information/vendors/flag-select/css/flags.css}">
+    <link rel="stylesheet" href="dist/vendors/sweetalert/sweetalert.css"
+        th:href="@{/information/vendors/sweetalert/sweetalert.css}">
+    <!-- END Template CSS-->
+
+    <!-- START: Page CSS-->
+    <link rel="stylesheet" href="dist/vendors/chartjs/Chart.min.css"
+          th:href="@{/information/vendors/chartjs/Chart.min.css}">
+    <!-- END: Page CSS-->
+
+    <!-- START: Page CSS-->
+    <link rel="stylesheet" href="dist/vendors/morris/morris.css" th:href="@{/information/vendors/morris/morris.css}">
+    <link rel="stylesheet" href="dist/vendors/weather-icons/css/pe-icon-set-weather.min.css"
+          th:href="@{/information/vendors/weather-icons/css/pe-icon-set-weather.min.css}">
+    <link rel="stylesheet" href="dist/vendors/chartjs/Chart.min.css"
+          th:href="@{/information/vendors/chartjs/Chart.min.css}">
+    <link rel="stylesheet" href="dist/vendors/starrr/starrr.css" th:href="@{/information/vendors/starrr/starrr.css}">
+    <link rel="stylesheet" href="dist/vendors/fontawesome/css/all.min.css"
+          th:href="@{/information/vendors/fontawesome/css/all.min.css}">
+    <link rel="stylesheet" href="dist/vendors/ionicons/css/ionicons.min.css"
+          th:href="@{/information/vendors/ionicons/css/ionicons.min.css}">
+    <link rel="stylesheet" href="dist/vendors/jquery-jvectormap/jquery-jvectormap-2.0.3.css"
+          th:href="@{/information/vendors/jquery-jvectormap/jquery-jvectormap-2.0.3.css}">
+    <!-- END: Page CSS-->
+
+    <!-- START: Custom CSS-->
+    <link rel="stylesheet" href="dist/css/main.css" th:href="@{/information/css/main.css}">
+    <link rel="stylesheet" href="dist/vendors/icofont/icofont.min.css" th:href="@{/information/vendors/icofont/icofont.min.css}">
+    <link rel="stylesheet" href="dist/css/main.css" th:href="@{/information/css/address.css}">
+    <!-- END: Custom CSS-->
+</head>
+<!-- END Head-->
+
+<!-- START: Body-->
+<body id="main-container" class="default">
+
+<!-- START: Pre Loader-->
+<div class="se-pre-con">
+    <img src="dist/images/logo.png" th:src="@{/information/images/logo.png}" alt="logo" width="23" class="img-fluid"/>
+</div>
+<!-- END: Pre Loader-->
+
+<!-- START: Header-->
+<div id="header-fix" class="header fixed-top">
+    <nav class="navbar navbar-expand-lg  p-0">
+        <div class="navbar-header h4 mb-0 align-self-center logo-bar text-center">
+            <a href="index.html" class="horizontal-logo text-center">
+                <span class="h3 align-self-center mb-0 ">个人信息</span>
+            </a>
+        </div>
+        <div class="navbar-header h4 mb-0 text-center h-100 collapse-menu-bar">
+            <a href="#" class="sidebarCollapse" id="collapse"><i class="icon-menu body-color"></i></a>
+        </div>
+
+        <form class="float-left d-none d-lg-block search-form">
+            <div class="form-group mb-0 position-relative">
+                <input type="text" class="form-control border-0 rounded bg-search pl-5"
+                       placeholder="请输入病症">
+                <div class="btn-search position-absolute top-0">
+                    <a th:onclick="'javascript:searchDisease('+${tConsumer.id}+')'" ><i class="h5 icon-magnifier body-color"></i></a>
+                </div>
+                <a href="#" class="position-absolute close-button mobilesearch d-lg-none" data-toggle="dropdown"
+                   aria-expanded="false"><i class="icon-close h5"></i>
+                </a>
+
+            </div>
+        </form>
+        <div class="navbar-right ml-auto h-100">
+            <ul class="ml-auto p-0 m-0 list-unstyled d-flex top-icon h-100">
+                <li class="d-inline-block align-self-center  d-block d-lg-none">
+                    <a href="#" class="nav-link mobilesearch" data-toggle="dropdown" aria-expanded="false"><i
+                            class="icon-magnifier h4"></i>
+                    </a>
+                </li>
+                <li class="dropdown user-profile align-self-center d-inline-block">
+                    <a href="#" class="nav-link py-0" data-toggle="dropdown" aria-expanded="false">
+                        <div class="media">
+<!--                            <img src="dist/images/author.jpg" th:src="@{${tConsumer.img}}" alt=""-->
+                            <img src="dist/images/author.jpg" th:src="@{${tConsumer.img}}" alt=""
+                                 class="d-flex img-fluid rounded-circle" width="29">
+
+                        </div>
+                    </a>
+
+                    <div class="dropdown-menu  dropdown-menu-right p-0">
+                        <a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}" class="dropdown-item px-2 align-self-center d-flex">
+                            <span class="icon-pencil mr-2 h6 mb-0"></span> 编辑个人资料</a>
+                        <a th:href="@{/consumerInformation/information(id=${tConsumer.id})}" class="dropdown-item px-2 align-self-center d-flex">
+                            <span class="icon-user mr-2 h6 mb-0"></span> 查看资料</a>
+                        <div class="dropdown-divider"></div>
+
+                        <div class="dropdown-divider"></div>
+                        <a href="/consumer/login" class="dropdown-item px-2 text-danger align-self-center d-flex">
+                            <span class="icon-logout mr-2 h6  mb-0"></span>登出</a>
+                    </div>
+
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</div>
+<!-- END: Header-->
+
+<!-- START: Main Menu-->
+<div class="sidebar">
+    <div class="media d-block text-center user-profile">
+        <img class="img-fluid" src="dist/images/author1.jpg" style="width: 100px; hight:100px" th:src="@{${tConsumer.img}}" alt="">
+        <div class="media-body text-center mt-0 color-primary mt-2">
+            <a href="#" class="nav-link py-0" data-toggle="dropdown" aria-expanded="false">
+                <h6 class="mb-0 font-weight-bold" th:text="${tConsumer.name}">姓名</h6>
+                <p th:text="${tConsumer.nativePlace}"></p>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right p-0" style="">
+                <a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}" class="dropdown-item px-2 align-self-center d-flex">
+                    <span class="icon-pencil mr-2 h6 mb-0"></span> 编辑个人资料</a>
+                <a th:href="@{/consumerInformation/information(id=${tConsumer.id})}" class="dropdown-item px-2 align-self-center d-flex">
+                    <span class="icon-user mr-2 h6 mb-0"></span> 查看资料</a>
+                <div class="dropdown-divider"></div>
+
+                <div class="dropdown-divider"></div>
+                <a href="/consumer/login" class="dropdown-item px-2 text-danger align-self-center d-flex">
+                    <span class="icon-logout mr-2 h6  mb-0"></span> 登出</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- START: Menu-->
+    <ul id="side-menu" class="sidebar-menu">
+        <li class="dropdown active"><a href="#">首页</a>
+            <ul>
+                <li class="active"><a href="index.html" th:href="@{/consumerInformation/index(id=${tConsumer.id})}"><i class="icon-rocket"></i> 首页</a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="#">应用</a>
+            <ul>
+                <li><a th:href="@{/consumerInformation/calendar(id=${tConsumer.id})}"><i class="icon-calendar"></i> 日历备忘录</a></li>
+
+                <li class="dropdown"><a href="#"><i class="icon-envelope"></i>邮箱</a>
+                    <ul class="sub-menu">
+                        <li><a th:href="@{/mailInbox/mail(id=${tConsumer.id})}"><i class="icon-envelope"></i> 收件箱</a></li>
+                    </ul>
+                </li>
+                <li><a th:href="@{/consumerOrder/consumerOrder(id=${tConsumer.id})}"><i class="icon icofont-ui-copy"></i> 预约</a></li>
+                        <li><a th:href="@{/consumerOrder/medicalOrder(id=${tConsumer.id})}"><i class="icon icofont-first-aid"></i> 体检预约</a></li>
+                <li><a th:href="@{/consumerInformation/prescriptionList(id=${tConsumer.id})}"><i class="icon icofont-ui-clip-board"></i> 查看处方</a></li>
+                <li><a th:href="@{/consumerInformation/searchDoctor(id=${tConsumer.id})}"><i class="icon icofont-doctor"></i> 查找医生</a></li>
+               <li><a th:href="@{/consumerInformation/doctorCollection(id=${tConsumer.id})}"><i class="icon icofont-heart"></i> 医生收藏</a></li>
+                        <li><a th:href="@{/drug/drugOrderList(id=${tConsumer.id})}"><i class="icon icofont-ticket"></i> 查看药品订单列表</a></li>
+            </ul>
+        </li>
+        <li class="dropdown"><a href="#">信息</a>
+            <ul>
+                <li class="dropdown"><a href="#"><i class="icon-user"></i>个人信息</a>
+                    <ul class="sub-menu">
+                        <li><a th:href="@{/consumerInformation/information(id=${tConsumer.id})}"><i class="icon-disc"></i> 查看个人信息</a></li>
+                        <li><a th:href="@{/consumerInformation/updateInformation(id=${tConsumer.id})}"><i class="icon-disc"></i> 修改个人信息</a></li>
+                        <li><a th:href="@{/consumerInformation/updatePassword(id=${tConsumer.id})}"><i class="icon-disc"></i> 修改密码</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><i class="icon-paper-clip"></i>病历</a>
+                    <ul class="sub-menu">
+                        <li><a th:href="@{/consumerInformation/medical(id=${tConsumer.id})}"><i class="icon-disc"></i>历史病历</a></li>
+                        <li><a th:href="@{/consumerInformation/existingMedical(id=${tConsumer.id})}"><i class="icon-cursor-move"></i>现有病历</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href="#"><i class="icon icofont-restaurant-menu"></i>预约信息</a>
+                    <ul class="sub-menu">
+                       <li><a th:href="@{/consumerOrder/appointmentProgress(id=${tConsumer.id})}"><i class="icon-disc"></i> 预约进度</a></li>
+                                <li><a th:href="@{/consumerInformation/consumerOrderList(id=${tConsumer.id})}"><i class="icon-disc"></i> 预约列表</a></li>
+                        <li><a th:href="@{/consumerOrder/medicalAppointmentList(id=${tConsumer.id})}"><i class="icon-disc"></i> 体检预约列表</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <!-- END: Menu-->
+</div>
+<!-- END: Main Menu-->
+
+
+<!-- START: Main Content-->
+<main>
+    <div class="container-fluid">
+        <!-- START: Breadcrumbs-->
+        <div class="row ">
+            <div class="col-12  align-self-center">
+                <div class="sub-header mt-3 py-3 px-3 align-self-center d-sm-flex w-100 rounded">
+                    <div class="w-sm-100 mr-auto"><h4 class="mb-0">修改个人信息</h4></div>
+                </div>
+            </div>
+        </div>
+        <!-- END: Breadcrumbs-->
+
+        <!-- START: Card Data-->
+        <div class="row">
+            <div class="col-12 mt-4">
+                <div class="card">
+                    <form action="/consumerInformation/upload" method="post" enctype="multipart/form-data">
+                        <input name="id" hidden="hidden" th:value="${tConsumer.id}">
+                        <img style="width: 64px;height:64px;display: inline-flex;align-items: center;"  src="images/users/avatar.jpg" id="titleImg" name="titleImg"
+                             th:src="@{${tConsumer.img}}" alt="..." class="img-avatar">
+                        <div class="edit-avatar-content" style="display: inline-flex;align-items: center;">
+                            <input type="file" class="form-control" id="title" name="title">
+                            <button class="btn btn-default" type="submit" style="width:30%;margin-left:10px">修改头像</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title" th:text="(${tConsumer.name} + '的个人信息')">xxx的个人信息</h4>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-row">
+                                        <input hidden="hidden" id="id" name="id" th:value="${tConsumer.id}">
+                                        <div class="form-group col-md-6">
+                                            <label for="name">姓名</label>
+                                            <div class="input-group  mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-transparent border-right-0"><i class="ion-person"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control" th:value="${tConsumer.name}"
+                                                       id="name" name="name" onblur="checkName()">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="phone">手机号</label>
+                                            <div class="input-group  mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text bg-transparent border-right-0"><i class="ion-iphone"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" id="phone" name="phone"
+                                                   th:value="${tConsumer.phone}" onblur="checkPhone()">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row" hidden="hidden" id="phone-code">
+                                        <div class="form-group col-md-6">
+                                            <label for="phoneCode">新手机号验证码</label>
+                                            <div class="input-group  mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-transparent border-right-0"><i class="ti-mobile"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control" onblur="checkPhoneCode()" id="phoneCode" name="phoneCode">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="oEmailCode">邮箱验证码</label>
+                                            <div class="input-group  mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-transparent border-right-0"><i class="ti-email"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control" onblur="checkEmailCode()" id="oEmailCode" name="oEmailCode">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label >性别</label>
+                                            <div class="input-group  mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text bg-transparent border-right-0"><i class="ion-person-stalker"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" disabled="disabled" th:if="${tConsumer.sex == false}" th:value="男"  name="sex">
+                                            <input type="text" class="form-control" disabled="disabled" th:if="${tConsumer.sex == true}" th:value="女"  name="sex">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="age">年龄</label>
+                                            <div class="input-group  mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text bg-transparent border-right-0"><i class="ion-calendar"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" id="age" disabled="disabled" name="age"
+                                                   th:value="${tConsumer.age}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="idCard">身份证</label>
+                                            <div class="input-group  mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-transparent border-right-0"><i class="ion-card"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control" disabled="disabled" id="idCard" name="idCard"
+                                                       th:value="${tConsumer.idCard}">
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="wchat">微信</label>
+                                            <div class="input-group  mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-transparent border-right-0"><i class="ion-chatbubbles"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control rounded"
+                                                       th:value="${tConsumer.wchat}" id="wchat" onblur="checkWchat()" name="wchat">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">邮箱</label>
+                                        <div class="input-group  mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text bg-transparent border-right-0"><i class="ion-email"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" onblur="checkEmail()" id="email" name="email"
+                                                   th:value="${tConsumer.email}">
+                                        </div>
+                                    </div>
+                                    <div class="form-row" hidden="hidden" id="email-code">
+                                        <div class="form-group col-md-6">
+                                            <label for="oPhoneCode">手机号验证码</label>
+                                            <div class="input-group  mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-transparent border-right-0"><i class="ti-mobile"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control" onblur="checkEPhoneCode()" id="oPhoneCode" name="oPhoneCode">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="emailCode">新邮箱验证码</label>
+                                            <div class="input-group  mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text bg-transparent border-right-0"><i class="ti-email"></i></span>
+                                                </div>
+                                                <input type="text" class="form-control" onblur="checkEEmailCode()" id="emailCode" name="emailCode">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="address">籍贯</label>
+                                        <div class="input-group  mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text bg-transparent border-right-0"><i class="ion-ios-home-outline"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" id="address" name="address" autocomplete="off" readonly="true"
+                                                   th:value="${tConsumer.address}"><s></s>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="nativePlace">现住址</label>
+                                        <div class="input-group  mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text bg-transparent border-right-0"><i class="ion-ios-home"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" id="nativePlace" autocomplete="off" readonly="true" name="nativePlace"
+                                                   th:value="${tConsumer.nativePlace}"><s></s>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="gmtCreate">注册日期</label>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text bg-transparent border-right-0"><i class="ion-ios-time"></i></span>
+                                            </div>
+                                                <input type="text" class="form-control"  id="gmtCreate" readonly="true" name="gmtCreate"
+                                                       th:value="${#dates.format(tConsumer.gmtCreate,'yyyy年MM月dd日')}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary" onclick="updateInformation()">修改</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END: Card DATA-->
+    </div>
+</main>
+<!-- END: Content-->
+
+
+<!-- START: Back to top-->
+<a href="#" class="scrollup text-center">
+    <i class="icon-arrow-up"></i>
+</a>
+<!-- END: Back to top-->
+
+<!-- START: Template JS-->
+<script src="dist/vendors/jquery/jquery-3.3.1.min.js"
+        th:src="@{/information/vendors/jquery/jquery-3.3.1.min.js}"></script>
+<script src="dist/vendors/jquery-ui/jquery-ui.min.js"
+        th:src="@{/information/vendors/jquery-ui/jquery-ui.min.js}"></script>
+<script src="dist/vendors/moment/moment.js" th:src="@{/information/vendors/moment/moment.js}"></script>
+<script src="dist/vendors/bootstrap/js/bootstrap.bundle.min.js"
+        th:src="@{/information/vendors/bootstrap/js/bootstrap.bundle.min.js}"></script>
+<script src="dist/vendors/slimscroll/jquery.slimscroll.min.js"
+        th:src="@{/information/vendors/slimscroll/jquery.slimscroll.min.js}"></script>
+<script src="dist/vendors/flag-select/js/jquery.flagstrap.min.js"
+        th:src="@{/information/vendors/flag-select/js/jquery.flagstrap.min.js}"></script>
+<script src="dist/vendors/sweetalert/sweetalert.min.js" th:src="@{/information/vendors/sweetalert/sweetalert.min.js}"></script><!-- END: Template JS-->
+<!-- START: APP JS-->
+<script src="dist/js/app.js" th:src="@{/information/js/app.js}"></script>
+<!--地址选择-->
+<script type="text/javascript" src="js/Popt.js" th:src="@{/information/js/Popt.js}"></script>
+<script type="text/javascript" src="js/city.json.js" th:src="@{/information/js/city.json.js}"></script>
+<script type="text/javascript" src="js/citySet.js" th:src="@{/information/js/citySet.js}"></script>
+<!-- END: APP JS-->
+<script type="text/javascript">
+    $("#address").click(function (e) {
+        SelCity(this, e);
+    });
+    $("s").click(function (e) {
+        SelCity(document.getElementById("address"), e);
+    });
+
+    $("#nativePlace").click(function (e) {
+        SelCity(this, e);
+    });
+    $("s").click(function (e) {
+        SelCity(document.getElementById("nativePlace"), e);
+    });
+</script>
+
+<script type="text/javascript">
+    function checkName(){
+        var name = $("#name").val();
+        if(name == null || name == ""){
+            $("#name").attr("class","form-control is-invalid");
+            swal({
+                title: "提示",
+                text: "姓名不能为空",
+                type: "error",
+                confirmButtonText: '重试'
+            });
+        }else {
+            $("#name").attr("class","form-control is-valid");
+        }
+    }
+
+    function checkPhone(){
+        $("#phone-code").attr("hidden",false);
+        var phone = $("#phone").val();
+        var email = $("#email").val();
+        var pattern = /^1[345678]\d{9}$/;
+        var reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
+        if(!pattern.test(phone)){
+            $("#phone").attr("class","form-control is-invalid");
+            swal({
+                title: "提示",
+                text: "手机号格式错误或为空",
+                type: "error",
+                showCancelButton: true,
+                confirmButtonText: '重试'
+            });
+        }else{
+            $.post(
+                "/consumerInformation/checkPhone",
+                "phone="+phone,
+                function (data){
+                    if(data == "success"){
+                        swal({
+                            title: "提示",
+                            text: "手机号未重复",
+                            type: "success",
+                            showCancelButton: true,
+                        });
+                        $("#phone").attr("disabled",true);
+                        $.post(
+                            "/consumerInformation/sendCode",
+                            "phone="+phone+"&email="+email,
+                            function (data){
+                                if(data == "success"){
+                                    swal({
+                                        title: "提示",
+                                        text: "验证码发送成功，请验证",
+                                        type: "success",
+                                        confirmButtonText: '重试'
+                                    });
+                                }else if(data == "error"){
+                                    $("#phoneCode").attr("class","form-control is-invalid");
+                                    $("#oEmailCode").attr("class","form-control is-invalid");
+                                    $("#phone").attr("class","form-control is-invalid");
+                                    swal({
+                                        title: "提示",
+                                        text: "验证码发送失败，请重新验证",
+                                        type: "error",
+                                        showLoaderOnConfirm: '重试'
+                                    },function (){
+                                        $("#phone").attr("disabled",false);
+
+                                    });
+                                }
+
+                            }
+                        )
+                    }else if(data == "error"){
+                        $("#phone").attr("class","form-control is-invalid");
+                        swal({
+                            title: "提示",
+                            text: "手机号重复，请重新尝试",
+                            type: "error",
+                            confirmButtonText: '重试'
+                        });
+                    }
+                }
+            )
+        }
+    }
+
+
+
+
+
+</script>
+<script type="text/javascript">
+
+    function checkPhoneCode(){
+        var phoneCode = $("#phoneCode").val();
+        $.post(
+            "/consumerInformation/checkPhoneCode",
+            "phoneCode="+phoneCode,
+            function (data){
+                if(data == "success"){
+                    $("#phoneCode").attr("class","form-control is-valid");
+                }else if(data == "error"){
+                    $("#phoneCode").attr("class","form-control is-invalid");
+                    swal({
+                        title: "提示",
+                        text: "手机验证码错误",
+                        type: "error",
+                        confirmButtonText: '重试'
+                    });
+                }
+            }
+        )
+    }
+</script>
+<script type="text/javascript">
+    function checkEmailCode(){
+        if($("#phoneCode").val() == "" && $("#oPhoneCode").val() == ""){
+            $("#phoneCode").attr("class","form-control is-invalid");
+            $("#oEmailCode").attr("class","form-control is-invalid");
+            $("#phone").attr("class","form-control is-invalid");
+            swal({
+                title: "提示",
+                text: "请先填写手机号验证码",
+                type: "error",
+                confirmButtonText: '重试'
+            });
+        }else if($("#phoneCode").attr("class").indexOf("is-invalid") == -1  && $("#oPhoneCode").attr("class").indexOf("is-invalid") == -1){
+
+            var emailCode = $("#emailCode").val();
+            var oEmailCode = $("#oEmailCode").val();
+            $.post(
+                "/consumerInformation/checkEmailCode",
+                "emailCode="+oEmailCode,
+                function (data){
+                    if(data == "success"){
+                        $("#oEmailCode").attr("class","form-control is-valid");
+                        $("#phone").attr("class","form-control is-valid");
+                        $("#phone").attr("style","border-color:green");
+                        $("#phone-code").attr("hidden",true);
+                        $("#phoneCode").val("");
+                        $("#oEmailCode").val("");
+                    }else if(data == "error"){
+                        $("#oEmailCode").attr("class","form-control is-invalid");
+                        $("#phone").attr("class","form-control is-invalid");
+                        swal({
+                            title: "提示",
+                            text: "邮箱验证码错误",
+                            type: "error",
+                            confirmButtonText: '重试'
+                        });
+                    }
+                }
+            )
+        }else {
+            $("#phoneCode").attr("class","form-control is-invalid");
+            $("#oEmailCode").attr("class","form-control is-invalid");
+            $("#phone").attr("class","form-control is-invalid");
+            swal({
+                title: "提示",
+                text: "手机验证码错误，请重新尝试",
+                type: "error",
+                confirmButtonText: '重试'
+            });
+        }
+    }
+</script>
+
+<script type="text/javascript">
+    function checkWchat(){
+        var wchat = $("#wchat").val();
+        if(wchat == ""){
+            $("#wchat").attr("class","form-control is-invalid");
+            swal({
+                title: "提示",
+                text: "微信不能为空",
+                type: "error",
+                confirmButtonText: '重试'
+            });
+        }else{
+            $.post(
+                "/consumerInformation/checkWchat",
+                "wchat="+wchat,
+                function (data){
+                    if(data == "success"){
+                        $("#wchat").attr("class","form-control is-valid");
+                    }else if(data == "error"){
+                        $("#wchat").attr("class","form-control is-invalid");
+                        swal({
+                            title: "提示",
+                            text: "微信已重复，请重新尝试",
+                            type: "error",
+                            confirmButtonText: '重试'
+                        });
+                    }
+                }
+            )
+        }
+    }
+</script>
+<script type="text/javascript">
+    function checkEmail(){
+        var email = $("#email").val();
+        var phone = $("#phone").val();
+        var reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
+        if(email == ""){
+            $("#email").attr("class","form-control is-invalid");
+            swal({
+                title: "提示",
+                text: "邮箱不能为空",
+                type: "error",
+                confirmButtonText: '重试'
+            });
+        }else if(!reg.test(email)) {
+            $("#email").attr("class","form-control is-invalid");
+            swal({
+                title: "提示",
+                text: "邮箱格式错误",
+                type: "error",
+                confirmButtonText: '重试'
+            });
+
+        }else{
+            $.post(
+                "/consumerInformation/checkEmail",
+                "email="+email,
+                function (data){
+                    if(data == "success"){
+                        $("#email-code").attr("hidden",false);
+                        $.post(
+                            "/consumerInformation/sendCode",
+                            "phone="+phone+"&email="+email,
+                            function (data){
+                                if(data == "success"){
+                                    swal({
+                                        title: "提示",
+                                        text: "验证码发送成功，请验证",
+                                        type: "success",
+                                        confirmButtonText: '重试'
+                                    });
+                                }else if(data == "error"){
+                                    $("#oPhoneCode").attr("class","form-control is-invalid");
+                                    $("#emailCode").attr("class","form-control is-invalid");
+                                    $("#email").attr("class","form-control is-invalid");
+                                    swal({
+                                        title: "提示",
+                                        text: "验证码发送失败，请重新验证",
+                                        type: "error",
+                                        showLoaderOnConfirm: '重试'
+                                    },function (){
+                                        $("#email").attr("disabled",false);
+
+                                    });
+                                }
+                            }
+                        )
+                    }else if(data == "error"){
+                        $("#email").attr("class","form-control is-invalid");
+                        swal({
+                            title: "提示",
+                            text: "邮箱重复，请重新尝试",
+                            type: "error",
+                            confirmButtonText: '重试'
+                        });
+                    }
+                }
+            )
+        }
+    }
+</script>
+<script type="text/javascript">
+
+    function checkEPhoneCode(){
+        var phoneCode = $("#oPhoneCode").val();
+        $.post(
+            "/consumerInformation/checkPhoneCode",
+            "phoneCode="+phoneCode,
+            function (data){
+                if(data == "success"){
+                    $("#oPhoneCode").attr("class","form-control is-valid");
+                }else if(data == "error"){
+                    $("#oPhoneCode").attr("class","form-control is-invalid");
+                    swal({
+                        title: "提示",
+                        text: "手机验证码错误",
+                        type: "error",
+                        confirmButtonText: '重试'
+                    });
+                }
+            }
+        )
+    }
+</script>
+<script type="text/javascript">
+    function checkEEmailCode(){
+        if($("#phoneCode").val() == "" && $("#oPhoneCode").val() == ""){
+            $("#oPhoneCode").attr("class","form-control is-invalid");
+            $("#emailCode").attr("class","form-control is-invalid");
+            $("#email").attr("class","form-control is-invalid");
+            swal({
+                title: "提示",
+                text: "请先填写手机号验证码",
+                type: "error",
+                confirmButtonText: '重试'
+            });
+        }else if($("#phoneCode").attr("class").indexOf("is-invalid") == -1  && $("#oPhoneCode").attr("class").indexOf("is-invalid") == -1){
+
+            var emailCode = $("#emailCode").val();
+            var oEmailCode = $("#oEmailCode").val();
+            $.post(
+                "/consumerInformation/checkEmailCode",
+                "emailCode="+emailCode,
+                function (data){
+                    if(data == "success"){
+                        $("#emailCode").attr("class","form-control is-valid");
+                        $("#email").attr("class","form-control is-valid");
+                        $("#emailCode").attr("style","border-color:green");
+                        $("#email-code").attr("hidden",true);
+                        $("#oPhoneCode").val("");
+                        $("#emailCode").val("");
+                    }else if(data == "error"){
+                        $("#emailCode").attr("class","form-control is-invalid");
+                        $("#email").attr("class","form-control is-invalid");
+                        swal({
+                            title: "提示",
+                            text: "邮箱验证码错误",
+                            type: "error",
+                            confirmButtonText: '重试'
+                        });
+                    }
+                }
+            )
+        }else {
+            $("#oPhoneCode").attr("class","form-control is-invalid");
+            $("#emailCode").attr("class","form-control is-invalid");
+            $("#email").attr("class","form-control is-invalid");
+            swal({
+                title: "提示",
+                text: "手机验证码错误，请重新尝试",
+                type: "error",
+                confirmButtonText: '重试'
+            });
+        }
+    }
+</script>
+<script type="text/javascript">
+    function updateInformation(){
+        if(($("#name").attr("class").indexOf("is-invalid")) != -1 ||
+            ($("#phone").attr("class").indexOf("is-invalid")) != -1||
+            ($("#wchat").attr("class").indexOf("is-invalid")) != -1 ||
+            ($("#email").attr("class").indexOf("is-invalid")) != -1){
+            swal({
+                title: "提示",
+                text: "您修改的信息还有错误，请信息修改正确后再重新尝试！",
+                type: "error",
+                confirmButtonText: '重试'
+            });
+        }else{
+            var consumer={
+                "id":$("#id").val(),
+                "name":$("#name").val(),
+                "phone":$("#phone").val(),
+                "wchat":$("#wchat").val(),
+                "email":$("#email").val(),
+                "address":$("#address").val(),
+                "nativePlace":$("#nativePlace").val(),
+            }
+            $.post(
+                "/consumerInformation/updateConsumerInformation",
+                consumer,
+                function (data){
+                    var slpit = data.split(":");
+                    if (slpit[0] == "success"){
+                        location.href="/consumerInformation/information?id="+slpit[1];
+                    }else if(slpit[0] == "error"){
+                        swal({
+                            title: "提示",
+                            text: "服务器错误，请稍后重试！",
+                            type: "error",
+                            confirmButtonText: '重试'
+                        });
+                    }
+
+                }
+            )
+        }
+    }
+</script>
+</body>
+<!-- END: Body-->
+</html>

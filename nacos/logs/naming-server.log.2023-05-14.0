@@ -1,0 +1,25 @@
+2023-05-14 20:04:07,265 INFO GlobalConfig{taskDispatchPeriod=2000, batchSyncKeyCount=1000, syncRetryDelay=5000, dataWarmup=false, expireInstance=true, loadDataRetryDelayMillis=30000}
+
+2023-05-14 20:04:07,623 INFO open empty service auto clean job, initialDelay : 50000 ms, period : 30000 ms
+
+2023-05-14 20:04:07,623 INFO listen for service meta change
+
+2023-05-14 20:04:12,260 INFO [NACOS-DISTRO] healthy server list changed, old: [192.168.1.101:8858], new: [192.168.1.101:8858]
+
+2023-05-14 20:42:17,204 WARN [NamingServerHttpClientManager] Start destroying HTTP-Client
+
+2023-05-14 20:42:17,217 WARN [NamingServerHttpClientManager] Destruction of the end
+
+2023-05-14 20:42:25,255 ERROR [HEALTH-CHECK] error while processing NIO task
+
+java.lang.InterruptedException: null
+	at java.base/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1679)
+	at java.base/java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:460)
+	at com.alibaba.nacos.naming.healthcheck.TcpSuperSenseProcessor.processTask(TcpSuperSenseProcessor.java:137)
+	at com.alibaba.nacos.naming.healthcheck.TcpSuperSenseProcessor.run(TcpSuperSenseProcessor.java:154)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)

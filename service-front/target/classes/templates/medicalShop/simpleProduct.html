@@ -1,0 +1,755 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>	
+	<title>商品页面</title>
+	<meta charset="utf-8" />
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<!-- FAVICONS -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="icons/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="icons/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="icons/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="icons/apple-touch-icon-57-precomposed.png" />
+
+	<!-- FAVICONS -->
+	<link rel="shortcut icon" href="icons/favicon.png" th:href="@{/medicalShop/icons/favicon.png}" />
+
+	<!-- GOOGLE WEB FONTS -->
+	<link rel="stylesheet" href="css/font-awesome.min.css" th:href="@{/medicalShop/css/font-awesome.min.css}">
+
+	<!-- BOOTSTRAP 3.3.7 CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" th:href="@{/medicalShop/css/bootstrap.min.css}" />
+
+	<!-- SLICK v1.6.0 CSS -->
+	<link rel="stylesheet" href="css/slick-1.6.0/slick.css" th:href="@{/medicalShop/css/slick-1.6.0/slick.css}" />
+
+	<link rel="stylesheet" href="css/jquery.fancybox.css" th:href="@{/medicalShop/css/jquery.fancybox.css}"/>
+	<link rel="stylesheet" href="css/yith-woocommerce-compare/colorbox.css" th:href="@{/medicalShop/css/yith-woocommerce-compare/colorbox.css}" />
+	<link rel="stylesheet" href="css/owl-carousel/owl.carousel.min.css" th:href="@{/medicalShop/css/owl-carousel/owl.carousel.min.css}" />
+	<link rel="stylesheet" href="css/owl-carousel/owl.theme.default.min.css" th:href="@{/medicalShop/css/owl-carousel/owl.theme.default.min.css}" />
+	<link rel="stylesheet" href="css/js_composer/js_composer.min.css"  th:href="@{/medicalShop/css/js_composer/js_composer.min.css}" />
+	<link rel="stylesheet" href="css/woocommerce/woocommerce.css" th:href="@{/medicalShop/css/woocommerce/woocommerce.css}" />
+	<link rel="stylesheet" href="css/woocommerce/woocommerce-layout.css" th:href="@{/medicalShop/css/woocommerce/woocommerce-layout.css}" />
+	<link rel="stylesheet" href="css/woocommerce/woocommerce-smallscreen.css" th:href="@{/medicalShop/css/woocommerce/woocommerce-smallscreen.css}" />
+
+	<link rel="stylesheet" href="css/yith-woocommerce-wishlist/style.css" th:href="@{/medicalShop/css/yith-woocommerce-wishlist/style.css}" />
+
+	<link rel="stylesheet" href="css/custom.css" th:href="@{/medicalShop/css/custom.css}" />
+	<link rel="stylesheet" href="css/app-orange.css" id="theme_color" th:href="@{/medicalShop/css/app-orange.css}" />
+	<link rel="stylesheet" href="" id="rtl" />
+	<link rel="stylesheet" href="css/app-responsive.css" th:href="@{/medicalShop/css/app-responsive.css}" />
+</head>
+
+<body class="product-template-default single single-product woocommerce woocommerce-page">
+	<div class="body-wrapper theme-clearfix">
+		<header id="header" class="header header-style1">
+			<div class="header-top clearfix">
+				<div class="container">
+					<div class="rows">
+						<!-- SIDEBAR TOP MENU -->
+
+						<div class="wrap-myacc pull-right">
+							<div class="sidebar-account pull-left">
+								<div class="account-title">我的账户</div>
+
+								<div id="my-account" class="my-account">
+									<div class="widget-1 widget-first widget nav_menu-4 widget_nav_menu">
+										<div class="widget-inner">
+											<ul id="menu-my-account" class="menu">
+												<li class="menu-my-account">
+													<a class="item-link" href="my_account.html">
+														<span class="menu-title">我的账户</span>
+													</a>
+												</li>
+
+												<li class="menu-cart">
+													<a class="item-link" href="cart.html">
+														<span class="menu-title">购物车</span>
+													</a>
+												</li>
+
+												<li class="menu-checkout">
+													<a class="item-link" href="checkout.html">
+														<span class="menu-title">结算</span>
+													</a>
+												</li>
+
+												<li class="menu-wishlist">
+													<a class="item-link" href="wishlist.html">
+														<span class="menu-title">收藏夹</span>
+													</a>
+												</li>
+												<li>
+													<a href="javascript:void(0);" data-toggle="modal" data-target="#login_form">
+														<span>登录</span>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="pull-left top2">
+								<div class="widget-1 widget-first widget nav_menu-2 widget_nav_menu">
+									<div class="widget-inner">
+										<ul id="menu-checkout" class="menu">
+											<li class="menu-checkout">
+												<a class="item-link" href="checkout.html">
+													<span class="menu-title">结算</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="header-mid">
+				<div class="container">
+					<div class="rows">
+						<!-- LOGO -->
+						<div class="etrostore-logo pull-left">
+							<a href="home_page_1.html">
+								<img th:src="@{/medicalShop/images/icons/logo-orange.png}" src="image`images/icons/logo-orange.png" alt="Shoopy">
+							</a>
+						</div>
+
+						<div class="mid-header pull-right">
+							<div class="widget sw_top-2 sw_top">
+								<div class="widget-inner">
+									<div class="top-form top-search">
+										<div class="topsearch-entry">
+											<input type="text" value="" name="s" placeholder="请输入要搜索的内容">
+
+											<button type="button" title="搜索" class="fa fa-search button-search-pro"></button>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="widget sw_top-3 sw_top pull-left">
+								<div class="widget-inner">
+									<div class="top-form top-form-minicart etrostore-minicart pull-right">
+										<div class="top-minicart-icon pull-right">
+											<i class="fa fa-shopping-cart"></i>
+											<a class="cart-contents" href="cart.html" title="View your shopping cart">
+												<span class="minicart-number">2</span>
+											</a>
+										</div>
+
+										<div class="wrapp-minicart">
+											<div class="minicart-padding">
+												<div class="number-item">
+													<span>购物车</span>
+												</div>
+
+												<ul class="minicart-content">
+													<li>
+														<a href="simple_product.html" class="product-image">
+															<img 	width="100" height="100" th:src="@{/medicalShop/images/1903/45-150x150.jpg}" src="images/1903/45-150x150.jpg" class="attachment-100x100 size-100x100 wp-post-image" alt=""
+																	srcset="images/1903/45-150x150.jpg 150w, images/1903/45-300x300.jpg 300w, images/1903/45-180x180.jpg 180w, images/1903/45.jpg 600w"
+																	sizes="(max-width: 100px) 100vw, 100px" />
+														</a>
+
+														<div class="detail-item">
+															<div class="product-details">
+																<h4>
+																	<a class="title-item" href="simple_product.html">Veniam Dolore</a>
+																</h4>
+
+																<div class="product-price">
+																	<span class="price">
+																		$190.00
+																	</span>
+
+																	<div class="qty">
+																		<span class="qty-number">1</span>
+																	</div>
+																</div>
+
+																<div class="product-action">
+																	<a href="#" class="btn-remove" title="Remove this item">
+																		<span class="fa fa-trash-o"></span>
+																	</a>
+
+																	<a class="btn-edit" href="cart.html" title="View your shopping cart">
+																		<span class="fa fa-pencil"></span>
+																	</a>
+																</div>
+															</div>
+														</div>
+													</li>
+
+												</ul>
+
+												<div class="cart-checkout">
+													<div class="price-total">
+														<span class="label-price-total">总数</span>
+
+														<span class="price-total-w">
+															<span class="price">
+																￥540.00
+															</span>
+														</span>
+													</div>
+
+													<div class="cart-links">
+														<div class="cart-link">
+															<a href="cart.html" title="Cart">查看购物车</a>
+														</div>
+
+														<div class="checkout-link">
+															<a href="checkout.html" title="Check Out">支付</a>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="widget widget_nav_menu pull-left">
+								<div class="widget-inner">
+									<ul id="menu-wishlist" class="menu">
+										<li class="menu-wishlist">
+											<a class="item-link" href="wishlist.html">
+												<span class="menu-title">收藏夹</span>
+											</a>
+										</li>
+
+										<li class="yith-woocompare-open menu-compare">
+											<a class="item-link compare" href="#">
+												<span class="menu-title">比较</span>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="header-bottom">
+				<div class="container">
+					<div class="rows">
+						<div class="top-form top-form-minicart etrostore-minicart pull-right">
+							<div class="top-minicart-icon pull-right">
+								<i class="fa fa-shopping-cart"></i>
+								<a class="cart-contents" href="cart.html" title="查看购物车">
+									<span class="minicart-number">数量</span>
+								</a>
+							</div>
+
+							<div class="wrapp-minicart">
+								<div class="minicart-padding">
+									<div class="number-item">
+										<span>购物车</span>
+									</div>
+
+									<ul class="minicart-content">
+										<li>
+											<a href="simple_product.html" class="product-image">
+												<img 	width="100" height="100" th:src="@{/medicalShop/images/1903/45-150x150.jpg}" src="images/1903/45-150x150.jpg" class="attachment-100x100 size-100x100 wp-post-image" alt=""
+														srcset="images/1903/45-150x150.jpg 150w, images/1903/45-300x300.jpg 300w, images/1903/45-180x180.jpg 180w, images/1903/45.jpg 600w"
+														sizes="(max-width: 100px) 100vw, 100px" />
+											</a>
+
+											<div class="detail-item">
+												<div class="product-details">
+													<h4>
+														<a class="title-item" href="simple_product.html">Veniam Dolore</a>
+													</h4>
+
+													<div class="product-price">
+														<span class="price">
+															$190.00
+														</span>
+
+														<div class="qty">
+															<span class="qty-number">1</span>
+														</div>
+													</div>
+
+													<div class="product-action">
+														<a href="#" class="btn-remove" title="Remove this item">
+															<span class="fa fa-trash-o"></span>
+														</a>
+
+														<a class="btn-edit" href="cart.html" title="View your shopping cart">
+															<span class="fa fa-pencil"></span>
+														</a>
+													</div>
+												</div>
+											</div>
+										</li>
+									</ul>
+
+									<div class="cart-checkout">
+										<div class="price-total">
+											<span class="label-price-total">总计</span>
+
+											<span class="price-total-w">
+												<span class="price">
+													￥540.00
+												</span>
+											</span>
+										</div>
+
+										<div class="cart-links">
+											<div class="cart-link">
+												<a href="cart.html" title="Cart">查看购物车</a>
+											</div>
+
+											<div class="checkout-link">
+												<a href="checkout.html" title="Check Out">支付</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="mid-header pull-right">
+							<div class="widget sw_top">
+								<span class="stick-sr">
+									<i class="fa fa-search" aria-hidden="true"></i>
+								</span>
+
+								<div class="top-form top-search">
+									<div class="topsearch-entry">
+										<input type="text" value="" name="s" class="search-query" placeholder="请输入要搜索的内容" />
+										<button type="button" class="button-search-pro">搜索</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		<div class="listings-title">
+			<div class="container">
+				<div class="wrap-title">
+					<h1>[[${tDrugStorage.name}]]</h1>
+					<div class="bread">
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
+			<div class="row">
+				<div id="contents-detail" class="content col-lg-12 col-md-12 col-sm-12" role="main">
+					<div id="container">
+						<div id="content" role="main">
+							<div class="single-product clearfix">
+								<div id="product-01" class="product type-product status-publish has-post-thumbnail product_cat-accessories product_brand-global-voices first outofstock featured shipping-taxable purchasable product-type-simple">
+									<div class="product_detail row">
+										<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 clear_xs">
+											<div class="slider_img_productd">
+												<!-- woocommerce_show_product_images -->
+												<div id="product_img_01" class="product-images loading" data-rtl="false">
+													<div class="product-images-container clearfix thumbnail-bottom">
+														<!-- Image Slider -->
+														<div class="slider product-responsive">
+															<div class="item-img-slider">
+																<div class="images">					
+																	<a th:href="${tDrugStorage.img} " data-rel="prettyPhoto[product-gallery]" class="zoom">
+																		<img style="width: 568px;height: 568px;" width="600" height="600" th:src="${tDrugStorage.img}"  class="attachment-shop_single size-shop_single" alt="" sizes="(max-width: 600px) 100vw, 600px">
+																	</a>
+																</div>
+															</div>
+														</div>
+														
+														<!-- Thumbnail Slider -->
+														<div class="slider product-responsive-thumbnail" id="product_thumbnail_247">
+															<div class="item-thumbnail-product">
+																<div class="thumbnail-wrapper">
+																	<img style="width: 104px;height: 104px;" width="180" height="180" th:src="${tDrugStorage.img}" src="images/1903/49-180x180.jpg" class="attachment-shop_thumbnail size-shop_thumbnail" alt="">
+																</div>
+															</div>
+
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										
+										<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 clear_xs">
+											<div class="content_product_detail">
+												<h1 class="product_title entry-title">[[${tDrugStorage.name}]]</h1>
+												
+												<div class="reviews-content">
+													<div class="star"></div>
+													<a href="#reviews" class="woocommerce-review-link" rel="nofollow"><span class="count">[[${tDrugStorage.evaluateSum}]]</span> 评价(s)</a>
+												</div>
+												
+												<div>
+													<p class="price"><span class="woocommerce-Price-amount amount"><del>
+																						￥[[${tDrugStorage.price}]]
+																					</del>
+
+																					<ins>
+																						￥[[${tDrugStorage.discount}]]
+																					</ins></span></p>
+												</div>
+												
+												<div class="product-info clearfix">
+													<div class="product-stock pull-left out-stock">
+														<span>库存[[${tDrugStorage.stock}]]</span>
+													</div>
+												</div>
+												
+												<div class="description" itemprop="description">
+													<p>[[${tDrugStorage.introduce}]]</p>
+												</div>
+
+												<form class="variations_form cart" method="post" enctype="multipart/form-data">
+
+
+													<div class="addcart-wrapper clearfix">
+														<div class="single_variation_wrap">
+															<div class="woocommerce-variation single_variation"></div>
+
+															<div class="woocommerce-variation-add-to-cart variations_button">
+																<div class="quantity">
+																	<input type="number" step="1" min="" max="" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" pattern="[0-9]*" inputmode="numeric">
+																</div>
+																<button type="button" class="single_add_to_cart_button button alt">添加购物车</button>
+															</div>
+
+															<!-- add to cart, wishlist, compare -->
+															<div class="item-bottom">
+																<a href="javascript:void(0)" class="compare button" rel="nofollow" title="Add to Compare">对比</a>
+
+																<div class="yith-wcwl-add-to-wishlist ">
+																	<div class="yith-wcwl-add-button show" style="display:block">
+																		<a href="wishlist.html" rel="nofollow" class="add_to_wishlist">添加收藏</a>
+																		<img src="images/wpspin_light.gif" class="ajax-loading" alt="loading" width="16" height="16" style="visibility:hidden" />
+																	</div>
+
+																	<div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
+																		<span class="feedback">产品添加成功!</span>
+																		<a href="#" rel="nofollow">浏览收藏夹</a>
+																	</div>
+
+																	<div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none">
+																		<span class="feedback">产品已经在收藏列表!</span>
+																		<a href="#" rel="nofollow">浏览收藏夹</a>
+																	</div>
+
+																	<div style="clear:both"></div>
+																	<div class="yith-wcwl-wishlistaddresponse"></div>
+																</div>
+
+																<div class="clear"></div>
+															</div>
+														</div>
+													</div>
+												</form>
+
+												<div class="social-share">
+													<div class="title-share">分享</div>
+													<div class="wrap-content">
+														<a href="http://www.facebook.com" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-facebook"></i></a>
+														<a href="http://twitter.com" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-twitter"></i></a>
+														<a href="https://plus.google.com" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><i class="fa fa-google-plus"></i></a>
+														<a href="#"><i class="fa fa-dribbble"></i></a>
+														<a href="#"><i class="fa fa-instagram"></i></a>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="tabs clearfix">
+									<div class="tabbable">
+										<ul class="nav nav-tabs">
+											<li class="description_tab active">
+												<a href="#tab-description" data-toggle="tab">介绍</a>
+											</li>
+											
+											<li class="reviews_tab ">
+												<a href="#tab-reviews" data-toggle="tab">评论 (0)</a>
+											</li>
+										</ul>
+										
+										<div class="clear"></div>
+										
+										<div class=" tab-content">
+											<div class="tab-pane active" id="tab-description">
+												<h2>商品描述</h2>
+												<P>[[${tDrugStorage.introduce}]]</P>
+											</div>
+											
+											<div class="tab-pane " id="tab-reviews">
+												<div id="reviews">
+													<div id="comments">
+														<h2>评论</h2>
+														<p class="woocommerce-noreviews">现在还没有评论.</p>
+													</div>
+													
+													<div id="review_form_wrapper">
+														<div id="review_form">
+															<div id="respond" class="comment-respond">
+																<h3 id="reply-title" class="comment-reply-title">
+																	您将是第一个评价[[${tDrugStorage.name}]]的人
+																	<small><a rel="nofollow" id="cancel-comment-reply-link" href="#" style="display:none;">关闭评论</a></small>
+																</h3>
+																
+																<form action="" method="post" id="commentform" class="comment-form">
+																	<p class="comment-form-rating">
+																		<label for="rating">您的评价</label>
+																		<select name="rating" id="rating">
+																			<option value="">评价</option>
+																			<option value="5">完美</option>
+																			<option value="4">好的</option>
+																			<option value="3">一般</option>
+																			<option value="2">不错</option>
+																			<option value="1">垃圾</option>
+																		</select>
+																	</p>
+																	
+																	<p class="comment-form-comment">
+																		<label for="comment">您的评论</label>
+																		<textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+																	</p>
+																	
+																	<p class="form-submit">
+																		<input name="submit" type="submit" id="submit" class="submit" value="提交">
+																	</p>
+																</form>
+															</div>
+														</div>
+													</div>
+													
+													<div class="clear"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="bottom-single-product theme-clearfix">
+									<div class="widget-1 widget-first widget sw_related_upsell_widget-2 sw_related_upsell_widget" data-scroll-reveal="enter bottom move 20px wait 0.2s">
+										<div class="widget-inner">
+											<div id="slider_sw_related_upsell_widget-2" class="sw-woo-container-slider related-products responsive-slider clearfix loading" data-lg="4" data-md="3" data-sm="2" data-xs="2" data-mobile="1" data-speed="1000" data-scroll="1" data-interval="5000" data-autoplay="false">
+												<div class="resp-slider-container">
+													<div class="box-slider-title">
+														<h2><span>相关产品</span></h2>
+													</div>
+													
+													<div class="slider responsive">
+														<div class="item ">
+															<div class="item-wrap">
+																<div class="item-detail">
+																	<div class="item-img products-thumb">
+																		<a href="simple_product.html">
+																			<div class="product-thumb-hover">
+																				<img width="300" height="300" src="images/1903/49-300x300.jpg" class="attachment-shop_catalog size-shop_catalog wp-post-image" alt="" srcset="images/1903/49-300x300.jpg 300w, images/1903/49-150x150.jpg 150w, images/1903/49-180x180.jpg 180w, images/1903/49.jpg 600w" sizes="(max-width: 300px) 100vw, 300px">
+																			</div>
+																		</a>																
+																				
+																		<!-- add to cart, wishlist, compare -->
+																		<div class="item-bottom clearfix">
+																			<a rel="nofollow" href="#" class="button product_type_simple add_to_cart_button ajax_add_to_cart" title="Add to Cart">Add to cart</a>
+																			
+																			<a href="javascript:void(0)" class="compare button" rel="nofollow" title="Add to Compare">Compare</a>
+																			
+																			<div class="yith-wcwl-add-to-wishlist ">
+																				<div class="yith-wcwl-add-button show" style="display:block">
+																					<a href="wishlist.html" rel="nofollow" class="add_to_wishlist">Add to Wishlist</a>
+																					<img src="images/wpspin_light.gif" class="ajax-loading" alt="loading" width="16" height="16" style="visibility:hidden" />
+																				</div>
+																			   
+																				<div class="yith-wcwl-wishlistaddedbrowse hide" style="display:none;">
+																					<span class="feedback">Product added!</span>
+																					<a href="#" rel="nofollow">Browse Wishlist</a>
+																				</div>
+																				
+																				<div class="yith-wcwl-wishlistexistsbrowse hide" style="display:none">
+																					<span class="feedback">The product is already in the wishlist!</span>
+																					<a href="#" rel="nofollow">Browse Wishlist</a>
+																				</div>
+																				
+																				<div style="clear:both"></div>
+																				<div class="yith-wcwl-wishlistaddresponse"></div>
+																			</div>
+																			
+																			<div class="clear"></div>
+																			<a href="ajax/fancybox/example.html" data-fancybox-type="ajax" class="sm_quickview_handler-list fancybox fancybox.ajax">Quick View </a>
+																		</div>
+																	</div>
+																	
+																	<div class="item-content">
+																		<!-- rating  -->
+																		<div class="reviews-content">
+																			<div class="star"></div>
+																			<div class="item-number-rating">
+																				0 Review(s)				
+																			</div>
+																		</div>
+																		<!-- end rating  -->
+																		
+																		<h4><a href="simple_product.html" title="turkey qui">Turkey Qui</a></h4>
+																		
+																		<!-- price -->
+																		<div class="item-price">
+																				$300.00
+																			</span>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								   
+									<div class="widget-2 widget-last widget sw_related_upsell_widget-3 sw_related_upsell_widget" data-scroll-reveal="enter bottom move 20px wait 0.2s">
+										<div class="widget-inner"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+
+	</div>
+   
+	<!-- DIALOGS -->
+
+	<div class="modal fade" id="login_form" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog block-popup-login">
+			<a href="javascript:void(0)" title="Close" class="close close-login" data-dismiss="modal">关闭</a>
+
+			<div class="tt_popup_login">
+				<strong>登录</strong>
+			</div>
+
+			<div class="block-content">
+				<div class="col-reg registered-account">
+					<div class="email-input">
+						<input type="text" class="form-control input-text username" name="username" id="username" placeholder="用户名" />
+					</div>
+
+					<div class="pass-input">
+						<input class="form-control input-text password" type="password" placeholder="密码" name="password" id="password" />
+					</div>
+
+					<div class="ft-link-p">
+						<a href="/consumer/forgetPassword" title="Forgot your password">忘记密码？</a>
+					</div>
+
+					<div class="actions">
+						<div class="submit-login">
+							<input type="submit" class="button btn-submit-login" name="login" value="登录" />
+						</div>
+					</div>
+				</div>
+
+				<div class="col-reg login-customer">
+					<h2>注册?</h2>
+
+					<p class="note-reg">免费快捷注册!</p>
+
+					<ul class="list-log">
+						<li>快速结算</li>
+
+						<li>保存多个收货地址</li>
+
+						<li>查看订单详情</li>
+					</ul>
+
+					<a th:href="@{/consumer/login}" title="Register" class="btn-reg-popup">注册</a>
+				</div>
+			</div>
+
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	<a id="etrostore-totop" href="#"></a>	
+	
+
+	<!-- OPEN LIBS JS -->
+
+	<script type="text/javascript">
+		/* <![CDATA[ */
+			var woocommerce_price_slider_params = {"currency_symbol":"$","currency_pos":"left","min_price":"100","max_price":"500"};
+			var wc_single_product_params = {"i18n_required_rating_text":"Please select a rating","review_rating_required":"yes"};
+		/* ]]> */
+	</script>
+
+	<script type="text/javascript" src="js/jquery/jquery.min.js" th:src="@{/medicalShop/js/jquery/jquery.min.js}"></script>
+	<script type="text/javascript" src="js/jquery/jquery-migrate.min.js" th:src="@{/medicalShop/js/jquery/jquery-migrate.min.js}"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js" th:src="@{/medicalShop/js/bootstrap.min.js}"></script>
+	<script type="text/javascript" src="js/jquery/js.cookie.min.js" th:src="@{/medicalShop/js/jquery/js.cookie.min.js}"></script>
+
+	<!-- OPEN LIBS JS -->
+	<script type="text/javascript" src="js/owl-carousel/owl.carousel.min.js" th:src="@{/medicalShop/js/owl-carousel/owl.carousel.min.js}"></script>
+	<script type="text/javascript" src="js/slick-1.6.0/slick.min.js" th:src="@{/medicalShop/js/slick-1.6.0/slick.min.js}"></script>
+
+	<script type="text/javascript" src="js/yith-woocommerce-compare/jquery.colorbox-min.js" th:src="@{/medicalShop/js/yith-woocommerce-compare/jquery.colorbox-min.js}"></script>
+	<script type="text/javascript" src="js/isotope/isotope.js" th:src="@{/medicalShop/js/isotope/isotope.js}"></script>
+	<script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js" th:src="@{/medicalShop/js/fancybox/jquery.fancybox.pack.js}"></script>
+	<script type="text/javascript" src="js/sw_woocommerce/category-ajax.js" th:src="@{/medicalShop/js/sw_woocommerce/category-ajax.js}"></script>
+	<script type="text/javascript" src="js/sw_woocommerce/jquery.countdown.min.js" th:src="@{/medicalShop/js/sw_woocommerce/jquery.countdown.min.js}"></script>
+	<script type="text/javascript" src="js/js_composer/js_composer_front.min.js" th:src="@{/medicalShop/js/js_composer/js_composer_front.min.js}"></script>
+	<script type="text/javascript" src="js/woocommerce/price-slider.min.js" th:src="@{/medicalShop/js/price-slider.min.js}"></script>
+	<script type="text/javascript" src="js/woocommerce/single-product.min.js" th:src="@{/medicalShop/js/single-product.min.js}"></script>
+	<script type="text/javascript" src="js/woocommerce/prettyPhoto/jquery.prettyPhoto.init.min.js" th:src="@{/medicalShop/js/woocommerce/prettyPhoto/jquery.prettyPhoto.init.min.js}"></script>
+	<script type="text/javascript" src="js/wc-quantity-increment.min.js" th:src="@{/medicalShop/js/wc-quantity-increment.min.js}"></script>
+	<script type="text/javascript" src="js/widget.min.js" th:src="@{/medicalShop/js/widget.min.js}"></script>
+	<script type="text/javascript" src="js/mouse.min.js" th:src="@{/medicalShop/js/mouse.min.js}"></script>
+	<script type="text/javascript" src="js/slider.min.js" th:src="@{/medicalShop/js/slider.min.js}"></script>
+	<script type="text/javascript" src="js/js_composer/js_composer_front.min.js" th:src="@{/medicalShop/js/js_composer/js_composer_front.min.js}"></script>
+
+	<script type="text/javascript" src="js/plugins.js" th:src="@{/medicalShop/js/plugins.js}"></script>
+	<script type="text/javascript" src="js/megamenu.min.js" th:src="@{/medicalShop/js/megamenu.min.js}"></script>
+	<script type="text/javascript" src="js/main.min.js" th:src="@{/medicalShop/js/main.min.js}"></script>
+   
+	<script type="text/javascript">
+		var sticky_navigation_offset_top = $("#header .header-bottom").offset().top;
+		var sticky_navigation = function(){
+									var scroll_top = $(window).scrollTop();
+									if (scroll_top > sticky_navigation_offset_top) {
+										$("#header .header-bottom").addClass("sticky-menu");
+										$("#header .header-bottom").css({ "top":0, "left":0, "right" : 0 });
+									} else {
+										$("#header .header-bottom").removeClass("sticky-menu");
+									}
+								};
+		sticky_navigation();
+		$(window).scroll(function() {
+			sticky_navigation();
+		});
+		
+		$(document).ready (function () {
+			$( ".show-dropdown" ).each(function(){
+				$(this).on("click", function(){
+					$(this).toggleClass("show");
+					var $element = $(this).parent().find( "> ul" );
+					$element.toggle( 300 );
+				});
+			});
+		});
+   </script>
+   
+   </body>
+</html>

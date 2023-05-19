@@ -1,0 +1,192 @@
+/* 模态框初始状态 */
+.modalbox {
+    font-family: Arial, Helvetica, sans-serif;
+    /* 通过 position 让遮罩层撑满整个屏幕 */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* 遮罩层背景色为黑色 */
+    background: #fff;
+    /* 给 z-index 一个过大的值，确保遮罩层”真的遮盖住了“模态框背后的元素 */
+    z-index: 99999;
+    /* 设置 opacity 为 0，用于隐藏模态框 */
+    opacity: 0;
+    /* 一些过渡效果 */
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    /* pointer-events 鼠标事件“穿透”该元素并且指定该元素“下面”的任何东西 */
+    /* 请参阅：https://developer.mozilla.org/zh-CN/docs/Web/CSS/pointer-events */
+    pointer-events: none;
+}
+
+/* 模态框显示状态 */
+.modalbox:target {
+    /* 不透明为 0.8 */
+    opacity: 1;
+    /* 与 pointer-events 属性未指定时的表现效果相同 */
+    /* 请参阅：https://developer.mozilla.org/zh-CN/docs/Web/CSS/pointer-events */
+    pointer-events: auto;
+}
+
+/* 模态框内容，你也可以自定义 */
+.modalbox-dialog {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #000;
+
+}
+
+.signin-form {
+
+    background: rgba(0, 0, 0, 0.78);
+    padding: 2em;
+    text-align: center;
+    -webkit-appearance: none;
+}
+
+.signin-form h2, .signin-form h3, .signin-form h3 {
+    font-size: 1.2em;
+    color: #FFFFFF;
+    text-align: center;
+    margin: 0 0 1em 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.signin-form input[type="text"], .signin-form input[type="email"], .signin-form input[type="password"], .signin-form textarea {
+    outline: none;
+    font-size: .9em;
+    color: #FFFFFF;
+    padding: 1em 1em;
+    margin: 0;
+    width: 92.5%;
+    border: none;
+    border-bottom: solid 1px #e2eaef;
+    -webkit-appearance: none;
+    display: block;
+    background: none;
+}
+
+.signin-form textarea {
+    min-height: 125px;
+    margin: 0 0 2em 0;
+    resize: none;
+
+}
+
+.signin-form input[type="text"], .signin-form input[type="email"] {
+    margin: 0 0 1em 0;
+}
+
+.signin-form input[type="checkbox"] {
+    display: none;
+}
+
+.signin-form input[type="checkbox"] + label {
+    position: relative;
+    padding-left: 1.8em;
+    border: none;
+    outline: none;
+    font-size: .9em;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    margin: 2em 0;
+}
+
+.signin-form input[type="checkbox"] + label span:first-child {
+    width: 14px;
+    height: 14px;
+    border: 2px solid #C8C8C8;
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+
+.signin-form input[type="checkbox"]:checked + label span:first-child:before {
+    content: "";
+    background: url(/static/signup/img/tick.png) no-repeat;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    font-size: 10px;
+    width: 10px;
+    height: 10px;
+}
+
+.signin-form input[type="submit"] {
+    font-size: 1em;
+    color: #fff;
+    background: #ED2553;
+    border: 2px solid #ED2553;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: .6em 1em;
+    width: 100%;
+    -webkit-appearance: none;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+.signin-form button {
+    font-size: 1em;
+    color: #fff;
+    background: #ED2553;
+    border: 2px solid #ED2553;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: .6em 1em;
+    width: 100%;
+    -webkit-appearance: none;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+
+.signin-form input[type="submit"]:hover {
+    background: none;
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+.signin-agileits-bottom p {
+    text-align: center;
+    margin: 1.5em 0 0 0;
+    font-size: .9em;
+}
+
+.signin-agileits-bottom p a {
+    color: #ffffff;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    transition: 0.5s all;
+}
+
+.signin-agileits-bottom p a:hover {
+    color: #ED2553;
+}
+
+.recover-password {
+    text-align: center;
+    margin: 2em 0;
+}
+
+.recover-password input[type="phone"] {
+    margin: 0 0 2em 0;
+}
